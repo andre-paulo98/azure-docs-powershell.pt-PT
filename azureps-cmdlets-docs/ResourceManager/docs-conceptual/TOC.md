@@ -1,16 +1,22 @@
 # [Azure PowerShell](overview.md)
+
 ## [Instalar](install-azurerm-ps.md)
+### [Instalar no macOS e Linux](install-azurermps-maclinux.md)
 ### [Outros métodos de instalação](other-install.md)
+
 ## [Introdução](get-started-azureps.md)
 ## [Iniciar sessão](authenticate-azureps.md)
 ### [Criar um principal de serviço](create-azure-service-principal-azureps.md)
+
 ## [Consultas](queries-azureps.md)
 ## [Formatação](formatting-output.md)
 ## [Subscrições](manage-subscriptions-azureps.md)
+
 ## Implementação
 ### [Implementar com modelos do Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-group-template-deploy)
 ### [Exportar modelos do Resource Manager](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-export-template-powershell)
 ### [Implementar um modelo privado do Resource Manager com o token SAS](https://docs.microsoft.com/azure/azure-resource-manager/resource-manager-powershell-sas-token)
+
 ## [Notas de versão](release-notes-azureps.md)
 
 # Scripts de Exemplo
