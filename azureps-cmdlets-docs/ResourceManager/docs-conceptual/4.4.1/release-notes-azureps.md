@@ -12,10 +12,10 @@ ms.topic: conceptual
 ms.workload: 
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: e6b7e20bbd04eda51416c56b13f867102b602d1a
+ms.sourcegitcommit: 9d2d35944106bdb6758853b050089bc804e6b9d2
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/07/2017
+ms.lasthandoff: 10/17/2017
 ---
 # <a name="release-notes"></a>Notas de versão
 
@@ -117,7 +117,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
     - Set-AzureRMLoadBalancerRuleConfig foi atualizado: foi adicionado o parâmetro opcional DisableOutboundSNAT
   * Foi adicionado suporte para P2S IKEv2
     - New-AzureRmVirtualNetworkGateway foi atualizado: foi adicionado um parâmetro opcional -VpnClientProtocol, assume a predefinição [ “SSTP”, “IkeV2” ]
-    - Set-AzureRmVirtualNetworkGateway foi atualizado: foi adicionado um parâmetro opcional - VpnClientProtocol
+    - Set-AzureRmVirtualNetworkGateway foi atualizado: foi adicionado um parâmetro opcional -VpnClientProtocol
   * Foi adicionado suporte para regras MultiValued nas Regras de Segurança de Rede e Regras Eficazes de Segurança de Rede
     - Add-AzureRmNetworkSecurityRuleConfig foi atualizado: os parâmetros SourcePortRange, DestinationPortRange, SourceAddressPrefix foram atualizados para aceitarem uma lista de cadeias
     - New-AzureRmNetworkSecurityRuleConfig foi atualizado: os parâmetros SourcePortRange, DestinationPortRange, SourceAddressPrefix foram atualizados para aceitarem uma lista de cadeias
