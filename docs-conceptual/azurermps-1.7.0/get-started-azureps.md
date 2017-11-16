@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 08/31/2017
-ms.openlocfilehash: 2cd3fc8e955ae826471dceee79d5e6b70070d416
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.openlocfilehash: 87aa26f86d1e6ebcae729375757fc3edc1abb71c
+ms.sourcegitcommit: 79dd3700b5cb4cb90b268778b482082052160093
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 11/14/2017
 ---
 # <a name="getting-started-with-azure-powershell"></a>Introdução ao Azure PowerShell
 
@@ -26,15 +26,15 @@ A forma mais simples de começar é [iniciar a Cloud Shell](/azure/cloud-shell/q
 
 1. Inicie o Cloud Shell a partir do menu de navegação superior do portal do Azure.
 
-   ![Ícone do Shell](~/media/get-started-azureps/shell-icon.png)
+   ![Ícone do Shell](/media/get-started-azureps/shell-icon.png)
 
 2. Selecione a subscrição que quer utilizar e crie uma conta de armazenamento.
 
-   ![Criar uma conta de armazenamento](~/media/get-started-azureps/storage-prompt.png)
+   ![Criar uma conta de armazenamento](/media/get-started-azureps/storage-prompt.png)
 
 Assim que tiver sido criado o seu armazenamento, o Cloud Shell irá abrir uma sessão do PowerShell no browser.
 
-![Cloud Shell para PowerShell](~/media/get-started-azureps/cloud-powershell.png)
+![Cloud Shell para PowerShell](/media/get-started-azureps/cloud-powershell.png)
 
 Também pode instalar o Azure PowerShell e utilizá-lo localmente numa sessão do PowerShell.
 
