@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
-ms.openlocfilehash: 7a01957040be7c0498ef4f0e9b8f7297119221a5
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.openlocfilehash: c11e4503c07b0a0c4a71021bc511da723098188e
+ms.sourcegitcommit: 42bfd513fe646494d3d9eb0cfc35b049f7e1fbb7
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 12/19/2017
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Utilizar módulos experimentais do Azure PowerShell
 
@@ -26,12 +26,7 @@ Para facilitar a experimentação, estamos a criar novos módulos do Azure Power
 
 Estes módulos podem ser instalados lado a lado com módulos existentes do Azure PowerShell. Os nomes dos cmdlets foram abreviados para fornecer nomes mais curtos e evitar conflitos de nomes com cmdlets existentes não experimentais.
 
-Os módulos experimentais utilizam a seguinte convenção de nomenclatura:
-
-- AzureRM.Compute.Experiments
-- AzureRM.Websites.Experiments
-
-Esta convenção de nomenclatura é semelhante à nomenclatura dos módulos de Pré-visualização: `AzureRM.*.Preview`. Os módulos de pré-visualização diferem dos módulos experimentais. Os módulos de pré-visualização implementam novas funcionalidades dos serviços do Azure que só estão disponíveis como uma oferta de Pré-visualização. Os módulos de pré-visualização substituem os módulos existentes do Azure PowerShell e utilizam o mesmo cmdlet e os nomes dos parâmetros.
+Os módulos experimentais utilizam a seguinte convenção de nomenclatura: `AzureRM.*.Experiments`. Esta convenção de nomenclatura é semelhante à nomenclatura dos módulos de Pré-visualização: `AzureRM.*.Preview`. Os módulos de pré-visualização diferem dos módulos experimentais. Os módulos de pré-visualização implementam novas funcionalidades dos serviços do Azure que só estão disponíveis como uma oferta de Pré-visualização. Os módulos de pré-visualização substituem os módulos existentes do Azure PowerShell e utilizam o mesmo cmdlet e os nomes dos parâmetros.
 
 ## <a name="how-to-install-an-experimental-module"></a>Como instalar um módulo experimental
 
@@ -42,10 +37,10 @@ Find-Module AzureRM.*.Experiments
 ```
 
 ```Output
-Version    Name                                Repository           Description
--------    ----                                ----------           -----------
-1.0.0      AzureRM.Websites.Experiments        PSGallery            Create and deploy web applications using Azure Ap...
-1.0.25     AzureRM.Compute.Experiments         PSGallery            Azure Compute experiments for VM creation
+Version Name                         Repository Description
+------- ----                         ---------- -----------
+1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
+1.0.0   AzureRM.Websites.Experiments PSGallery  Create and deploy web applications using Azure App Services.
 ```
 
 Para instalar o módulo experimental, utilize os seguintes comandos a partir de uma sessão elevada do PowerShell:
@@ -101,30 +96,3 @@ Por exemplo, o cenário “Criar aplicação Web” poderia ter um comutador `-G
 - Predefinições de Tamanho - os “tamanhos” dos recursos podem ser confusos para os utilizadores, uma vez que muitos Fornecedores de Recursos utilizam nomes diferentes (por exemplo, “Standard\_DS1\_v2” ou “S1”). No entanto, a maioria dos utilizadores preocupa-se mais com o custo. Por conseguinte, faz sentido definir tamanhos “universais”, com base num agendamento de preços. Os utilizadores podem escolher um tamanho específico ou permitir que o Azure PowerShell escolha a _melhor opção_ com base no orçamento para recursos.
 
 - Formato de Saída - atualmente, o Azure PowerShell devolve `PSObject`s e há pouca saída da consola. O Azure PowerShell poderá ter de apresente algumas informações ao utilizador sobre as “predefinições inteligentes” utilizadas.
-
-## <a name="try-using-the-experiments"></a>Tente utilizar as experimentações
-
-### <a name="install"></a>Instalar
-
-```powershell
-Install-Module AzureRM.Compute.Experiments
-```
-
-### <a name="create-a-vm"></a>Criar uma VM
-
-```powershell
-$job = New-AzVm -Name MyVm -AsJob
-Receive-Job $job
-```
-
-### <a name="send-us-feedback"></a>Envie-nos comentários
-
-```powershell
-Send-Feedback
-```
-
-### <a name="uninstall-the-experimental-modules"></a>Desinstalar os módulos experimentais
-
-```powershell
-Uninstall-Module AzureRM.Compute.Experiments
-```
