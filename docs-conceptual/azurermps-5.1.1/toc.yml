@@ -37,6 +37,8 @@
       items:
         - name: Utilizar módulos experimentais
           href: using-experimental-modules.md
+        - name: Executar cmdlets em paralelo com as tarefas do PowerShell
+          href: using-psjobs.md
     - name: Notas de versão
       href: release-notes-azureps.md
 - name: Scripts de Exemplo
@@ -49,5 +51,5 @@
       href: /azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
     - name: Bases de Dados SQL
       href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
-    - name: Cosmos DB
+    - name: BD do Cosmos
       href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
