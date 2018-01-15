@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: 94b39c18acaca7a4b17b5207feed025442665acc
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.openlocfilehash: 2357bb5d71c221a782a297c41e7a6d08cd3f2952
+ms.sourcegitcommit: 4ebdeea3c472d94c1aedb10b9d85bf2e76826e83
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 01/06/2018
 ---
 # <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Instalar e configurar o Azure PowerShell no macOS e Linux
 
@@ -55,6 +55,7 @@ Uma vez que o módulo seja instalado, terá de carregar o módulo para a sessão
 
 ```powershell
 Import-Module AzureRM.Netcore
+Import-Module AzureRM.Profile.Netcore
 ```
 
 Quando a importação terminar, pode testar o módulo que acabou de instalar ao tentar iniciar sessão no Azure através do seguinte comando:
@@ -78,7 +79,7 @@ Os módulos do Azure PowerShell para .NET Standard ainda estão em desenvolvimen
 * Cmdlets do plano de gestão para os serviços do Azure através das interfaces do Resource Manager e da Gestão do Serviço.
   - Máquina Virtual
   - Serviço de Aplicações (Sites)
-  - Base de Dados SQL
+  - SQL Database
   - Armazenamento
   - Rede
 
