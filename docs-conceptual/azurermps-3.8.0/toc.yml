@@ -29,6 +29,9 @@
           href: 'https://docs.microsoft.com/en-us/azure/azure-resource-manager/resource-manager-powershell-sas-token'
     - name: Notas de versão
       href: release-notes-azureps.md
+      items:
+        - name: Alterações recentes ao Azure PowerShell 3.x
+          href: migration-guide.3.0.0.md
 - name: Scripts de Exemplo
   items:
     - name: Máquinas Virtuais do Linux
@@ -39,7 +42,7 @@
       href: 'https://docs.microsoft.com/azure/app-service-web/app-service-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
     - name: Bases de Dados SQL
       href: 'https://docs.microsoft.com/azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json'
-    - name: Cosmos DB
+    - name: BD do Cosmos
       href: 'https://docs.microsoft.com/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json'
-    - name: Cosmos DB
+    - name: BD do Cosmos
       href: 'https://docs.microsoft.com/azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json'
