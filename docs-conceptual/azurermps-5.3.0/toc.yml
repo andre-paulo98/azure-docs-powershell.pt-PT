@@ -37,6 +37,8 @@
       items:
         - name: Utilizar módulos experimentais
           href: using-experimental-modules.md
+        - name: Tarefas do PowerShell
+          href: using-psjobs.md
     - name: Notas de versão
       href: release-notes-azureps.md
       items:
