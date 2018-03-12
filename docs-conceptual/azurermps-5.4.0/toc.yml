@@ -37,13 +37,17 @@
       items:
         - name: Utilizar módulos experimentais
           href: using-experimental-modules.md
-        - name: Tarefas do PowerShell
+        - name: Utilizar tarefas do PowerShell
           href: using-psjobs.md
     - name: Notas de versão
       href: release-notes-azureps.md
       items:
         - name: Alterações recentes ao Azure PowerShell 5.x
           href: migration-guide.5.0.0.md
+- name: Tutoriais
+  items:
+    - name: Criar Máquinas Virtuais
+      href: azureps-vm-tutorial.yml
 - name: Scripts de Exemplo
   items:
     - name: Máquinas Virtuais do Linux
