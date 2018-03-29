@@ -1,7 +1,7 @@
 ---
-title: "Gerir subscrições do Azure com o Azure PowerShell | Microsoft Docs"
-description: "Gerir subscrições do Azure com o Azure PowerShell"
-keywords: "Azure PowerShell, subscrição"
+title: Gerir subscrições do Azure com o Azure PowerShell | Microsoft Docs
+description: Gerir subscrições do Azure com o Azure PowerShell
+keywords: Azure PowerShell, subscrição
 author: sdwheeler
 ms.author: sewhee
 manager: carmonm
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
 ms.openlocfilehash: 68d03ec8d1a86fb3b270d02a4697bbf9af847f2d
-ms.sourcegitcommit: 20af779cd523c758d40e23d60eb989a4ef982d5c
+ms.sourcegitcommit: 15bf69bf95eceb936b3a429e741add95c308826a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 03/15/2018
+ms.lasthandoff: 03/28/2018
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gerir várias subscrições do Azure
 
