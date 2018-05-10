@@ -1,6 +1,6 @@
 ---
-title: "Outros modos de instalação do Azure PowerShell | Microsoft Docs"
-description: "Como instalar o Azure PowerShell através do pacote MSI ou do Instalador de Plataforma Web."
+title: Outros modos de instalação do Azure PowerShell | Microsoft Docs
+description: Como instalar o Azure PowerShell através do pacote MSI ou do Instalador de Plataforma Web.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
 ms.openlocfilehash: 73c099375cecc8abdd5d6179109513946e7e793b
-ms.sourcegitcommit: c42c7176276ec4e1cc3360a93e6b15d32083bf9f
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/14/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="other-installation-methods"></a>Outros métodos de instalação
 

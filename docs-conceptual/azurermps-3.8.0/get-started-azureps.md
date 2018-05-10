@@ -10,11 +10,11 @@ ms.service: azure-powershell
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
-ms.openlocfilehash: 5f1bd0c780b027b2b5779c70fa3145c5dfdc3bb4
-ms.sourcegitcommit: 4ebdeea3c472d94c1aedb10b9d85bf2e76826e83
+ms.openlocfilehash: c6fdfcdb262e5fe2b8babf14ef2f2760af31f898
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 01/09/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="getting-started-with-azure-powershell"></a>Introdução ao Azure PowerShell
 
@@ -30,7 +30,7 @@ A forma mais simples de começar é [iniciar a Cloud Shell](/azure/cloud-shell/q
 
 2. Selecione a subscrição que quer utilizar e crie uma conta de armazenamento.
 
-   ![Create a storage account](~/media/get-started-azureps/storage-prompt.png)
+   ![Criar uma conta de armazenamento](~/media/get-started-azureps/storage-prompt.png)
 
 Assim que tiver sido criado o seu armazenamento, o Cloud Shell irá abrir uma sessão do PowerShell no browser.
 
@@ -367,7 +367,7 @@ Para saber mais sobre as formas como pode utilizar o Azure PowerShell, veja os n
 * [Iniciar sessão com o Azure PowerShell](authenticate-azureps.md)
 * [Gerir subscrições do Azure com o Azure PowerShell](manage-subscriptions-azureps.md)
 * [Criar principais de serviço no Azure com o Azure PowerShell](create-azure-service-principal-azureps.md)
-* Leia as Notas de versão sobre como migrar a partir de uma versão mais antiga: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
+* Leia as Notas de versão sobre a migração de uma versão mais antiga: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Obter ajuda da comunidade:
   * [Fórum do Azure no MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)

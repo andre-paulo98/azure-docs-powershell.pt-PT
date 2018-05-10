@@ -1,6 +1,6 @@
 ---
-title: "Introdução ao Azure PowerShell | Microsoft Docs"
-description: 
+title: Introdução ao Azure PowerShell | Microsoft Docs
+description: ''
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -11,10 +11,10 @@ ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 11/15/2017
 ms.openlocfilehash: cbe8507a89c048351dab64e28552596ed802bf21
-ms.sourcegitcommit: 5fe9a579d2e0d1cb5a05aadaeba5db784f1b18fa
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 02/28/2018
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="getting-started-with-azure-powershell"></a>Introdução ao Azure PowerShell
 
@@ -30,7 +30,7 @@ A forma mais simples de começar é [iniciar a Cloud Shell](/azure/cloud-shell/q
 
 2. Selecione a subscrição que quer utilizar e crie uma conta de armazenamento.
 
-   ![Criar uma conta do Storage](~/media/get-started-azureps/storage-prompt.png)
+   ![Criar uma conta de armazenamento](~/media/get-started-azureps/storage-prompt.png)
 
 Assim que tiver sido criado o seu armazenamento, o Cloud Shell irá abrir uma sessão do PowerShell no browser.
 
@@ -367,7 +367,7 @@ Para saber mais sobre as formas como pode utilizar o Azure PowerShell, veja os n
 * [Iniciar sessão com o Azure PowerShell](authenticate-azureps.md)
 * [Gerir subscrições do Azure com o Azure PowerShell](manage-subscriptions-azureps.md)
 * [Criar principais de serviço no Azure com o Azure PowerShell](create-azure-service-principal-azureps.md)
-* Leia as Notas de versão sobre como migrar a partir de uma versão mais antiga: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
+* Leia as Notas de versão sobre a migração de uma versão mais antiga: [https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes](https://github.com/Azure/azure-powershell/tree/dev/documentation/release-notes).
 * Obter ajuda da comunidade:
   * [Fórum do Azure no MSDN](http://go.microsoft.com/fwlink/p/?LinkId=320212)
   * [Stackoverflow](http://go.microsoft.com/fwlink/?LinkId=320213)

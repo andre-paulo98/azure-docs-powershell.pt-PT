@@ -1,6 +1,6 @@
 ---
-title: "Registo de alterações do Azure PowerShell | Microsoft Docs"
-description: "Este é um histórico das alterações realizadas no Azure PowerShell na versão mais recente."
+title: Registo de alterações do Azure PowerShell | Microsoft Docs
+description: Este é um histórico das alterações realizadas no Azure PowerShell na versão mais recente.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 05/18/2017
 ms.openlocfilehash: 0a3f152751fee569d3ac5fba6bcff8c1737f7b8c
-ms.sourcegitcommit: b256bf48e15ee98865de0fae50e7b81878b03a54
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/03/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Notas de versão
 
