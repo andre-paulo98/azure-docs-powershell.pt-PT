@@ -1,6 +1,6 @@
 ---
-title: "Registo de alterações do Azure PowerShell | Microsoft Docs"
-description: "Este é um histórico das alterações realizadas no Azure PowerShell na versão mais recente."
+title: Registo de alterações do Azure PowerShell | Microsoft Docs
+description: Este é um histórico das alterações realizadas no Azure PowerShell na versão mais recente.
 services: azure
 author: sdwheeler
 ms.author: sewhee
@@ -9,13 +9,13 @@ ms.service: azure-powershell
 ms.product: azure
 ms.devlang: powershell
 ms.topic: conceptual
-ms.workload: 
+ms.workload: ''
 ms.date: 07/26/2017
 ms.openlocfilehash: d8a891673df343551cbd805016c2d25ee4e31c8c
-ms.sourcegitcommit: 9d2d35944106bdb6758853b050089bc804e6b9d2
+ms.sourcegitcommit: 37bfbf11fd0967a8e7977c692ab829d286baf88a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/17/2017
+ms.lasthandoff: 05/08/2018
 ---
 # <a name="release-notes"></a>Notas de versão
 
@@ -230,7 +230,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
   * Exposição de MaintenanceRedeployStatus a Get-AzureRmVM -Saída do estado
   * Exposição da Restrição e Capacidade ao formato de tabela de Get-AzureRmComputeResourceSku
 * DataLakeStore
-  * Correção do problema: https://github.com/Azure/azure-powershell/issues/4323
+  * Corrija o problema: https://github.com/Azure/azure-powershell/issues/4323
 * EventHub
   * Adicionada a propriedade ResourceGroup a NamespaceAttributes
     - “ResourceGroup” obtém o nome do grupo de recursos em que se encontra o Espaço de Nomes
@@ -305,9 +305,9 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
       - Update-AzureRmDisk
       - Update-AzureRmSnapshot
 * Perfil
-    - Correção do problema da autenticação de utilizador não-interativa no RDFE (ligação)[https://github.com/Azure/azure-powershell/issues/4299]
+    - Correção do problema com autenticação de utilizador não interativo em RDFE (ligação) [https://github.com/Azure/azure-powershell/issues/4299]
 * ServiceManagement
-    - Correção do problema da autenticação de utilizador não-interativa (ligação)[https://github.com/Azure/azure-powershell/issues/4299]
+    - Correção do problema com autenticação de utilizador não interativo (ligação) [https://github.com/Azure/azure-powershell/issues/4299]
 
 ## <a name="2017711---version-420"></a>11-07-2017 - Versão 4.2.0
 * AnalysisServices
@@ -315,7 +315,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
         - Introdução de uma API para obter o registo do servidor AS, Export-AzureAnalysisServicesInstanceLog
 * Automatização
     * Definição correta do valor TimeZone dos agendamentos Semanal e Mensal para New-AzureRmAutomationSchedule
-        - Pode encontrar mais informações sobre este problema: https://github.com/Azure/azure-powershell/issues/3043
+        - Pode encontrar mais informações neste problema: https://github.com/Azure/azure-powershell/issues/3043
 * AzureBatch
     - Adicionado o novo cmdlet Get-AzureBatchJobPreparationAndReleaseTaskStatus.
     - Adicionado o início e fim do intervalo de bytes aos parâmetros Get-AzureBatchNodeFileContent.
@@ -437,7 +437,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
         - Get-AzureRmVirtualNetworkUsageList
 * Perfil
     * Correção do erro que ocorria ao utilizar Import-AzureRmContext ou Save-AzureRmContext
-        - Pode encontrar mais informações sobre este problema: https://github.com/Azure/azure-powershell/issues/3954
+        - Pode encontrar mais informações neste problema: https://github.com/Azure/azure-powershell/issues/3954
 * RecoveryServices.SiteRecovery
     * Introdução de um novo módulo para as operações do Azure Site Recovery.
         - Todos os cmdlets começam por AzureRmRecoveryServicesAsr*
@@ -447,7 +447,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
     * Cmdlets de atualização do servidor preteridos porque a versão antiga do servidor (2.0) já não existe.
     * Adicione um novo parâmetro opcional "AssignIdentity" aos cmdlets New-AzureRmSqlServer e Set-AzureRmSqlServer para suportar o aprovisionamento de uma identidade de recurso para o recurso do servidor SQL
     * O parâmetro ResourceGroupName é agora opcional para Get-AzureRmSqlServer
-        - Pode encontrar mais informações sobre este problema: https://github.com/Azure/azure-powershell/issues/635
+        - Pode encontrar mais informações no seguinte problema: https://github.com/Azure/azure-powershell/issues/635
 * ServiceManagement   Para o ExpressRoute:
     * Atualizado o cmdlet New-AzureBgpPeering para adicionar as novas opções seguintes:
         - PeerAddressType : os valores de "IPv4" ou "IPv6" podem ser especificados para criar um Peering de BGP do tipo de família de endereços correspondente
@@ -533,7 +533,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
       * Adicionado o parâmetro de alias `-EnvironmentName` para retrocompatibilidade com as versões 2.x do AzureRM.profile
 
 ## <a name="20170512---version-401"></a>12-05-2017 - Versão 4.0.1
- * Correção do problema do New-AzureStorageContext em cenários offline: https://github.com/Azure/azure-powershell/issues/3939
+ * Correção do problema com New-AzureStorageContext em cenários offline: https://github.com/Azure/azure-powershell/issues/3939
 
 ## <a name="20170510---version-400"></a>10-05-2017 - Versão 4.0.0
 
@@ -554,7 +554,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
   - Remover DataDiskNames duplicados e propriedades NetworkInterfaceIDs do objeto de PS VM.
   - Tornar os parâmetros DataDiskNames e NetworkInterfaceIDs opcionais em Remove-AzureRmVMDataDisk e Remove-AzureRmVMNetworkInterface, respetivamente.
   - Corrigir o problema de suportes de tubagem dos Get cmdlets quando os cmdlets Get devolvem um objeto de lista.
-  - Os cmdlets que entraram em conflito com os cmdlets RDFE foram alterados no nome. Ver o problema https://github.com/Azure/azure-powershell/issues/2917 para obter mais detalhes
+  - Os cmdlets que entraram em conflito com os cmdlets RDFE foram alterados no nome. Veja o problema https://github.com/Azure/azure-powershell/issues/2917 para obter mais detalhes
     + `New-AzureVMSqlServerAutoBackupConfig` mudou de nome para `New-AzureRmVMSqlServerAutoBackupConfig`
     + `New-AzureVMSqlServerAutoPatchingConfig` mudou de nome para `New-AzureRmVMSqlServerAutoPatchingConfig`
     + `New-AzureVMSqlServerKeyVaultCredentialConfig` mudou de nome para `New-AzureRmVMSqlServerKeyVaultCredentialConfig`
