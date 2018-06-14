@@ -1,19 +1,18 @@
 ---
-title: Gerir subscrições do Azure com o Azure PowerShell | Microsoft Docs
+title: Gerir subscrições do Azure com o Azure PowerShell
 description: Gerir subscrições do Azure com o Azure PowerShell
-keywords: Azure PowerShell, subscrição
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/30/2017
-ms.openlocfilehash: d28da700efbc2927cb3f73ae696759fb1e0c0cd6
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.openlocfilehash: fbd2fe315efbdfb2147218229d51e983e2b61361
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34821960"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323361"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gerir várias subscrições do Azure
 
@@ -21,11 +20,11 @@ Se só agora começou a utilizar o Azure, é provável que só tenha uma subscri
 
 1. Obtenha uma lista de todas as subscrições da sua conta.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
@@ -50,17 +49,17 @@ Se só agora começou a utilizar o Azure, é provável que só tenha uma subscri
 
 2. Defina a predefinida.
 
-    ```powershell
+    ```azurepowershell-interactive
     Select-AzureRmSubscription -SubscriptionName "My Demos"
     ```
 
 3. Verifique a alteração executando o cmdlet `Get-AzureRmContext`.
 
-    ```powershell
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
-    ```
+    ```output
     Environment           : AzureCloud
     Account               : username@contoso.com
     TenantId              : XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
