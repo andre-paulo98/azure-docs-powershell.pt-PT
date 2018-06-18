@@ -1,44 +1,39 @@
 ---
-title: Instalar e configurar o Azure PowerShell no macOS e Linux | Microsoft Docs
-description: Como instalar e configurar o Azure PowerShell para uma primeira utilização no macOS e Linux.
-services: azure
+title: Instalar o Azure PowerShell no macOS ou Linux
+description: Como instalar o Azure PowerShell no macOS ou Linux.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 01/12/2018
-ms.openlocfilehash: 4dae78779758f240668db5a809b4c1bc1cfc34c7
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/06/2018
+ms.openlocfilehash: 17912c155255b6fdfd3cfb9242163b67d405dc03
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34819920"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323259"
 ---
-# <a name="install-and-configure-azure-powershell-on-macos-and-linux"></a>Instalar e configurar o Azure PowerShell no macOS e Linux
+# <a name="install-azure-powershell-on-macos-or-linux"></a>Instalar o Azure PowerShell no macOS ou Linux
 
-Agora, é possível instalar o PowerShell Core v6 e o Azure PowerShell em plataformas não Windows.
-O processo de instalação do Azure PowerShell no macOS e Linux não difere muito do do Windows. No entanto, primeiro tem de instalar o PowerShell Core v6.
+Em plataformas não Windows, é possível executar o Azure PowerShell por cima do PowerShell Core v6. Em vez do Azure PowerShell padrão baseado no .NET Framework para Windows, este produto foi concebido para o .NET Core e pode ser executado em qualquer plataforma que suporte o .Net Core runtime.
 
 > [!NOTE]
-
 > Atualmente, tanto o PowerShell Core v6 como o Azure PowerShell para .NET Core ainda se encontram em fase beta.
-> O suporte para estes produtos é limitado. Se tiver problemas ou detetar erros, envie um relatório para Problemas no GitHub.
+> O suporte para estes produtos é limitado. Se se deparar com problemas ou detetar erros, registe um problema no GitHub.
 >
 > * [Problemas do PowerShell Core v6](https://github.com/PowerShell/PowerShell/issues)
 > * [Problemas do Azure PowerShell](https://github.com/azure/azure-docs-powershell/issues)
 
-## <a name="step-1-install-powershell-core-v6"></a>Passo 1: Instalar o PowerShell Core v6
+## <a name="install-powershell-core-v6"></a>Instalar o PowerShell Core v6
 
-O processo de instalação do PowerShell Core v6 varia consoante o sistema operativo de destino.
-Embora seja possível instalar o PowerShell Core v6 no Windows, este artigo incide sobre o macOS e Linux. Se quiser utilizar o Azure PowerShell no Windows, veja o artigo [instalar](./install-azurerm-ps.md) para o Windows.
+A instalação do PowerShell Core v6 no Linux ou macOS varia consoante a distribuição do Linux e a versão do SO.
+Pode encontrar instruções detalhadas nos seguintes artigos:
 
-A instalação do **PowerShell Core v6** no Linux ou macOS varia consoante a distribuição do Linux e a versão do SO.
-Pode encontrar instruções detalhadas no seguinte artigo:
+- [Instalar o PowerShell Core no macOS](/powershell/scripting/setup/installing-powershell-core-on-macos)
+- [Instalar o PowerShell Core no Linux](/powershell/scripting/setup/installing-powershell-core-on-linux)
 
-- [Instalar o PowerShell Core no macOS e no Linux](/powershell/scripting/setup/installing-powershell-core-on-macos-and-linux)
-
-## <a name="step-2-install-azure-powershell-for-net-core"></a>Passo 2: Instalar o Azure PowerShell para .NET Core
+## <a name="install-azure-powershell-for-net-core"></a>Instalar o Azure PowerShell para o .NET Core
 
 O PowerShell Core v6 é fornecido com o módulo PowerShellGet já instalado. o que facilita a instalação de qualquer módulo que seja publicado na Galeria do PowerShell. Para instalar o Azure PowerShell, abra uma nova sessão do PowerShell e execute o seguinte comando:
 
@@ -46,7 +41,7 @@ O PowerShell Core v6 é fornecido com o módulo PowerShellGet já instalado. o q
 Install-Module AzureRM.NetCore
 ```
 
-## <a name="step-3-load-the-azurermnetcore-module"></a>Passo 3: Carregar o módulo AzureRM.Netcore
+## <a name="load-the-azurermnetcore-module"></a>Carregar o módulo AzureRM.Netcore
 
 Uma vez que o módulo seja instalado, terá de carregar o módulo para a sessão do PowerShell. Os módulos são carregados com o cmdlet `Import-Module`, da seguinte forma:
 

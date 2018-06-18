@@ -1,25 +1,24 @@
 ---
-title: Consultar recursos e resultados de formatação do Azure | Microsoft Docs
+title: Consultar saída de cmdlets do Azure PowerShell
 description: Como consultar recursos no Azure e formatar os resultados.
-services: azure
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: dde1702f512be70ece137059797e29c75926e231
-ms.sourcegitcommit: 2eea03b7ac19ad6d7c8097743d33c7ddb9c4df77
+ms.date: 06/08/2018
+ms.openlocfilehash: daa39ada5b4e969264b6e8596dc7b090bb196fd5
+ms.sourcegitcommit: bcf80dfd7fbe17e82e7ad029802cfe8a2f02b15c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/06/2018
-ms.locfileid: "34820311"
+ms.lasthandoff: 06/11/2018
+ms.locfileid: "35323089"
 ---
-# <a name="querying-for-azure-resources"></a>Consultar recursos do Azure
+# <a name="query-output-of-azure-powershell-cmdlets"></a>Consultar saída de cmdlets do Azure PowerShell
 
 A consulta no PowerShell pode ser concluída através de cmdlets incorporados. No PowerShell, os nomes dos cmdlets têm a forma de  **_Verbo-Nome_**. Os cmdlets com o verbo **_Get_** são os cmdlets de consulta. Os nomes dos cmdlets são os tipos de recursos do Azure alterados pelos verbos dos cmdlets.
 
-## <a name="selecting-simple-properties"></a>Selecionar propriedades simples
+## <a name="select-simple-properties"></a>Selecionar propriedades simples
 
 O Azure PowerShell tem formatação predefinida para cada cmdlet. As propriedades mais comuns para cada tipo de recurso são apresentadas automaticamente num formato de tabela ou lista. Para obter mais informações sobre como formatar o resultado, veja [Formatar resultados da consulta](formatting-output.md).
 
@@ -51,7 +50,7 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-## <a name="selecting-complex-nested-properties"></a>Selecionar propriedades aninhadas complexas
+## <a name="select-complex-nested-properties"></a>Selecionar propriedades aninhadas complexas
 
 Se a propriedade que quer selecionar estiver muito aninhada na saída JSON, tem de indicar o caminho completo para essa propriedade aninhada. O exemplo seguinte mostra como selecionar o Nome da VM e o tipo de SO a partir do cmdlet `Get-AzureRmVM`.
 
@@ -66,7 +65,7 @@ MyUnbuntu1610   Linux
 MyWin2016VM   Windows
 ```
 
-## <a name="filter-result-using-the-where-object-cmdlet"></a>Filtrar resultado com o cmdlet Where-Object
+## <a name="filter-results-with-the-where-object-cmdlet"></a>Filtrar resultados com o cmdlet Where-Object
 
 O cmdlet `Where-Object` permite filtrar o resultado com base em qualquer valor de propriedade. No exemplo seguinte, filtro seleciona apenas as VMs com o texto "RGD" no respetivo nome.
 
