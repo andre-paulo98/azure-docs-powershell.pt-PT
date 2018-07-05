@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: dc5a1c59d23e37acf11aa7831ddc6e1edbd7f73e
+ms.openlocfilehash: 0d8019a7acaf2ba3baaa0772a76285ec497c991c
 ms.sourcegitcommit: 4c775721461210431bd913f28d1f1e6f1976880a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 06/28/2018
-ms.locfileid: "37091423"
+ms.locfileid: "37091474"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalar o Azure PowerShell no Windows com o PowerShellGet
 
@@ -24,39 +24,13 @@ O modelo de implementação clássica do Azure não é suportado por esta versã
 
 ## <a name="requirements"></a>Requisitos
 
-Para instalar o Azure PowerShell, precisa do PowerShellGet versão 1.1.2.0 ou superior. Para verificar se está disponível no seu sistema, execute o comando:
+A partir da versão 6.0, o Azure PowerShell exige a versão 5.0 ou superior do PowerShell em execução no Windows. Para verificar a versão do PowerShell em execução na sua máquina, execute o seguinte comando:
 
 ```powershell
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+$PSVersionTable.PSVersion
 ```
 
-Deverá ver algo semelhante à saída seguinte:
-
-```output
-Name          Version Path
-----          ------- ----
-Name          Version Path
-----          ------- ----
-PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
-PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
-```
-
-Se precisa de atualizar a sua instalação do PowerShellGet, execute o seguinte comando:
-
-```powershell
-Install-Module PowerShellGet -Force
-```
-
-Se não tem o PowerShellGet instalado, siga as instruções na tabela abaixo do seu sistema.
-
-|Cenário|Instruções de instalação|
-|---|---|
-|Windows 10<br/>Windows Server 2016|Incorporado no Windows Management Framework (WMF) 5.0 incluído no SO|
-|Atualizar para o PowerShell 5| <ol><li>[Instalar a versão mais recente do WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Execute o seguinte comando:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|Windows com PowerShell 3 ou PowerShell 4|<ol><il>[Obter os módulos PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Execute o seguinte comando:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-> [!NOTE]
-> A utilização do PowerShellGet requer uma Política de Execução que lhe permita executar scripts. Para obter mais informações sobre a Política de Execução do PowerShell, veja [About Execution Policies (Sobre as Políticas de Execução)](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
+Se tem uma versão desatualizada, veja [Atualizar o Windows PowerShell existente](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
 ## <a name="install-the-azure-powershell-module"></a>Instalar o módulo do Azure PowerShell
 
