@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: af39fec226492c9ccf251c996b57e274de783178
+ms.openlocfilehash: 20194ac2282d602ba61bf130791edac9f4ffae6c
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100278"
+ms.locfileid: "38100227"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Iniciar sessão com o Azure PowerShell
 
@@ -29,7 +29,7 @@ Connect-AzureRmAccount
 Quando é executado, este cmdlet apresenta uma caixa de diálogo que lhe pede para indicar o endereço de e-mail e a palavra-passe associados à sua conta do Azure. Quando efetuar a autenticação, essas informações são guardadas para a sessão atual do PowerShell, a caixa de diálogo é fechada e tem acesso a todos os cmdlets do Azure PowerShell.
 
 > [!IMPORTANT]
-> Este início de sessão reporta à sessão atual do PowerShell _apenas_. Para manter a autenticação em várias sessões, veja o artigo sobre [Credenciais Persistentes](context-persistence.md).
+> A partir do Azure PowerShell 6.3.0, as suas credenciais são partilhadas entre várias sessões do PowerShell, desde que mantenha sessão iniciada no Windows. Para obter mais informações, veja o artigo sobre [Credenciais Persistentes](context-persistence.md).
 
 ## <a name="sign-in-with-a-service-principal"></a>Iniciar sessão com um principal de serviço
 

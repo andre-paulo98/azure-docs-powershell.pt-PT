@@ -1,22 +1,22 @@
 ---
-title: Inícios de sessão do utilizador persistentes entre sessões do PowerShell
-description: O artigo explica as novas funcionalidades do Azure PowerShell que permitem reutilizar as credenciais e outras informações de utilizador entre várias sessões do PowerShell.
+title: Manter credenciais do utilizador nas sessões do PowerShell
+description: Saiba como reutilizar as credenciais do Azure e outras informações entre várias sessões do PowerShell.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: d650cfaae580acd10b3ddb06edec9883f1a32844
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 12a57f9aaf445fe95f731e09a6dcd174b97aa3fe
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34853972"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100193"
 ---
-# <a name="persisting-user-logins-across-powershell-sessions"></a>Inícios de sessão do utilizador persistentes entre sessões do PowerShell
+# <a name="persisting-user-credentials-across-powershell-sessions"></a>Manter credenciais do utilizador nas sessões do PowerShell
 
-Na versão de setembro de 2017 do Azure PowerShell, os cmdlets do Azure Resource Manager apresentam uma nova funcionalidade, a **Gravação Automática de Contexto do Azure**. Esta funcionalidade permite vários novos cenários de utilizador, incluindo:
+O Azure PowerShell oferece uma funcionalidade chamada **Gravação Automática de Contexto do Azure**, que lhe oferece as seguintes funcionalidades:
 
 - Retenção de informações de início de sessão para serem reutilizadas em novas sessões do PowerShell.
 - Utilização mais fácil de tarefas em segundo plano para executar os cmdlets de execução longa.
@@ -36,7 +36,7 @@ Um *contexto do Azure* é um conjunto de informações que define o destino dos 
 
 Em versões anteriores, o Contexto do Azure tinha de ser criado sempre que abria uma nova sessão do PowerShell. A partir do Azure PowerShell v4.4.0, pode ativar a gravação e reutilização automáticas de Contextos do Azure sempre que abrir uma nova sessão do PowerShell.
 
-## <a name="automatically-saving-the-context-for-the-next-login"></a>Guardar automaticamente o contexto para o próximo início de sessão
+## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Guardar automaticamente o contexto para o próximo início de sessão
 
 Por predefinição, o Azure PowerShell elimina as informações de contexto sempre que fecha a sessão do PowerShell.
 
@@ -71,11 +71,11 @@ Quando precisar de saber o resultado da tarefa em segundo plano, utilize `Get-Jo
 
 ## <a name="creating-selecting-renaming-and-removing-contexts"></a>Criar, selecionar, mudar o nome e remover contextos
 
-Para criar um contexto, tem de ter sessão iniciada no Azure. O cmdlet `Add-AzureRmAccount` (ou o respetivo alias, `Login-AzureRmAccount`) define o contexto predefinido utilizado por cmdlets subsequentes do Azure PowerShell e permite-lhe aceder a quaisquer inquilinos ou subscrições permitidos pelas suas credenciais de início de sessão.
+Para criar um contexto, tem de ter sessão iniciada no Azure. O cmdlet `Add-AzureRmAccount` (ou o respetivo alias, `Login-AzureRmAccount`) define o contexto predefinido utilizado por cmdlets subsequentes do Azure PowerShell e permite-lhe aceder a quaisquer inquilinos ou subscrições permitidos pelas suas credenciais.
 
 Para adicionar um novo contexto após o início de sessão, utilize `Set-AzureRmContext` (ou o respetivo alias, `Select-AzureRmSubscription`).
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Set-AzureRMContext -Subscription "Contoso Subscription 1" -Name "Contoso1"
 ```
 
@@ -83,7 +83,7 @@ O exemplo anterior adiciona um novo contexto que visa “Contoso Subscription 1�
 
 Para mudar o nome de um contexto existente, utilize o cmdlet `Rename-AzureRmContext`. Por exemplo:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Rename-AzureRmContext '[user1@contoso.org; 123456-7890-1234-564321]` 'Contoso2'
 ```
 
@@ -91,7 +91,7 @@ Este exemplo muda o nome do contexto com o nome automático `[user1@contoso.org;
 
 Por último, para remover um contexto, utilize o cmdlet `Remove-AzureRmContext`.  Por exemplo:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Remove-AzureRmContext Contoso2
 ```
 
@@ -101,7 +101,7 @@ Esquece o contexto ao qual foi dado o nome “Contoso2”. Pode recriar este con
 
 Pode remover todas as credenciais e os contextos associados de um utilizador ou principal de serviço, com `Remove-AzureRmAccount` (também conhecido como `Logout-AzureRmAccount`). Quando executado sem parâmetros, o cmdlet `Remove-AzureRmAccount` remove todas as credenciais e os contextos associados ao Utilizador ou Principal de Serviço no contexto atual. Pode passar um Nome de Utilizador, Nome do Principal de Serviço ou contexto para visar um determinado principal.
 
-```powershell
+```azurepowershell-interactive
 Remove-AzureRmAccount user1@contoso.org
 ```
 
@@ -111,7 +111,7 @@ Ocasionalmente, poderá querer selecionar, alterar ou remover um contexto de uma
 
 Por exemplo, para alterar o contexto predefinido na sessão atual do PowerShell sem causar impacto noutras janelas ou no contexto utilizado da próxima vez que abrir uma sessão, utilize:
 
-```powershell
+```azurepowershell-interactive
 PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 ```
 
@@ -119,7 +119,7 @@ PS C:\> Select-AzureRmContext Contoso1 -Scope Process
 
 A definição de Gravação Automática do contexto é guardada no diretório do Azure PowerShell do utilizador (`%AppData%\Roaming\Windows Azure PowerShell`). Alguns tipos de contas de computador podem não ter acesso a este diretório. Para estes cenários, pode utilizar a variável de ambiente
 
-```powershell
+```azurepowershell-interactive
 $env:AzureRmContextAutoSave="true" | "false"
 ```
 
@@ -139,9 +139,9 @@ Novos cmdlets para gerir o contexto
 
 Alterações aos cmdlets do perfil existente
 
-- [Add-AzureRmAccount][login] -permitir o controlo do âmbito do início de sessão para o processo ou utilizador atual.
-  Permitir nomear o contexto predefinido após iniciar sessão.
-- [Import-AzureRmContext][import] - Permitir o controlo do âmbito do início de sessão para o processo ou utilizador atual.
+- [Add-AzureRmAccount][login] - permitir o controlo do âmbito do início de sessão para o processo ou utilizador atual.
+  Permitir nomear o contexto predefinido após a autenticação.
+- [Import-AzureRmContext][import] - permitir o controlo do âmbito do início de sessão para o processo ou utilizador atual.
 - [Set-AzureRmContext][set-context] - permitir a seleção de contextos nomeados existentes, e alterações de âmbito no processo ou utilizador atual.
 
 <!-- Hyperlinks -->

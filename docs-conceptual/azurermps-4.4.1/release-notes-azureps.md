@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 5c8d9fd2e79dd18ee26493343e038c2a5ed24b26
-ms.sourcegitcommit: c98e3a21037ebd82936828bcb544eed902b24212
+ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
+ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/08/2018
-ms.locfileid: "34854431"
+ms.lasthandoff: 07/11/2018
+ms.locfileid: "38100496"
 ---
 # <a name="release-notes"></a>Notas de versão
 
@@ -151,8 +151,8 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
       - Padrão comum para as tarefas com a persistência de contexto DESATIVADO:`Start-Job {param ($context) New-AzureRmVM -AzureRmContext $context [... other parameters]} -ArgumentList (Get-AzureRmContext)`
       - Padrão comum para as tarefas com a persistência de contexto ATIVADO:`Start-Job {New-AzureRmVM [... other parameters]}`
   * Manter as informações de início de sessão entre sessões, cmdlets novos:
-    - Enable-AzureRmContextAutosave - ativar a persistência de início de sessão entre sessões.
-    - Disable-AzureRmContextAutosave - desativar a persistência de início de sessão entre sessões.
+    - Enable-AzureRmContextAutosave - ativar a persistência de credenciais entre sessões.
+    - Disable-AzureRmContextAutosave - desativar a persistência de credenciais entre sessões.
   * Gerir informações de contexto, cmdlets novos
     - Select-AzureRmContext - selecionar o contexto nomeado ativo.
     - Rename-AzureRmContext - mudar o nome de um contexto existente para facilidade de referência.

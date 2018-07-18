@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
+ms.openlocfilehash: 76e08c462bb34bd2b16a11f70f14c4584b72795a
 ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100261"
+ms.locfileid: "38100363"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Manter credenciais do utilizador nas sessões do PowerShell
 
@@ -38,12 +38,10 @@ Em versões anteriores, o Contexto do Azure tinha de ser criado sempre que abria
 
 ## <a name="automatically-saving-the-context-for-the-next-sign-in"></a>Guardar automaticamente o contexto para o próximo início de sessão
 
-Por predefinição, o Azure PowerShell elimina as informações de contexto sempre que fecha a sessão do PowerShell.
+A partir da versão 6.3.0, o Azure PowerShell mantém as informações de contexto automaticamente entre sessões. Para definir o PowerShell para que esqueça o contexto e as credenciais, utilize `Disable-AzureRmContextAutoSave`. Terá de iniciar sessão no Azure sempre que abrir uma sessão do PowerShell.
 
 Para permitir que o Azure PowerShell se lembre do contexto depois de fechar a sessão do PowerShell, utilize `Enable-AzureRmContextAutosave`. As informações de contexto e as credenciais são guardadas automaticamente numa pasta oculta especial no seu diretório de utilizador (`%AppData%\Roaming\Windows Azure PowerShell`).
 Posteriormente, cada nova sessão do PowerShell visa o contexto utilizado na sua última sessão.
-
-Para definir o PowerShell para que esqueça o contexto e as credenciais, utilize `Disable-AzureRmContextAutoSave`. Terá de iniciar sessão no Azure sempre que abrir uma sessão do PowerShell.
 
 Os cmdlets que lhe permitem gerir contextos do Azure também permitem o controlo detalhado. Se pretender que as alterações sejam aplicadas apenas à sessão atual do PowerShell (âmbito `Process`) ou a cada sessão do PowerShell (âmbito `CurrentUser`). Estas opções são abordadas detalhadamente em [Utilizar Âmbitos de Contexto](#Using-Context-Scopes).
 
@@ -141,7 +139,7 @@ Alterações aos cmdlets do perfil existente
 
 - [Add-AzureRmAccount][login] - permitir o controlo do âmbito do início de sessão para o processo ou utilizador atual.
   Permitir nomear o contexto predefinido após a autenticação.
-- [Import-AzureRmContext][import] - permitir o controlo do âmbito do início de sessão para o processo ou utilizador atual.
+- [Import-AzureRmContext][import] - Permitir o controlo do âmbito do início de sessão para o processo ou utilizador atual.
 - [Set-AzureRmContext][set-context] - permitir a seleção de contextos nomeados existentes, e alterações de âmbito no processo ou utilizador atual.
 
 <!-- Hyperlinks -->
