@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 5/1/2018
-ms.openlocfilehash: 4f9c99152fd6ddc23aec005c8e8957e545e65246
-ms.sourcegitcommit: dca906e73e943aac207cee23b79915773419c673
+ms.date: 05/01/2018
+ms.openlocfilehash: 72a0e9ca8562dc06a1fe2718658172ce9ee20f0e
+ms.sourcegitcommit: 971f19181b2cd68b7845bbebdb22858c06541c8c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 08/30/2018
-ms.locfileid: "43250504"
+ms.lasthandoff: 09/06/2018
+ms.locfileid: "43383945"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Alterações recentes ao Microsoft Azure PowerShell 6.0.0
 
@@ -22,7 +22,7 @@ Este documento é simultaneamente uma notificação das alterações recentes e 
 
 - [Alterações interruptivas gerais](#general-breaking-changes)
     - [Versão mínima do PowerShell necessária bumped para 5.0](#minimum-powershell-version-required-bumped-to-50)
-    - [Gravação automática do contexto ativada por predefinição](#context-autosaved-enabled-by-default)
+    - [Gravação automática do contexto ativada por predefinição](#context-autosave-enabled-by-default)
     - [Remoção de alias de Etiquetas](#removal-of-tags-alias)
 - [Alterações interruptivas aos cmdlets AzureRM.Compute](#breaking-changes-to-azurermcompute-cmdlets)
 - [Alterações interruptivas aos cmdlets AzureRM.DataLakeStore](#breaking-changes-to-azurermdatalakestore-cmdlets)
