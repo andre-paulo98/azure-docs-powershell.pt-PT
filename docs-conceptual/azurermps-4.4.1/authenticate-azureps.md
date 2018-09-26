@@ -1,18 +1,18 @@
 ---
 title: Iniciar sessão com o Azure PowerShell
-description: Como iniciar sessão com o Azure PowerShell como um utilizador, principal de serviço ou com o MSI.
+description: Como iniciar sessão com o Azure PowerShell como um utilizador, principal de serviço ou com identidades geridas para recursos do Azure.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: 6525e41be54c3f6b97812504c436e0ff3f5edf8e
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: c3131d3516e50123c48b13dc9e04c0b507a63a58
+ms.sourcegitcommit: bc88e64c494337821274d6a66c1edad656c119c5
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100091"
+ms.lasthandoff: 09/20/2018
+ms.locfileid: "46300872"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Iniciar sessão com o Azure PowerShell
 
@@ -44,11 +44,11 @@ $pscredential = Get-Credential
 Connect-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-vm-managed-service-identity"></a>Iniciar sessão com uma Identidade de Serviço Gerida de VM do Azure
+## <a name="sign-in-using-managed-identities-for-azure-resources"></a>Iniciar sessão com as identidades geridas para os recursos do Azure
 
-Identidade do Serviço Gerido (MSI) é uma funcionalidade de pré-visualização do Azure Active Directory. Pode utilizar um principal de serviço do MSI para início de sessão e adquirir um token de acesso só de aplicação para aceder a outros recursos. O MSI só está disponível em máquinas virtuais em execução numa cloud do Azure.
+As identidades geridas para os recursos do Azure são uma funcionalidade do Azure Active Directory. Pode utilizar um principal de serviço da identidade gerida para início de sessão e adquirir um token de acesso só de aplicação para aceder a outros recursos. As identidades geridas só estão disponíveis em máquinas virtuais em execução numa cloud do Azure.
 
-Para obter mais informações sobre o MSI, veja [Como utilizar uma Identidade do Serviço Gerido de VM (MSI) do Azure para início de sessão e aquisição de token](/azure/active-directory/msi-how-to-get-access-token-using-msi).
+Para obter mais informações sobre identidades geridas para recursos do Azure, veja [Como utilizar identidades geridas para recursos do Azure numa VM do Azure para adquirir um token de acesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
 ## <a name="sign-in-to-another-cloud"></a>Iniciar sessão noutra Cloud
 
