@@ -1,3 +1,20 @@
+---
+title: Descrição Geral do módulo Azure Stack Admin do PowerShell | Microsoft Docs
+description: Descrição geral do módulo Azure Stack Admin com instruções para instalação e configuração.
+author: bganapa
+ms.author: bganapa
+manager: knithinc
+ms.devlang: powershell
+ms.topic: conceptual
+ms.manager: knithinc
+ms.date: 09/21/2018
+ms.openlocfilehash: 72d147f5bc9c882083dda6b33b1c89663fd2eb34
+ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
+ms.translationtype: HT
+ms.contentlocale: pt-PT
+ms.lasthandoff: 09/27/2018
+ms.locfileid: "47178804"
+---
 # <a name="azure-stack-module-140"></a>Azure Stack Module 1.4.0
 
 ## <a name="requirements"></a>Requisitos:

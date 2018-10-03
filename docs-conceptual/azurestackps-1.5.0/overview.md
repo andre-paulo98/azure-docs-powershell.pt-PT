@@ -8,47 +8,63 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: knithinc
 ms.date: 09/21/2018
-ms.openlocfilehash: fb892daeafb1365ea62324392ac806cf9f3d39cf
+ms.openlocfilehash: 18861f0e5232e0b505767aa9609099afe88f9477
 ms.sourcegitcommit: 19dffee617477001f98d43e39a50ce1fad087b74
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 09/27/2018
-ms.locfileid: "47179144"
+ms.locfileid: "47178634"
 ---
-# <a name="azure-stack-module-130"></a>Módulo 1.3.0 do Azure Stack
+# <a name="azure-stack-module-150"></a>Módulo 1.5.0 do Azure Stack
 
 ## <a name="requirements"></a>Requisitos:
-A versão mínima suportada do Azure Stack é a 1804.
+A versão mínima suportada do Azure Stack é a 1808.
 
-Nota: Se estiver a utilizar uma versão anterior, instale a versão 1.2.11
+Nota: se estiver a utilizar uma versão anterior, instale a versão 1.4.0.
 
 ## <a name="known-issues"></a>Problemas conhecidos:
 
-- Fechar Alerta requer a versão 1803 do Azure Stack
-- Alguns cmdlets de Armazenamento requerem a versão 1804 do Azure Stack
 - O New-AzsOffer não permite criar uma oferta com o estado público. O cmdlet Set-AzsOffer tem de ser chamado depois para alterar o estado.
 - Não é possível remover um Conjunto IP sem uma reimplementação
 
-## <a name="breaking-changes"></a>Alterações Interruptivas
-Todas as alterações interruptivas migradas da versão 1.2.11 estão documentadas aqui https://aka.ms/azspowershellmigration
-
 ## <a name="install"></a>Instalar
 ```
-# Remove previous Versions
+# Remove previous versions of AzureStack modules
+Uninstall-Module -Name AzureStack -Force 
 Uninstall-Module AzureRM.AzureStackAdmin -Force
 Uninstall-Module AzureRM.AzureStackStorage -Force
-Uninstall-Module -Name AzureStack -Force 
+Get-Module Azs.* -ListAvailable | Uninstall-Module -Force
 
 
 # Install the AzureRM.Bootstrapper module. Select Yes when prompted to install NuGet
 Install-Module -Name AzureRm.BootStrapper
 
 # Install and import the API Version Profile required by Azure Stack into the current PowerShell session.
-Use-AzureRmProfile -Profile 2017-03-09-profile -Force
+Use-AzureRmProfile -Profile 2018-03-01-hybrid -Force
 
 # Install Azure Stack Admin Module
-Install-Module -Name AzureStack -RequiredVersion 1.3.0
+Install-Module -Name AzureStack -RequiredVersion 1.5.0
 ```
+
+##<a name="release-notes"></a>Notas de Versão
+* Todos os módulos do Azure Stack Admin foram atualizados para dependência igual ou superior no módulo AzureRm.Profile
+* Suporte para processar nomes de recursos aninhados em todos os módulos
+* Correção de erros em todos os módulos em que ErrorActionPreference são anulados e mudam para Parar
+* Módulo Azs.Compute.Admin
+    * Novas quotas de propriedades adicionadas para suportar discos geridos
+    * Adição de cmdlets relacionados com a migração de discos
+    * Propriedades adicionais nos objetos Imagem da Plataforma e extensão da VM
+* Azs.Fabric.Admin 
+    * Novo cmdlet para adicionar o nó de unidade de escala
+* Azs.Backup.Admin
+    * Set-AzsBackupShare é agora um alias do cmdlet Set-AzsBackupConfiguration
+    * Get-AzsBackupLocation é agora um alias do cmdlet Get-AzsBackupConfiguration
+    * Set-AzsBackupConfiguration, o parâmetro BackupShare é agora um alias do caminho do parâmetro
+* Azs.Subscriptions
+    * Get-AzsDelegatedProviderOffer, o parâmetro OfferName é agora um alias de Offer
+* Azs.Subscriptions.Admin
+    * Get-AzsDelegatedProviderOffer, o parâmetro OfferName é agora um alias de Offer
+
 ## <a name="content"></a>Conteúdo:
 ### <a name="azure-bridge"></a>Azure Bridge
 Versão de pré-visualização do módulo de administrador AzureBridge do Azure Stack que lhe permite sindicar imagens a partir do Azure.
@@ -63,7 +79,7 @@ Versão de pré-visualização do módulo de administrador Cópia de Segurança 
 Versão de pré-visualização do módulo de administrador Comércio do Azure Stack que permite ver a utilização de dados agregados em todo o sistema do Azure Stack.
 
 ### <a name="compute"></a>Computação
-Versão de pré-visualização do módulo de administrador Computação do Azure Stack que fornece funcionalidade que permite gerir quotas de computação, imagens de plataforma e extensões de máquina virtual.
+Versão de pré-visualização do módulo de administrador Computação do Azure Stack, que fornece uma funcionalidade que permite gerir quotas de computação, imagens de plataformas, discos geridos e extensões de máquina virtual.
 
 ### <a name="fabric"></a>Recursos de infraestrutura
 Versão de pré-visualização do módulo de administrador Recursos de infraestrutura do Azure Stack que permite ver a utilização de dados agregados em todo o sistema do Azure Stack:
