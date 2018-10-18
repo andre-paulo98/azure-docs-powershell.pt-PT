@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
-ms.openlocfilehash: 6bf66e312557f047a9393e26b9de736c1c55c261
-ms.sourcegitcommit: a749eb729f583c9d0dd86141bbd04984d77ae9ab
+ms.openlocfilehash: 52fa80542af39a2a768cc54e5b6bd8d0b8246c9f
+ms.sourcegitcommit: f6f5e256143aa6c097de3e57e930d8badea49f30
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/11/2018
-ms.locfileid: "48889271"
+ms.lasthandoff: 10/18/2018
+ms.locfileid: "49399030"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Instalar o Azure PowerShell no Windows com o MSI
 
@@ -21,8 +21,6 @@ Utilize estes métodos de instalação apenas se forem necessários para o seu s
 
 > [!NOTE]
 > O método de instalação do Instalador de Plataforma Web já não está disponível para as versões 6.x e superiores do Azure PowerShell. Se precisar de utilizar o Instalador de Plataforma Web, considere utilizar o MSI em alternativa ou instale uma versão anterior do Azure PowerShell.
-
-Para executar o Azure PowerShell num contentor do Docker, veja [Executar o Azure PowerShell no Docker](azurerm-ps-in-docker.md).
 
 Para instalar em ambientes Linux ou macOS, veja [Instalar o Azure PowerShell no macOS ou Linux](install-azurermps-maclinux.md).
 
