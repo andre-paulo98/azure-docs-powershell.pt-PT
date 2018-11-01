@@ -8,35 +8,35 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
 ms.openlocfilehash: 71a2554052f5a25ea86fe44b6dcf5d9343c81f3e
-ms.sourcegitcommit: 5f946a535eccca0b3ddf3db8f617b32564a88938
+ms.sourcegitcommit: ff44dec6418a449757bded3c6ebe0a7d4c05ee6e
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/25/2018
-ms.locfileid: "50000764"
+ms.lasthandoff: 11/01/2018
+ms.locfileid: "50737939"
 ---
-# <a name="log-in-with-azure-powershell"></a><span data-ttu-id="a706c-103">Iniciar sessão com o Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="a706c-103">Log in with Azure PowerShell</span></span>
+# <a name="log-in-with-azure-powershell"></a><span data-ttu-id="319e7-103">Iniciar sessão com o Azure PowerShell</span><span class="sxs-lookup"><span data-stu-id="319e7-103">Log in with Azure PowerShell</span></span>
 
-<span data-ttu-id="a706c-104">O Azure PowerShell suporta vários métodos de início de sessão.</span><span class="sxs-lookup"><span data-stu-id="a706c-104">Azure PowerShell supports multiple login methods.</span></span> <span data-ttu-id="a706c-105">A forma mais simples de começar é iniciar sessão interativamente na linha de comandos.</span><span class="sxs-lookup"><span data-stu-id="a706c-105">The simplest way to get started is to log in interactively at the command line.</span></span>
+<span data-ttu-id="319e7-104">O Azure PowerShell suporta vários métodos de início de sessão.</span><span class="sxs-lookup"><span data-stu-id="319e7-104">Azure PowerShell supports multiple login methods.</span></span> <span data-ttu-id="319e7-105">A forma mais simples de começar é iniciar sessão interativamente na linha de comandos.</span><span class="sxs-lookup"><span data-stu-id="319e7-105">The simplest way to get started is to log in interactively at the command line.</span></span>
 
-## <a name="interactive-log-in"></a><span data-ttu-id="a706c-106">Início de sessão interativo</span><span class="sxs-lookup"><span data-stu-id="a706c-106">Interactive log in</span></span>
+## <a name="interactive-log-in"></a><span data-ttu-id="319e7-106">Início de sessão interativo</span><span class="sxs-lookup"><span data-stu-id="319e7-106">Interactive log in</span></span>
 
-1. <span data-ttu-id="a706c-107">Digite `Login-AzureRmAccount`.</span><span class="sxs-lookup"><span data-stu-id="a706c-107">Type `Login-AzureRmAccount`.</span></span> <span data-ttu-id="a706c-108">Obterá uma caixa de diálogo a solicitar as suas credenciais do Azure.</span><span class="sxs-lookup"><span data-stu-id="a706c-108">You will get dialog box asking for your Azure credentials.</span></span>
+1. <span data-ttu-id="319e7-107">Digite `Login-AzureRmAccount`.</span><span class="sxs-lookup"><span data-stu-id="319e7-107">Type `Login-AzureRmAccount`.</span></span> <span data-ttu-id="319e7-108">Obterá uma caixa de diálogo a solicitar as suas credenciais do Azure.</span><span class="sxs-lookup"><span data-stu-id="319e7-108">You will get dialog box asking for your Azure credentials.</span></span>
 
-2. <span data-ttu-id="a706c-109">Escreva o endereço de e-mail e a palavra-passe associados à sua conta.</span><span class="sxs-lookup"><span data-stu-id="a706c-109">Type the email address and password associated with your account.</span></span> <span data-ttu-id="a706c-110">O Azure autentica e guarda as informações das credenciais e, em seguida, fecha a janela.</span><span class="sxs-lookup"><span data-stu-id="a706c-110">Azure authenticates and saves the credential information, and then closes the window.</span></span>
+2. <span data-ttu-id="319e7-109">Escreva o endereço de e-mail e a palavra-passe associados à sua conta.</span><span class="sxs-lookup"><span data-stu-id="319e7-109">Type the email address and password associated with your account.</span></span> <span data-ttu-id="319e7-110">O Azure autentica e guarda as informações das credenciais e, em seguida, fecha a janela.</span><span class="sxs-lookup"><span data-stu-id="319e7-110">Azure authenticates and saves the credential information, and then closes the window.</span></span>
 
-## <a name="log-in-with-a-service-principal"></a><span data-ttu-id="a706c-111">Iniciar sessão com um principal de serviço</span><span class="sxs-lookup"><span data-stu-id="a706c-111">Log in with a service principal</span></span>
+## <a name="log-in-with-a-service-principal"></a><span data-ttu-id="319e7-111">Iniciar sessão com um principal de serviço</span><span class="sxs-lookup"><span data-stu-id="319e7-111">Log in with a service principal</span></span>
 
-<span data-ttu-id="a706c-112">Os principais de serviço proporcionam uma forma de criar contas não interativas que pode ser utilizar para manipular recursos.</span><span class="sxs-lookup"><span data-stu-id="a706c-112">Service principals provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="a706c-113">Os principais de serviço são como contas de utilizador às quais pode aplicar regras com o Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="a706c-113">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span> <span data-ttu-id="a706c-114">Ao conceder as permissões mínimas necessárias para um principal de serviço, pode garantir que os seus scripts de automatização estão ainda mais protegidos.</span><span class="sxs-lookup"><span data-stu-id="a706c-114">By granting the minimum permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span>
+<span data-ttu-id="319e7-112">Os principais de serviço proporcionam uma forma de criar contas não interativas que pode ser utilizar para manipular recursos.</span><span class="sxs-lookup"><span data-stu-id="319e7-112">Service principals provide a way for you to create non-interactive accounts that you can use to manipulate resources.</span></span> <span data-ttu-id="319e7-113">Os principais de serviço são como contas de utilizador às quais pode aplicar regras com o Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="319e7-113">Service principals are like user accounts to which you can apply rules using Azure Active Directory.</span></span> <span data-ttu-id="319e7-114">Ao conceder as permissões mínimas necessárias para um principal de serviço, pode garantir que os seus scripts de automatização estão ainda mais protegidos.</span><span class="sxs-lookup"><span data-stu-id="319e7-114">By granting the minimum permissions needed to a service principal, you can ensure your automation scripts are even more secure.</span></span>
 
-1. <span data-ttu-id="a706c-115">Se ainda não tiver um principal de serviço, [crie-o](create-azure-service-principal-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="a706c-115">If you don't already have a service principal, [create one](create-azure-service-principal-azureps.md).</span></span>
+1. <span data-ttu-id="319e7-115">Se ainda não tiver um principal de serviço, [crie-o](create-azure-service-principal-azureps.md).</span><span class="sxs-lookup"><span data-stu-id="319e7-115">If you don't already have a service principal, [create one](create-azure-service-principal-azureps.md).</span></span>
 
-2. <span data-ttu-id="a706c-116">Inicie sessão com o principal de serviço.</span><span class="sxs-lookup"><span data-stu-id="a706c-116">Log in with the service principal.</span></span>
+2. <span data-ttu-id="319e7-116">Inicie sessão com o principal de serviço.</span><span class="sxs-lookup"><span data-stu-id="319e7-116">Log in with the service principal.</span></span>
 
     ```powershell
     Login-AzureRmAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
     ```
 
-    <span data-ttu-id="a706c-117">Para obter o seu T, inicie sessão interativamente e obtenha o TenantId da sua subscrição.</span><span class="sxs-lookup"><span data-stu-id="a706c-117">To get your TenantId, log in interactively and then get the TenantId from your subscription.</span></span>
+    <span data-ttu-id="319e7-117">Para obter o seu T, inicie sessão interativamente e obtenha o TenantId da sua subscrição.</span><span class="sxs-lookup"><span data-stu-id="319e7-117">To get your TenantId, log in interactively and then get the TenantId from your subscription.</span></span>
 
     ```powershell
     Get-AzureRmSubscription
@@ -51,21 +51,21 @@ ms.locfileid: "50000764"
     CurrentStorageAccount :
     ```
 
-### <a name="log-in-using-managed-identities-for-azure-resources"></a><span data-ttu-id="a706c-118">Iniciar sessão com as identidades geridas para os recursos do Azure</span><span class="sxs-lookup"><span data-stu-id="a706c-118">Log in using managed identities for Azure resources</span></span>
+### <a name="log-in-using-managed-identities-for-azure-resources"></a><span data-ttu-id="319e7-118">Iniciar sessão com as identidades geridas para os recursos do Azure</span><span class="sxs-lookup"><span data-stu-id="319e7-118">Log in using managed identities for Azure resources</span></span>
 
-<span data-ttu-id="a706c-119">As identidades geridas para os recursos do Azure são uma funcionalidade do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="a706c-119">Managed identities for Azure resources is a feature of Azure Active Directory.</span></span> <span data-ttu-id="a706c-120">Pode utilizar um principal de serviço da identidade gerida para início de sessão e adquirir um token de acesso só de aplicação para aceder a outros recursos.</span><span class="sxs-lookup"><span data-stu-id="a706c-120">You can use a managed identity service principal for sign-in, and acquire an app-only access token to access other resources.</span></span>
+<span data-ttu-id="319e7-119">As identidades geridas para os recursos do Azure são uma funcionalidade do Azure Active Directory.</span><span class="sxs-lookup"><span data-stu-id="319e7-119">Managed identities for Azure resources is a feature of Azure Active Directory.</span></span> <span data-ttu-id="319e7-120">Pode utilizar um principal de serviço da identidade gerida para início de sessão e adquirir um token de acesso só de aplicação para aceder a outros recursos.</span><span class="sxs-lookup"><span data-stu-id="319e7-120">You can use a managed identity service principal for sign-in, and acquire an app-only access token to access other resources.</span></span>
 
-<span data-ttu-id="a706c-121">Para obter mais informações sobre identidades geridas para recursos do Azure, veja [Como utilizar identidades geridas para recursos do Azure numa VM do Azure para adquirir um token de acesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).</span><span class="sxs-lookup"><span data-stu-id="a706c-121">For more information about managed identities for Azure resources, see [How to use managed identities for Azure resources on an Azure VM to acquire an access token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).</span></span>
+<span data-ttu-id="319e7-121">Para obter mais informações sobre identidades geridas para recursos do Azure, veja [Como utilizar identidades geridas para recursos do Azure numa VM do Azure para adquirir um token de acesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).</span><span class="sxs-lookup"><span data-stu-id="319e7-121">For more information about managed identities for Azure resources, see [How to use managed identities for Azure resources on an Azure VM to acquire an access token](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).</span></span>
 
-## <a name="log-in-to-another-cloud"></a><span data-ttu-id="a706c-122">Inicie sessão noutra Cloud</span><span class="sxs-lookup"><span data-stu-id="a706c-122">Log in to another Cloud</span></span>
+## <a name="log-in-to-another-cloud"></a><span data-ttu-id="319e7-122">Inicie sessão noutra Cloud</span><span class="sxs-lookup"><span data-stu-id="319e7-122">Log in to another Cloud</span></span>
 
-<span data-ttu-id="a706c-123">Os serviços cloud do Azure fornecem diferentes ambientes que aderem aos regulamentos de processamento de dados de várias administrações públicas.</span><span class="sxs-lookup"><span data-stu-id="a706c-123">Azure cloud services provide different environments that adhere to the data-handling regulations of various governments.</span></span> <span data-ttu-id="a706c-124">Se a sua conta do Azure é de uma das clouds de administração pública, tem de especificar o ambiente quando iniciar sessão.</span><span class="sxs-lookup"><span data-stu-id="a706c-124">If your Azure account is in one the government clouds, you need to specify the environment when you sign in.</span></span> <span data-ttu-id="a706c-125">Por exemplo, se a sua conta está na cloud da China, inicia sessão com o seguinte comando:</span><span class="sxs-lookup"><span data-stu-id="a706c-125">For example, if you account is in the China cloud you sign on using the following command:</span></span>
+<span data-ttu-id="319e7-123">Os serviços cloud do Azure fornecem diferentes ambientes que aderem aos regulamentos de processamento de dados de várias administrações públicas.</span><span class="sxs-lookup"><span data-stu-id="319e7-123">Azure cloud services provide different environments that adhere to the data-handling regulations of various governments.</span></span> <span data-ttu-id="319e7-124">Se a sua conta do Azure é de uma das clouds de administração pública, tem de especificar o ambiente quando iniciar sessão.</span><span class="sxs-lookup"><span data-stu-id="319e7-124">If your Azure account is in one the government clouds, you need to specify the environment when you sign in.</span></span> <span data-ttu-id="319e7-125">Por exemplo, se a sua conta está na cloud da China, inicia sessão com o seguinte comando:</span><span class="sxs-lookup"><span data-stu-id="319e7-125">For example, if you account is in the China cloud you sign on using the following command:</span></span>
 
 ```powershell
 Login-AzureRmAccount -EnvironmentName AzureChinaCloud
 ```
 
-<span data-ttu-id="a706c-126">Utilize o seguinte comando para obter uma lista de ambientes disponíveis:</span><span class="sxs-lookup"><span data-stu-id="a706c-126">Use the following command to get a list of available environments:</span></span>
+<span data-ttu-id="319e7-126">Utilize o seguinte comando para obter uma lista de ambientes disponíveis:</span><span class="sxs-lookup"><span data-stu-id="319e7-126">Use the following command to get a list of available environments:</span></span>
 
 ```powershell
 Get-AzureRmEnvironment | Select-Object Name
@@ -80,16 +80,16 @@ AzureUSGovernment
 AzureGermanCloud
 ```
 
-## <a name="learn-more-about-managing-azure-role-based-access"></a><span data-ttu-id="a706c-127">Saiba mais sobre como gerir o acesso baseado em funções do Azure</span><span class="sxs-lookup"><span data-stu-id="a706c-127">Learn more about managing Azure role-based access</span></span>
+## <a name="learn-more-about-managing-azure-role-based-access"></a><span data-ttu-id="319e7-127">Saiba mais sobre como gerir o acesso baseado em funções do Azure</span><span class="sxs-lookup"><span data-stu-id="319e7-127">Learn more about managing Azure role-based access</span></span>
 
-<span data-ttu-id="a706c-128">Para obter mais informações sobre a gestão de autenticação e de subscrições do Azure, veja [Gerir Contas, Subscrições e Funções Administrativas](/azure/active-directory/role-based-access-control-configure).</span><span class="sxs-lookup"><span data-stu-id="a706c-128">For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](/azure/active-directory/role-based-access-control-configure).</span></span>
+<span data-ttu-id="319e7-128">Para obter mais informações sobre a gestão de autenticação e de subscrições do Azure, veja [Gerir Contas, Subscrições e Funções Administrativas](/azure/active-directory/role-based-access-control-configure).</span><span class="sxs-lookup"><span data-stu-id="319e7-128">For more information about authentication and subscription management in Azure, see [Manage Accounts, Subscriptions, and Administrative Roles](/azure/active-directory/role-based-access-control-configure).</span></span>
 
-<span data-ttu-id="a706c-129">Cmdlets do Azure PowerShell para gestão de funções</span><span class="sxs-lookup"><span data-stu-id="a706c-129">Azure PowerShell cmdlets for role management</span></span>
+<span data-ttu-id="319e7-129">Cmdlets do Azure PowerShell para gestão de funções</span><span class="sxs-lookup"><span data-stu-id="319e7-129">Azure PowerShell cmdlets for role management</span></span>
 
-* [<span data-ttu-id="a706c-130">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="a706c-130">Get-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
-* [<span data-ttu-id="a706c-131">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="a706c-131">Get-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
-* [<span data-ttu-id="a706c-132">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="a706c-132">New-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)
-* [<span data-ttu-id="a706c-133">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="a706c-133">New-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
-* [<span data-ttu-id="a706c-134">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="a706c-134">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
-* [<span data-ttu-id="a706c-135">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="a706c-135">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
-* [<span data-ttu-id="a706c-136">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="a706c-136">Set-AzureRmRoleDefinition</span></span>](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
+* [<span data-ttu-id="319e7-130">Get-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="319e7-130">Get-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleAssignment)
+* [<span data-ttu-id="319e7-131">Get-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="319e7-131">Get-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Get-AzureRmRoleDefinition)
+* [<span data-ttu-id="319e7-132">New-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="319e7-132">New-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleAssignment)
+* [<span data-ttu-id="319e7-133">New-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="319e7-133">New-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/New-AzureRmRoleDefinition)
+* [<span data-ttu-id="319e7-134">Remove-AzureRmRoleAssignment</span><span class="sxs-lookup"><span data-stu-id="319e7-134">Remove-AzureRmRoleAssignment</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleAssignment)
+* [<span data-ttu-id="319e7-135">Remove-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="319e7-135">Remove-AzureRmRoleDefinition</span></span>](/powershell/module/AzureRM.Resources/Remove-AzureRmRoleDefinition)
+* [<span data-ttu-id="319e7-136">Set-AzureRmRoleDefinition</span><span class="sxs-lookup"><span data-stu-id="319e7-136">Set-AzureRmRoleDefinition</span></span>](/powershell/moduel/AzureRM.Resources/Set-AzureRmRoleDefinition)
