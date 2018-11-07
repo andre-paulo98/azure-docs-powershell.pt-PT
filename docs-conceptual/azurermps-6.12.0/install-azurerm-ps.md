@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/15/2018
-ms.openlocfilehash: a868a62bd7bb2f39775a3b7878e2c8484c50438d
+ms.date: 10/08/2018
+ms.openlocfilehash: 44537686277810e9632b0916089043d26023e27a
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211099"
+ms.locfileid: "51212811"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalar o Azure PowerShell no Windows com o PowerShellGet
 
@@ -24,40 +24,14 @@ O modelo de implementação clássica do Azure não é suportado por esta versã
 
 ## <a name="requirements"></a>Requisitos
 
-Para instalar o Azure PowerShell, precisa do PowerShellGet versão 1.1.2.0 ou superior. Para verificar se está disponível no seu sistema, execute o comando:
+A partir do Azure PowerShell versão 6.0, o Azure PowerShell requer a versão 5.0 do PowerShell. Para verificar a versão do PowerShell em execução na sua máquina, execute o seguinte comando:
 
 ```powershell-interactive
-Get-Module -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
+$PSVersionTable.PSVersion
 ```
 
-Deverá ver algo semelhante à saída seguinte:
+Se tem uma versão desatualizada, veja [Atualizar o Windows PowerShell existente](/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
 
-```output
-Name          Version Path
-----          ------- ----
-Name          Version Path
-----          ------- ----
-PowerShellGet 1.6.0   C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.6.0\PowerShellGet.psd1
-PowerShellGet 1.0.0.1 C:\Program Files\WindowsPowerShell\Modules\PowerShellGet\1.0.0.1\PowerShellGet.psd1
-```
-
-Se precisa de atualizar a sua instalação do PowerShellGet, execute o seguinte comando:
-
-```powershell-interactive
-Install-Module PowerShellGet -Force
-```
-
-Se não tem o PowerShellGet instalado, siga as instruções na tabela abaixo do seu sistema.
-
-|Cenário|Instruções de instalação|
-|---|---|
-|Windows 10<br/>Windows Server 2016|Incorporado no Windows Management Framework (WMF) 5.0 incluído no SO|
-|Atualizar para o PowerShell 5| <ol><li>[Instalar a versão mais recente do WMF](https://www.microsoft.com/en-us/download/details.aspx?id=54616)</li><li>Execute o seguinte comando:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-|Windows com PowerShell 3 ou PowerShell 4|<ol><il>[Obter os módulos PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Execute o seguinte comando:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
-
-> [!NOTE]
-> A utilização do PowerShellGet requer uma Política de Execução que lhe permita executar scripts. Para obter mais informações sobre a Política de Execução do PowerShell, veja [About Execution Policies (Sobre as Políticas de Execução)](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
->
 > [!IMPORTANT]
 > O módulo descrito neste documento, o AzureRM, utiliza o .NET Framework. Isto torna-o incompatível com o PowerShell 6.0, que utiliza o .NET Core. Se estiver a utilizar o PowerShell 6.0, siga as [instruções de instalação para macOS e Linux](install-azurermps-maclinux.md).
 
@@ -66,7 +40,7 @@ Se não tem o PowerShellGet instalado, siga as instruções na tabela abaixo do 
 Precisa de privilégios elevados para instalar módulos da Galeria do PowerShell. Para instalar o Azure PowerShell, execute o seguinte comando numa sessão elevada:
 
 ```powershell-interactive
-Install-Module -Name AzureRM
+Install-Module -Name AzureRM -AllowClobber
 ```
 
 > [!NOTE]
@@ -114,7 +88,15 @@ Se pretende remover as versões anteriores do Azure PowerShell do seu sistema, v
 
 ## <a name="use-multiple-versions-of-azure-powershell"></a>Utilizar várias versões do Azure PowerShell
 
-Pode instalar várias versões do Azure PowerShell. Poderá precisar de mais de uma versão se trabalhar com recursos do Azure Stack no local, executar uma versão mais antiga do Windows que não pode atualizar para o PowerShell 5.0 ou utilizar o modelo de implementação clássica do Azure. Para instalar uma versão anterior, apresente o argumento `-RequiredVersion` ao instalar.
+Pode instalar mais de uma versão do Azure PowerShell. Para verificar se tem várias versões do Azure PowerShell instaladas, utilize o seguinte comando:
+
+```powershell-interactive
+Get-Module -Name AzureRM -List | select Name,Version
+```
+
+Para remover uma versão do Azure PowerShell, veja [Desinstalar o módulo do Azure PowerShell](uninstall-azurerm-ps.md).
+
+Poderá precisar de mais de uma versão se trabalhar com recursos do Azure Stack no local, executar uma versão mais antiga do Windows ou utilizar o modelo de implementação clássica do Azure. Para instalar uma versão anterior, apresente o argumento `-RequiredVersion` ao instalar.
 
 ```powershell-interactive
 # Install version 1.2.9 of Azure PowerShell

@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: 09858da9981c1136e2a39a079962c5b8fc39bde9
+ms.date: 09/11/2018
+ms.openlocfilehash: 245d69d3bcee3c502babe82395341efad2bc96d0
 ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/07/2018
-ms.locfileid: "51211915"
+ms.locfileid: "51213193"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>Utilizar módulos experimentais do Azure PowerShell
+# <a name="use-experimental-azure-powershell-modules"></a>Utilizar módulos experimentais do Azure PowerShell
 
 Com o ênfase em ferramentas de programador (especialmente CLIs) no Azure, a equipa do Azure PowerShell está a experimentar várias melhorias na experiência do Azure PowerShell.
 
@@ -30,11 +30,11 @@ Os módulos experimentais utilizam a seguinte convenção de nomenclatura: `Azur
 
 Os módulos experimentais são publicados na Galeria do PowerShell, tal como os módulos existentes do Azure PowerShell. Para ver uma lista de módulos experimentais, execute o comando seguinte:
 
-```powershell-interactive
+```azurepowershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```Output
+```output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -43,7 +43,7 @@ Version Name                         Repository Description
 
 Para instalar o módulo experimental, utilize os seguintes comandos a partir de uma sessão elevada do PowerShell:
 
-```powershell-interactive
+```azurepowershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```
@@ -89,8 +89,8 @@ As melhorias experimentais apresentam uma alteração significativa que a equipa
 
 Por exemplo, o cenário “Criar aplicação Web” poderia ter um comutador `-Git` ou `-AddRemote` que iria adicionar automaticamente um “azure” remoto a um repositório existente do git.
 
-- Predefinições Definíveis - os utilizadores devem ter a capacidade de predefinir determinados parâmetros gerais como `-ResourceGroupName` e `-Location`.
+- Predefinições definíveis: os utilizadores podem definir as predefinições para os parâmetros comuns, como `-ResourceGroupName` e `-Location`.
 
-- Predefinições de Tamanho - os “tamanhos” dos recursos podem ser confusos para os utilizadores, uma vez que muitos Fornecedores de Recursos utilizam nomes diferentes (por exemplo, “Standard\_DS1\_v2” ou “S1”). No entanto, a maioria dos utilizadores preocupa-se mais com o custo. Por conseguinte, faz sentido definir tamanhos “universais”, com base num agendamento de preços. Os utilizadores podem escolher um tamanho específico ou permitir que o Azure PowerShell escolha a _melhor opção_ com base no orçamento para recursos.
+- Predefinições de Tamanho - os “tamanhos” dos recursos podem ser confusos para os utilizadores, uma vez que muitos Fornecedores de Recursos utilizam nomes diferentes (por exemplo, “Standard\_DS1\_v2” ou “S1”). No entanto, a maioria dos utilizadores preocupa-se mais com o custo. Por isso, faz sentido definir tamanhos "universais", com base num agendamento de preços. Os utilizadores podem escolher um tamanho específico ou permitir que o Azure PowerShell escolha a _melhor opção_ com base no orçamento para recursos.
 
-- Formato de Saída - atualmente, o Azure PowerShell devolve `PSObject`s e há pouca saída da consola. O Azure PowerShell poderá ter de apresente algumas informações ao utilizador sobre as “predefinições inteligentes” utilizadas.
+- Formato de Saída - atualmente, o Azure PowerShell devolve `PSObject`s e há pouca saída da consola. O Azure PowerShell poderá ter de apresente algumas informações ao utilizador sobre as "predefinições inteligentes" utilizadas.

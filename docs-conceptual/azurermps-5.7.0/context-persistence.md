@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 08/31/2017
-ms.openlocfilehash: 3107f77987745faa7ec57ea4811c62a38a7b2aa2
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 164444b7bacbef202513bfafe2f75bdcd6d027c4
+ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100261"
+ms.lasthandoff: 11/07/2018
+ms.locfileid: "51211303"
 ---
 # <a name="persisting-user-credentials-across-powershell-sessions"></a>Manter credenciais do utilizador nas sessões do PowerShell
 
@@ -55,7 +55,7 @@ A funcionalidade **Gravação Automática de Contexto do Azure** permite-lhe tam
 
   A maioria dos cmdlets do AzureRM permitem-lhe passar o contexto como um parâmetro para o cmdlet. Pode passar um contexto para uma tarefa em segundo plano, conforme mostrado no exemplo seguinte:
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { param ($ctx) New-AzureRmVm -AzureRmContext $ctx [... Additional parameters ...]} -ArgumentList (Get-AzureRmContext)
   ```
 
@@ -63,7 +63,7 @@ A funcionalidade **Gravação Automática de Contexto do Azure** permite-lhe tam
 
   Se tiver ativado a **Gravação Automática de Contexto**, as tarefas em segundo plano utilizam automaticamente o contexto predefinido guardado.
 
-  ```powershell
+  ```powershell-interactive
   PS C:\> $job = Start-Job { New-AzureRmVm [... Additional parameters ...]}
   ```
 
