@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 07/26/2017
-ms.openlocfilehash: 6f0e304c499fc8bf4909e2825d52cd63b1fcbf5d
-ms.sourcegitcommit: 990f82648b0aa2e970f96c02466a7134077c8c56
+ms.openlocfilehash: 563f84c3af98de066611dd80102e552b31f12883
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 07/11/2018
-ms.locfileid: "38100496"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51274930"
 ---
 # <a name="release-notes"></a>Notas de versão
 
@@ -262,14 +262,15 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
       - Remove-AzureRMRoleDefinition
       - Set-AzureRMRoleDefinition
 * ServiceBus
-    * Adicionado abaixo novos commandlets para AuthorizationRules do Espaço de Nomes, Fila e Tópico. De acordo com o parâmetro definido, as operações da regra de autorização são realizadas.
-     - New-AzureRmServiceBusAuthorizationRule - Adiciona uma nova AuthorizationRule ao Espaço de Nomes/Fila/Tópico existente do ServiceBus.
-     - Get-AzureRmServiceBusAuthorizationRule - Obtém a AuthorizationRule/Lista de AuthorizationRules do Espaço de Nomes/Fila/Tópico existente do ServiceBus.
-     - Set-AzureRmServiceBusAuthorizationRule - Atualiza as propriedades da AuthorizationRule existente do Espaço de Nomes/Fila/Tópico do ServiceBus.
-     - New-AzureRmServiceBusKey - Gera uma nova Chave Primária/Secundária da AuthorizationRule do Espaço de Nomes/Fila/Tópico existente do ServiceBus.
-     - Get-AzureRmServiceBusKey - Obtém a Chave Primária/Secundária da AuthorizationRule do Espaço de Nomes/Fila/Tópico existente do ServiceBus.
-     - Remove-AzureRmServiceBusNamespaceAuthorizationRule - Elimina a AuthorizationRule existente do Espaço de Nomes/Fila/Tópico do ServiceBus.
-    * Adicionada a propriedade ResourceGroup a NamespaceAttributes
+  * Adicionado abaixo novos commandlets para AuthorizationRules do Espaço de Nomes, Fila e Tópico. De acordo com o parâmetro definido, as operações da regra de autorização são realizadas.
+    - New-AzureRmServiceBusAuthorizationRule - Adiciona uma nova AuthorizationRule ao Espaço de Nomes/Fila/Tópico existente do ServiceBus.
+    - Get-AzureRmServiceBusAuthorizationRule - Obtém a AuthorizationRule/Lista de AuthorizationRules do Espaço de Nomes/Fila/Tópico existente do ServiceBus.
+    - Set-AzureRmServiceBusAuthorizationRule - Atualiza as propriedades da AuthorizationRule existente do Espaço de Nomes/Fila/Tópico do ServiceBus.
+    - New-AzureRmServiceBusKey - Gera uma nova Chave Primária/Secundária da AuthorizationRule do Espaço de Nomes/Fila/Tópico existente do ServiceBus.
+    - Get-AzureRmServiceBusKey - Obtém a Chave Primária/Secundária da AuthorizationRule do Espaço de Nomes/Fila/Tópico existente do ServiceBus.
+    - Remove-AzureRmServiceBusNamespaceAuthorizationRule - Elimina a AuthorizationRule existente do Espaço de Nomes/Fila/Tópico do ServiceBus.
+  * Adicionada a propriedade ResourceGroup a NamespaceAttributes
+
 * SQL
     * Atualização de Set-AzureRmSqlServerTransparentDataEncryptionProtector para apresentar um aviso e pedir confirmação se o Tipo de Protetor de Encriptação estiver definido para AzureKeyVault
     * A adicionar novos cmdlets atualizados para as definições de Auditoria
@@ -297,15 +298,16 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 
 ## <a name="20170717---version-421"></a>17-07-2017 - Versão 4.2.1
 * Computação
-    - Correção do problema dos cmdlets de criação e atualização do Disco da VM e do instantâneo do Disco da VM, (ligação)[https://github.com/azure/azure-powershell/issues/4309]
-      - New-AzureRmDisk
-      - New-AzureRmSnapshot
-      - Update-AzureRmDisk
-      - Update-AzureRmSnapshot
+  - Correção do problema dos cmdlets de criação e atualização do Disco da VM e do instantâneo do Disco da VM, (ligação)[<https://github.com/azure/azure-powershell/issues/4309>]
+    - New-AzureRmDisk
+    - New-AzureRmSnapshot
+    - Update-AzureRmDisk
+    - Update-AzureRmSnapshot
 * Perfil
-    - Correção do problema com autenticação de utilizador não interativo em RDFE (ligação) [https://github.com/Azure/azure-powershell/issues/4299]
+  - Correção do problema com autenticação de utilizador não interativo em RDFE (ligação) [<https://github.com/Azure/azure-powershell/issues/4299>]
+
 * ServiceManagement
-    - Correção do problema com autenticação de utilizador não interativo (ligação) [https://github.com/Azure/azure-powershell/issues/4299]
+  - Correção do problema com autenticação de utilizador não interativo (ligação) [<https://github.com/Azure/azure-powershell/issues/4299>]
 
 ## <a name="2017711---version-420"></a>11-07-2017 - Versão 4.2.0
 * AnalysisServices
@@ -660,7 +662,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 * ServiceBus
 
   - Correção de erros: os valores de propriedade do objeto de ServiceBus foram definidos como nulos; o objeto é utilizado como parâmetro de entrada no cmdlet Set-AzureRmServiceBusQueue para atualizar a Fila.
-   - As propriedades afetadas são LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount e MessageCount
+    - As propriedades afetadas são LockDuration, EntityAvailabilityStatus, DuplicateDetectionHistoryTimeWindow, MaxDeliveryCount e MessageCount
 * ServiceFabric
 
   - Cmdlets adicionados ao Service Fabric
