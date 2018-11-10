@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: c60bc9197266cc1da37cc9af7baf03e7ba8fb7ac
-ms.sourcegitcommit: 06f9206e025afa7207d4657c8f57c94ddb74817a
+ms.openlocfilehash: 8a7b184ed06eb078956229fa67d02840014e3aaf
+ms.sourcegitcommit: ac4b53bb42a25aae013a9d8cd9ae98ada9397274
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/07/2018
-ms.locfileid: "51212882"
+ms.lasthandoff: 11/08/2018
+ms.locfileid: "51275525"
 ---
 # <a name="release-notes"></a>Notas de versão
 
@@ -164,7 +164,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Alterações menores ao código comum do armazenamento
 * Ficheiros de ajuda atualizados para incluírem todos os tipos de parâmetros.
-- -ServicePrincipal alterado para non-mandatory no conjunto de parâmetros ServicePrincipalCertificateWithSubscriptionId 
+* -ServicePrincipal alterado para non-mandatory no conjunto de parâmetros ServicePrincipalCertificateWithSubscriptionId 
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Suporte para a criação de Contexto de Armazenamento com OAuth. 
@@ -403,7 +403,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Remoção da limitação de 5 TB da quota da Partilha de Ficheiros do Azure
-- Set-AzureStorageShareQuota
+* Set-AzureStorageShareQuota
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * Atualizado para a versão mais recente do Azure ClientRuntime.
@@ -680,8 +680,8 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 
 #### <a name="azurestorage"></a>Azure.Storage
 * Suporte de Carregamento de Blob ou Ficheiro com token Sas apenas de escrita
-- Set-AzureStorageBlobContent
-- Set-AzureStorageFileContent
+* Set-AzureStorageBlobContent
+* Set-AzureStorageFileContent
 
 #### <a name="azurermanalysisservices"></a>AzureRM.AnalysisServices
 * Adicionar propriedade ResourceGroupName obrigatória ao AS.
