@@ -1,35 +1,35 @@
 ---
-title: Formatar resultados de consulta | Microsoft Docs
-description: Como consultar recursos no Azure e formatar os resultados.
+title: Formatar a saída de cmdlets do Azure PowerShell
+description: Como formatar a saída de cmdlets do Azure PowerShell.
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 37f240d371150928f10cb2811c4bb5f1b585c2f3
+ms.date: 09/09/2018
+ms.openlocfilehash: 390285bcf483e75b7a2b77d345ccb108669f66e5
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52258371"
+ms.locfileid: "52260016"
 ---
-# <a name="formatting-query-results"></a>Formatar resultados de consulta
+# <a name="format-azurepowershell-cmdlet-output"></a>Formatar a saída de cmdlets do Azure PowerShell
 
-Por predefinição, cada cmdlet do PowerShell possui formatação de saída predefinida, facilitando a leitura.  O PowerShell fornece também a flexibilidade para ajustar a saída ou converter a saída do cmdlet num formato diferente com os seguintes cmdlets:
+Por predefinição, cada cmdlet do Azure PowerShell inclui formatação de saída predefinida, o que facilita a respetiva leitura.  O PowerShell fornece também a flexibilidade para ajustar a saída ou converter a saída do cmdlet num formato diferente com os seguintes cmdlets:
 
 | Formatação      | Conversão       |
 |-----------------|------------------|
-| `Format-Custom` | `ConvertTo-Csv`  |
-| `Format-List`   | `ConvertTo-Html` |
-| `Format-Table`  | `ConvertTo-Json` |
-| `Format-Wide`   | `ConvertTo-Xml`  |
+| [Format-Custom](/powershell/module/microsoft.powershell.utility/format-custom) | [ConvertTo-Csv](/powershell/module/microsoft.powershell.utility/convertto-csv)  |
+| [Format-List](/powershell/module/microsoft.powershell.utility/format-list)   | [ConvertTo-Html](/powershell/module/microsoft.powershell.utility/convertto-html) |
+| [Format-Table](/powershell/module/microsoft.powershell.utility/format-table)  | [ConvertTo-Json](/powershell/module/microsoft.powershell.utility/convertto-json) |
+| [Format-Wide](/powershell/module/microsoft.powershell.utility/format-wide)   | [ConvertTo-Xml](/powershell/module/microsoft.powershell.utility/convertto-xml)  |
 
-## <a name="formatting-examples"></a>Exemplos de formatação
+## <a name="format-examples"></a>Exemplos de formato
 
-Neste exemplo obtemos uma lista de VMs do Azure na nossa subscrição predefinida.  O comando Get-AzureRmVM predefine a saída para um formato de tabela.
+Neste exemplo obtemos uma lista de VMs do Azure na nossa subscrição predefinida.  O comando `Get-AzureRmVM` predefine a saída para um formato de tabela.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM
 ```
 
@@ -42,7 +42,7 @@ MYWESTEURG          MyWin2016VM westeurope Standard_DS1_v2 Windows   mywin2016vm
 
 Se pretende limitar as colunas devolvidas pode utilizar o cmdlet `Format-Table`. No exemplo seguinte obtemos a mesma lista de máquinas virtuais, mas restringimos a saída para apenas o nome da VM, o grupo de recursos e a localização da VM.  O parâmetro `-Autosize` define o tamanho das colunas, de acordo com o tamanho dos dados.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Format-Table Name,ResourceGroupName,Location -AutoSize
 ```
 
@@ -53,10 +53,10 @@ MyUnbuntu1610 MYWESTEURG        westeurope
 MyWin2016VM   MYWESTEURG        westeurope
 ```
 
-Se preferir, pode visualizar as informações em formato de lista. O exemplo seguinte mostra este utilizando o cmdlet `Format-List`.
+A saída também pode ser formatada numa lista. O exemplo seguinte mostra este utilizando o cmdlet `Format-List`.
 
-```powershell-interactive
-Get-AzureVM | Format-List Name,VmId,Location,ResourceGroupName
+```azurepowershell-interactive
+Get-AzureRmVM | Format-List Name,VmId,Location,ResourceGroupName
 ```
 
 ```output
@@ -71,11 +71,11 @@ Location          : westeurope
 ResourceGroupName : MYWESTEURG
 ```
 
-## <a name="converting-to-other-data-types"></a>Converter para outros tipos de dados
+## <a name="convert-to-other-data-types"></a>Converter noutros tipos de dados
 
-O PowerShell também oferece vários formatos de saída que pode utilizar para corresponder às suas necessidades.  No exemplo seguinte utilizamos o cmdlet `Select-Object` para obter os atributos das máquinas virtuais na nossa subscrição e para converter o resultado em formato CSV para uma importação mais fácil numa base de dados ou folha de cálculo.
+O PowerShell também permite converter a saída de comandos em vários formatos de dados. No exemplo seguinte, o cmdlet `Select-Object` serve para obter os atributos das máquinas virtuais da subscrição e converter a saída em formato CSV a fim de facilitar a importação para uma base de dados ou folha de cálculo.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Csv -NoTypeInformation
 ```
 
@@ -85,9 +85,9 @@ Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,Provisioni
 "MYWESTUERG","/subscriptions/XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX/resourceGroups/MYWESTUERG/providers/Microsoft.Compute/virtualMachines/MyWin2016VM","4650c755-fc2b-4fc7-a5bc-298d5c00808f","MyWin2016VM","westeurope","Succeeded"
 ```
 
-Também pode converter o resultado no formato JSON.  O exemplo seguinte cria a mesma lista de VMs mas altera o formato de saída para JSON.
+A saída também pode ser convertida no formato JSON.  O exemplo seguinte cria a mesma lista de VMs mas altera o formato de saída para JSON.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmVM | Select-Object ResourceGroupName,Id,VmId,Name,Location,ProvisioningState | ConvertTo-Json
 ```
 

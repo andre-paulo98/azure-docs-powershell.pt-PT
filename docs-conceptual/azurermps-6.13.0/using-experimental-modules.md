@@ -6,15 +6,15 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 09/05/2017
-ms.openlocfilehash: ff58693c8ec21b7e50e37bd85975a9ae3980a5e7
+ms.date: 09/11/2018
+ms.openlocfilehash: 77d0ce36ae3ab7c7bddd3febef4600fc9652850f
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52259136"
+ms.locfileid: "52259867"
 ---
-# <a name="using-experimental-azure-powershell-modules"></a>Utilizar módulos experimentais do Azure PowerShell
+# <a name="use-experimental-azure-powershell-modules"></a>Utilizar módulos experimentais do Azure PowerShell
 
 Com o ênfase em ferramentas de programador (especialmente CLIs) no Azure, a equipa do Azure PowerShell está a experimentar várias melhorias na experiência do Azure PowerShell.
 
@@ -89,8 +89,8 @@ As melhorias experimentais apresentam uma alteração significativa que a equipa
 
 Por exemplo, o cenário “Criar aplicação Web” poderia ter um comutador `-Git` ou `-AddRemote` que iria adicionar automaticamente um “azure” remoto a um repositório existente do git.
 
-- Predefinições Definíveis - os utilizadores devem ter a capacidade de predefinir determinados parâmetros gerais como `-ResourceGroupName` e `-Location`.
+- Predefinições definíveis: os utilizadores podem definir as predefinições para os parâmetros comuns, como `-ResourceGroupName` e `-Location`.
 
-- Predefinições de Tamanho - os “tamanhos” dos recursos podem ser confusos para os utilizadores, uma vez que muitos Fornecedores de Recursos utilizam nomes diferentes (por exemplo, “Standard\_DS1\_v2” ou “S1”). No entanto, a maioria dos utilizadores preocupa-se mais com o custo. Por conseguinte, faz sentido definir tamanhos “universais”, com base num agendamento de preços. Os utilizadores podem escolher um tamanho específico ou permitir que o Azure PowerShell escolha a _melhor opção_ com base no orçamento para recursos.
+- Predefinições de Tamanho - os “tamanhos” dos recursos podem ser confusos para os utilizadores, uma vez que muitos Fornecedores de Recursos utilizam nomes diferentes (por exemplo, “Standard\_DS1\_v2” ou “S1”). No entanto, a maioria dos utilizadores preocupa-se mais com o custo. Por isso, faz sentido definir tamanhos "universais", com base num agendamento de preços. Os utilizadores podem escolher um tamanho específico ou permitir que o Azure PowerShell escolha a _melhor opção_ com base no orçamento para recursos.
 
-- Formato de Saída - atualmente, o Azure PowerShell devolve `PSObject`s e há pouca saída da consola. O Azure PowerShell poderá ter de apresente algumas informações ao utilizador sobre as “predefinições inteligentes” utilizadas.
+- Formato de Saída - atualmente, o Azure PowerShell devolve `PSObject`s e há pouca saída da consola. O Azure PowerShell poderá ter de apresente algumas informações ao utilizador sobre as "predefinições inteligentes" utilizadas.

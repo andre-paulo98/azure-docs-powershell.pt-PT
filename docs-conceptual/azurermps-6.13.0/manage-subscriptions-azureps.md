@@ -1,27 +1,26 @@
 ---
-title: Gerir subscrições do Azure com o Azure PowerShell | Microsoft Docs
+title: Gerir subscrições do Azure com o Azure PowerShell
 description: Gerir subscrições do Azure com o Azure PowerShell
-keywords: Azure PowerShell, subscrição
 author: sptramer
 ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/30/2017
-ms.openlocfilehash: 12e304f32f585c1af40d20579cd46999e0a12395
+ms.date: 09/11/2018
+ms.openlocfilehash: a93461af1dafbf8f2c85ef127ecaefadf3be2f52
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52257963"
+ms.locfileid: "52260036"
 ---
 # <a name="manage-multiple-azure-subscriptions"></a>Gerir várias subscrições do Azure
 
-Se só agora começou a utilizar o Azure, é provável que só tenha uma subscrição. Mas se já o utilizar há algum tempo, poderá ter criado várias subscrições do Azure. Pode configurar Azure PowerShell para executar comandos numa determinada subscrição.
+Se só agora começou a utilizar o Azure, é provável que só tenha uma subscrição individual. Mas se já o utilizar há algum tempo, poderá ter criado várias subscrições do Azure. Pode configurar Azure PowerShell para executar comandos numa determinada subscrição.
 
 1. Obtenha uma lista de todas as subscrições da sua conta.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmSubscription
     ```
 
@@ -50,13 +49,13 @@ Se só agora começou a utilizar o Azure, é provável que só tenha uma subscri
 
 2. Defina a predefinida.
 
-    ```powershell-interactive
-    Select-AzureRmSubscription -SubscriptionName "My Demos"
+    ```azurepowershell-interactive
+    Select-AzureRmSubscription -Subscription "My Demos"
     ```
 
 3. Verifique a alteração executando o cmdlet `Get-AzureRmContext`.
 
-    ```powershell-interactive
+    ```azurepowershell-interactive
     Get-AzureRmContext
     ```
 
@@ -69,4 +68,4 @@ Se só agora começou a utilizar o Azure, é provável que só tenha uma subscri
     CurrentStorageAccount :
     ```
 
-Depois de definir a subscrição predefinida, todos os comandos do Azure PowerShell subsequentes são executados no âmbito dessa subscrição.
+Depois de definir a subscrição predefinida, todos os comandos do Azure PowerShell são executados no âmbito dessa subscrição.

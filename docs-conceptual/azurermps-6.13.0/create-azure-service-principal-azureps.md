@@ -7,28 +7,28 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 05/15/2017
-ms.openlocfilehash: 19379a57e2ed369f75b2f02c73c00c1fbe02213e
+ms.date: 09/09/2018
+ms.openlocfilehash: 433a638187f024883c177457e420a759968fed9a
 ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 11/22/2018
-ms.locfileid: "52257793"
+ms.locfileid: "52259936"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar um principal de serviço do Azure com o Azure PowerShell
 
-Se pretender gerir o seu serviço ou aplicação com o Azure PowerShell, deve executá-lo num principal de serviço do Azure Active Directory (AAD) em vez de utilizar as suas próprias credenciais. Este tópico orienta-o ao longo da criação de um principal de segurança com o Azure PowerShell.
+Se pretender gerir o seu serviço ou aplicação com o Azure PowerShell, deve executá-lo num principal de serviço do Azure Active Directory (AAD) em vez de utilizar as suas próprias credenciais. Este artigo orienta-o ao longo da criação de um principal de segurança com o Azure PowerShell.
 
 > [!NOTE]
 > Também pode criar um principal de serviço através do portal do Azure. Leia [Use portal to create Active Directory application and service principal that can access resources](/azure/azure-resource-manager/resource-group-create-service-principal-portal) (Utilizar o portal para criar o principal de serviço e de aplicação do Active Directory que pode aceder a recursos) para obter mais detalhes.
 
 ## <a name="what-is-a-service-principal"></a>O que é um “principal de serviço”?
 
-Um principal de serviço do Azure é uma identidade de segurança utilizada por aplicações e serviços criados por utilizadores e ferramentas de automatização para aceder a recursos do Azure específicos. Pense nisso como uma "identidade de utilizador" (nome de utilizador e palavra-passe ou certificado) com uma função específica e permissões fortemente controladas. Só precisa de poder fazer determinadas coisas, ao contrário das identidades de utilizador gerais. Melhora a segurança se apenas lhe conceder o nível de permissões mínimo de que precisa para realizar as tarefas de gestão.
+Um principal de serviço do Azure é uma identidade de segurança utilizada por aplicações e serviços criados por utilizadores e ferramentas de automatização para aceder a recursos do Azure específicos. Pense nisso como uma "identidade de utilizador" (nome de utilizador e palavra-passe ou certificado) com uma função específica e permissões fortemente controladas. Um principal de serviço apenas precisa de fazer determinadas coisas, ao contrário das identidades de utilizador gerais. Melhora a segurança se apenas lhe conceder o nível de permissões mínimo de que precisa para realizar as tarefas de gestão.
 
 ## <a name="verify-your-own-permission-level"></a>Verificar o seu nível de permissões
 
-Em primeiro lugar, tem de ter permissões suficientes na sua subscrição do Azure e no Azure Active Directory. Mais concretamente, tem de poder criar uma aplicação no Active Directory e atribuir uma função ao principal de serviço.
+Em primeiro lugar, tem de ter permissões suficientes na sua subscrição do Azure e no Azure Active Directory. Tem de poder criar uma aplicação no Active Directory e atribuir uma função ao principal de serviço.
 
 A forma mais fácil de verificar se a sua conta tem permissões adequadas é utilizar o portal. Veja [Verificar as permissões necessárias no portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
 
@@ -41,9 +41,9 @@ Quando tiver iniciado sessão na sua conta do Azure, pode criar o principal de s
 
 ### <a name="get-information-about-your-application"></a>Obter informações sobre a sua aplicação
 
-O cmdlet `Get-AzureRmADApplication` pode ser utilizado para detetar informações sobre a aplicação.
+O cmdlet `Get-AzureRmADApplication` pode servir para obter informações sobre a aplicação.
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADApplication -DisplayNameStartWith MyDemoWebApp
 ```
 
@@ -63,10 +63,11 @@ ReplyUrls               : {}
 
 O cmdlet `New-AzureRmADServicePrincipal` é utilizado para criar o principal de serviço.
 
-```powershell-interactive
+```azurepowershell-interactive
 Add-Type -Assembly System.Web
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
-New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $password
+$securePassword = ConvertTo-SecureString -Force -AsPlainText -String $password
+New-AzureRmADServicePrincipal -ApplicationId 00c01aaa-1603-49fc-b6df-b78c4e5138b4 -Password $securePassword
 ```
 
 ```output
@@ -77,7 +78,7 @@ MyDemoWebApp                   ServicePrincipal               698138e7-d7b6-4738
 
 ### <a name="get-information-about-the-service-principal"></a>Obter informações sobre o principal de serviço
 
-```powershell-interactive
+```azurepowershell-interactive
 $svcprincipal = Get-AzureRmADServicePrincipal -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 $svcprincipal | Select-Object *
 ```
@@ -92,14 +93,14 @@ Type                  : ServicePrincipal
 
 ### <a name="sign-in-using-the-service-principal"></a>Iniciar sessão com o principal de serviço
 
-Agora, pode iniciar sessão como o novo principal de serviço da sua aplicação com o *appId* e a *palavra-passe* fornecidos. Tem de fornecer o ID do Inquilino para a sua conta. O ID do Inquilino é apresentado ao iniciar sessão no Azure com as suas credenciais pessoais.
+Agora, pode iniciar sessão como o novo principal de serviço da sua aplicação com o *appId* e a *palavra-passe* fornecidos. Também vai precisar do ID de Inquilino para o principal de serviço. O ID do Inquilino é apresentado ao iniciar sessão no Azure com as suas credenciais pessoais. Para iniciar sessão com um principal de serviço, utilize os comandos seguintes:
 
-```powershell-interactive
+```azurepowershell-interactive
 $cred = Get-Credential -UserName $svcprincipal.ApplicationId -Message "Enter Password"
-Login-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
+Connect-AzureRmAccount -Credential $cred -ServicePrincipal -TenantId XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX
 ```
 
-Execute este comando a partir de uma nova sessão do PowerShell. Após um início de sessão com êxito, vê um resultado como este:
+Depois de iniciar sessão com êxito, verá o resultado da seguinte forma:
 
 ```output
 Environment           : AzureCloud
@@ -128,7 +129,7 @@ A função **Leitor** é mais restritiva e é uma boa escolha para aplicações 
 
 Neste exemplo, adicionámos a função **Leitor** ao exemplo anterior e eliminámos a função **Contribuinte**:
 
-```powershell-interactive
+```azurepowershell-interactive
 New-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Reader
 ```
 
@@ -143,13 +144,13 @@ ObjectId           : 698138e7-d7b6-4738-a866-b4e3081a69e4
 ObjectType         : ServicePrincipal
 ```
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4 -RoleDefinitionName Contributor
 ```
 
 Para ver as funções atuais atribuídas:
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmRoleAssignment -ResourceGroupName myRG -ObjectId 698138e7-d7b6-4738-a866-b4e3081a69e4
 ```
 
@@ -177,7 +178,7 @@ Rever as permissões e atualizar a palavra-passe regularmente é uma boa prátic
 
 ### <a name="add-a-new-password-for-the-service-principal"></a>Adicionar uma nova palavra-passe para o principal de serviço
 
-```powershell-interactive
+```azurepowershell-interactive
 $password = [System.Web.Security.Membership]::GeneratePassword(16,3)
 New-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -Password $password
 ```
@@ -190,7 +191,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="get-a-list-of-credentials-for-the-service-principal"></a>Obter uma lista de credenciais para o principal de serviço
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
@@ -203,7 +204,7 @@ StartDate           EndDate             KeyId                                Typ
 
 ### <a name="remove-the-old-password-from-the-service-principal"></a>Remover a palavra-passe antiga do principal de serviço
 
-```powershell-interactive
+```azurepowershell-interactive
 Remove-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp -KeyId ca9d4846-4972-4c70-b6f5-a4effa60b9bc
 ```
 
@@ -216,7 +217,7 @@ service principal objectId '698138e7-d7b6-4738-a866-b4e3081a69e4'.
 
 ### <a name="verify-the-list-of-credentials-for-the-service-principal"></a>Verificar a lista de credenciais para o principal de serviço
 
-```powershell-interactive
+```azurepowershell-interactive
 Get-AzureRmADSpCredential -ServicePrincipalName http://MyDemoWebApp
 ```
 
