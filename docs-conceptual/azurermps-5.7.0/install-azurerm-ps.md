@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: a868a62bd7bb2f39775a3b7878e2c8484c50438d
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.openlocfilehash: 5f7f65aa25d86feb77a85fc28d122118216542cc
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52258558"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52588048"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalar o Azure PowerShell no Windows com o PowerShellGet
 
@@ -117,15 +117,15 @@ Se pretende remover as versões anteriores do Azure PowerShell do seu sistema, v
 Pode instalar várias versões do Azure PowerShell. Poderá precisar de mais de uma versão se trabalhar com recursos do Azure Stack no local, executar uma versão mais antiga do Windows que não pode atualizar para o PowerShell 5.0 ou utilizar o modelo de implementação clássica do Azure. Para instalar uma versão anterior, apresente o argumento `-RequiredVersion` ao instalar.
 
 ```powershell-interactive
-# Install version 1.2.9 of Azure PowerShell
-Install-Module -Name AzureRM -RequiredVersion 1.2.9
+# Install version 2.3.0 of Azure PowerShell
+Install-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 Ao carregar o módulo do Azure PowerShell, a versão mais recente é carregada por predefinição. Para carregar uma versão diferente, apresente o argumento `-RequiredVersion`.
 
 ```powershell-interactive
-# Load version 1.2.9 of Azure PowerShell
-Import-Module -Name AzureRM -RequiredVersion 1.2.9
+# Load version 2.3.0 of Azure PowerShell
+Import-Module -Name AzureRM -RequiredVersion 2.3.0
 ```
 
 ## <a name="provide-feedback"></a>Enviar comentários
