@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 11/16/2018
-ms.openlocfilehash: 32e96c6459c9db0c4b9eda0cc170c85ba99a22ca
-ms.sourcegitcommit: 80a3da199954d0ab78765715fb49793e89a30f12
+ms.date: 11/26/2018
+ms.openlocfilehash: 3d52b18750341f220dc8e10d6bf89796457c5a10
+ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/22/2018
-ms.locfileid: "52260017"
+ms.lasthandoff: 11/29/2018
+ms.locfileid: "52588184"
 ---
 # <a name="install-the-azure-powershell-az-module"></a>Instalar o módulo "Az" do Azure PowerShell
 
@@ -32,7 +32,9 @@ Se tiver uma versão desatualizada ou precisar de instalar o PowerShell, veja [I
 
 > [!IMPORTANT]
 >
-> Não deve ter os módulos `AzureRM` e `Az` instalados num sistema ao mesmo tempo. Para instalar o módulo `Az`, o `AzureRM` tem de ser desinstalado. Para obter instruções sobre como fazê-lo, veja [Desinstalar o módulo do Azure PowerShell (AzureRM)](uninstall-azurerm-ps.md).
+> Pode ter ambos os módulos `AzureRM` e `Az` instalados em simultâneo. Se tiver ambos os módulos instalados, __não ative os aliases__.
+> Ativar os aliases causa conflitos entre os cmdlets `AzureRM` e os aliases de comando `Az`, o que pode causar comportamentos inesperados.
+> É recomendado que antes de instalar o módulo `Az`, desinstale `AzureRM`. Pode sempre desinstalar `AzureRM` ou ativar aliases a qualquer momento. Para instruções de desinstalação, veja [Desinstalar o módulo do Azure PowerShell (AzureRM)](uninstall-azurerm-ps.md). 
 
 Para instalar módulo num âmbito global, precisa de privilégios elevados para instalar módulos da Galeria do PowerShell. Para instalar o Azure PowerShell, execute o seguinte comando numa sessão elevada ("Executar como Administrador" no Windows, ou com privilégios de superutilizador no macOS ou Linux):
 
