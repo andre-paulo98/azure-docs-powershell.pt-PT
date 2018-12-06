@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/06/2017
-ms.openlocfilehash: 21b61a2f91b4f6211fbeec8ba234782355b9a4b3
-ms.sourcegitcommit: cb1fd248920d7efca67bd6c738a3b47206df7890
+ms.openlocfilehash: 6cc6d9984e49c0cbc23c7ef3a77b98c0b7f3a8e0
+ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 07/13/2018
-ms.locfileid: "39024771"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52828336"
 ---
 # <a name="installing-the-azure-powershell-service-management-module"></a>Instalar o módulo Gestão do Serviço do Azure PowerShell
 
@@ -85,7 +85,8 @@ Para obter informações gerais sobre a instalação, formação, utilização e
 |Estou a executar uma versão do Windows com o PowerShell 3 ou o PowerShell 4|[Obter os módulos PackageManagement](http://go.microsoft.com/fwlink/?LinkID=746217)|
 
 <div id="helpmechoose"/>
-### A verificar a versão do Azure PowerShell
+
+### <a name="checking-the-version-of-azure-powershell"></a>A verificar a versão do Azure PowerShell
 
 Embora o aconselhemos a atualizar para a versão mais recente o mais cedo possível, são suportadas várias versões do Azure PowerShell. Para determinar a versão do Azure PowerShell que tem instalada, execute `Get-Module AzureRM` a partir da linha de comandos.
 
