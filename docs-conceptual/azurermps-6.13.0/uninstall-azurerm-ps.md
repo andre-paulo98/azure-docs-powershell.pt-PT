@@ -1,18 +1,18 @@
 ---
 title: Desinstalar o Azure PowerShell
 description: Como realizar uma desinstalação completa do Azure PowerShell
-ms.date: 09/11/2018
+ms.date: 11/30/2018
 author: sptramer
 ms.author: sttramer
 ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: bf1f81b4929ec066eeb888da4ba1303430f026b4
-ms.sourcegitcommit: 558436c824d9b59731aa9b963cdc8df4dea932e7
+ms.openlocfilehash: a35814f4411dd9cab75fa36bd13ff087cdec8f9b
+ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 11/29/2018
-ms.locfileid: "52586586"
+ms.lasthandoff: 12/05/2018
+ms.locfileid: "52826702"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Desinstalar o módulo do Azure PowerShell
 
@@ -23,7 +23,20 @@ Se encontrar um erro, agradecemos-se que [registe um problema no GitHub](https:/
 
 Se instalou o Azure PowerShell através do PowerShellGet, pode utilizar o cmdlet [Uninstall-Module](/powershell/module/powershellget/uninstall-module). No entanto, `Uninstall-Module` desinstala apenas um módulo. Para remover completamente o Azure PowerShell, tem de desinstalar cada módulo individualmente. A desinstalação pode ser complicada se tiver mais de uma versão do Azure PowerShell instalada.
 
-O script seguinte consulta a Galeria do PowerShell para obter uma lista dos submódulos dependentes. Em seguida, o script desinstala a versão correta de cada submódulo.
+Para ver que versões do Azure PowerShell tem atualmente instaladas, execute o seguinte comando:
+
+```powershell-interactive
+Get-InstalledModule -Name AzureRM -AllVersions
+```
+
+```output
+Version              Name                                Repository           Description
+-------              ----                                ----------           -----------
+6.11.0               AzureRM                             PSGallery            Azure Resource Manager Module
+6.13.1               AzureRM                             PSGallery            Azure Resource Manager Module
+```
+
+O script seguinte consulta a Galeria do PowerShell para obter uma lista dos submódulos dependentes. Em seguida, o script desinstala a versão correta de cada submódulo. Precisa de ter acesso de administrador para executar este script num âmbito diferente de `Process` ou `CurrentUser`.
 
 ```powershell-interactive
 function Uninstall-AllModules {
@@ -34,22 +47,38 @@ function Uninstall-AllModules {
     [Parameter(Mandatory=$true)]
     [string]$Version,
 
-    [switch]$Force
+    [switch]$Force,
+
+    [switch]$WhatIf
   )
-
+  
   $AllModules = @()
-
+  
   'Creating list of dependencies...'
   $target = Find-Module $TargetModule -RequiredVersion $version
   $target.Dependencies | ForEach-Object {
-    $AllModules += New-Object -TypeName psobject -Property @{name=$_.name; version=$_.minimumVersion}
+    if ($_.requiredVersion) {
+      $AllModules += New-Object -TypeName psobject -Property @{name=$_.name; version=$_.requiredVersion}
+    }
+    else { # Assume minimum version
+      # Minimum version actually reports the installed dependency
+      # which is used, not the actual "minimum dependency." Check to
+      # see if the requested version was installed as a dependency earlier.
+      $candidate = Get-InstalledModule $_.name -RequiredVersion $version
+      if ($candidate) {
+        $AllModules += New-Object -TypeName psobject -Property @{name=$_.name; version=$version}
+      }
+      else {
+        Write-Warning ("Could not find uninstall candidate for {0}:{1} - module may require manual uninstall" -f $_.name,$version)
+      }
+    }
   }
   $AllModules += New-Object -TypeName psobject -Property @{name=$TargetModule; version=$Version}
 
   foreach ($module in $AllModules) {
-    Write-Host ('Uninstalling {0} version {1}' -f $module.name,$module.version)
+    Write-Host ('Uninstalling {0} version {1}...' -f $module.name,$module.version)
     try {
-      Uninstall-Module -Name $module.name -RequiredVersion $module.version -Force:$Force -ErrorAction Stop
+      Uninstall-Module -Name $module.name -RequiredVersion $module.version -Force:$Force -ErrorAction Stop -WhatIf:$WhatIf
     } catch {
       Write-Host ("`t" + $_.Exception.Message)
     }
@@ -63,7 +92,7 @@ Para utilizar esta função, copie e cole o código na sua sessão do PowerShell
 Uninstall-AllModules -TargetModule AzureRM -Version 4.4.1 -Force
 ```
 
-À medida que o script é executado, apresenta o nome e a versão de cada submódulo que está a ser desinstalado.
+À medida que o script é executado, apresenta o nome e a versão de cada submódulo que está a ser desinstalado. Para executar o script para apenas ver o que seria eliminar, sem o remover, utilize a opção `-WhatIf`.
 
 ```output
 Creating list of dependencies...
