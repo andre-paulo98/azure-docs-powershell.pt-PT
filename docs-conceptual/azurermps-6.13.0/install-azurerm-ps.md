@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 11/16/2018
-ms.openlocfilehash: 616a9e14c3944e3151676d89b8a22e35d8f9d406
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.openlocfilehash: 198c9476b06c818fd3f7cb5ac3ac465497cac9cf
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52828429"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53216590"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalar o Azure PowerShell no Windows com o PowerShellGet
 
@@ -95,7 +95,7 @@ Se pretende remover as versões anteriores do Azure PowerShell do seu sistema, v
 Pode instalar mais de uma versão do Azure PowerShell. Para verificar se tem várias versões do Azure PowerShell instaladas, utilize o seguinte comando:
 
 ```powershell-interactive
-Get-Module -Name AzureRM -List | select Name,Version
+Get-Module -Name AzureRM -ListAvailable | select Name,Version
 ```
 
 Para remover uma versão do Azure PowerShell, veja [Desinstalar o módulo do Azure PowerShell](uninstall-azurerm-ps.md).
