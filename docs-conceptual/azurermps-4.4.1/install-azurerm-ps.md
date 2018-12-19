@@ -8,16 +8,16 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
 ms.openlocfilehash: ef796bcb81e24b1942c644aad2b4ec7705916b02
-ms.sourcegitcommit: 93f93b90ef88c2659be95f3acaba514fe9639169
+ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/05/2018
-ms.locfileid: "52826549"
+ms.lasthandoff: 12/13/2018
+ms.locfileid: "53217750"
 ---
 # <a name="install-and-configure-azure-powershell"></a>Instalar e configurar o Azure PowerShell
 
 Este artigo explica os passos para instalar os módulos do Azure PowerShell no ambiente do Windows.
-Se quiser utilizar o Azure PowerShell no macOS ou Linux, veja o seguinte artigo: [Instalar e configurar o Azure PowerShell no macOS e Linux](install-azurermps-maclinux.md).
+Se quiser utilizar o Azure PowerShell no macOS ou no Linux, veja o seguinte artigo: [Instalar e configurar o Azure PowerShell no macOS e Linux](install-azurermps-maclinux.md).
 
 Instalar o Azure PowerShell a partir da Galeria do PowerShell é o método de instalação preferencial.
 
@@ -84,7 +84,7 @@ O módulo de AzureRM é um módulo de rollup para os cmdlets do Azure Resource M
 
 Se tiver uma versão anterior do Azure PowerShell instalado poderá receber um erro. Para resolver este problema, veja a secção [Updating to a new version of Azure PowerShell](#update-azps)(Atualizar para uma versão nova do Azure PowerShell) deste artigo.
 
-## <a name="step-3-load-the-azurerm-module"></a>Passo 3: carregar o módulo de AzureRM
+## <a name="step-3-load-the-azurerm-module"></a>Passo 3: Carregar o módulo de AzureRM
 
 Uma vez que o módulo seja instalado, terá de carregar o módulo para a sessão do PowerShell. Deve fazê-lo numa sessão normal (não avaliada) do PowerShell. Os módulos são carregados com o cmdlet `Import-Module`, da seguinte forma:
 
