@@ -7,15 +7,17 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
-ms.date: 09/11/2018
-ms.openlocfilehash: bdd8e69a2ea9df8b4fff100e1f3cc4c82d2d9d9d
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.date: 12/20/2018
+ms.openlocfilehash: eaa4e3ccd2b53304aeaf9cb184814b83f4f88608
+ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53217818"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53736397"
 ---
 # <a name="overview-of-azure-powershell"></a>Descrição Geral do Azure PowerShell
+
+[!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
 
 O Azure PowerShell fornece um conjunto de cmdlets que utilizam o modelo do [Azure Resource Manager](/azure/azure-resource-manager/resource-group-overview) para gerir os recursos do Azure. Pode utilizá-lo no seu browser com o [Azure Cloud Shell](/azure/cloud-shell/overview) ou pode instalá-lo no seu computador local e utilizá-lo em qualquer sessão do PowerShell.
 
@@ -27,8 +29,6 @@ Os exemplos seguintes podem ajudá-lo a saber como utilizar o Azure PowerShell p
 * [Máquinas Virtuais do Windows](/azure/virtual-machines/virtual-machines-windows-powershell-samples?toc=/powershell/azure/toc.json)
 * [Aplicações Web](/azure/app-service-web/app-service-powershell-samples?toc=/powershell/azure/toc.json)
 * [Bases de Dados SQL](/azure/sql-database/sql-database-powershell-samples?toc=/powershell/azure/toc.json)
-
-[!INCLUDE[az-replacing-azurerm](../includes/az-replacing-azurerm.md)]
 
 ## <a name="learn-powershell-basics"></a>Aprenda as noções básicas do PowerShell
 
