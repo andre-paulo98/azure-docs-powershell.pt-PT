@@ -1,21 +1,20 @@
 ---
 author: sptramer
 ms.author: sttramer
-ms.date: 10/22/2018
+ms.date: 12/20/2018
 ms.topic: include
-ms.openlocfilehash: 02a7969c5a52f47de2024485e642ed03834fe8e9
-ms.sourcegitcommit: 087c588169786c005a3c177624fb3ac6c8870125
+ms.openlocfilehash: a19417fcab60d92edc1867901fe8c4fffdaefd30
+ms.sourcegitcommit: 4acddc7026522c4fe39de2c4424917d88ee01b7e
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/13/2018
-ms.locfileid: "53218243"
+ms.lasthandoff: 12/21/2018
+ms.locfileid: "53736917"
 ---
 > [!NOTE]
 > 
-> <span data-ttu-id="1d9b1-101">Depois de novembro de 2018, não haverá novas funcionalidades ou cmdlets adicionados ao módulo `AzureRM`.</span><span class="sxs-lookup"><span data-stu-id="1d9b1-101">After November 2018, there will be no new features or cmdlets added to the `AzureRM` module.</span></span> <span data-ttu-id="1d9b1-102">`AzureRM` irá continuar a ser suportado e receber correções de erros.</span><span class="sxs-lookup"><span data-stu-id="1d9b1-102">`AzureRM` will continue to be supported and receive bugfixes.</span></span> <span data-ttu-id="1d9b1-103">Serão disponibilizadas novas funcionalidades no módulo `Az`, que chegam ao 1.0 em simultâneo.</span><span class="sxs-lookup"><span data-stu-id="1d9b1-103">New features will be provided in the `Az` module, which will reach 1.0 at the same time.</span></span> <span data-ttu-id="1d9b1-104">`Az` tem um modo de retrocompatibilidade com `AzureRM`, e foi criado para ser fácil de trocar.</span><span class="sxs-lookup"><span data-stu-id="1d9b1-104">`Az` has a backwards compatibility mode with `AzureRM`, and is designed to be easy to switch to.</span></span> <span data-ttu-id="1d9b1-105">Para saber mais sobre este novo módulo e como atualizar, veja:</span><span class="sxs-lookup"><span data-stu-id="1d9b1-105">To learn more about this new module and how to upgrade, see:</span></span>
+> <span data-ttu-id="012b8-101">A partir de dezembro de 2018, não serão adicionadas novas funcionalidades ao módulo do AzureRM.</span><span class="sxs-lookup"><span data-stu-id="012b8-101">Starting in December 2018, no new features will be added to the AzureRM module.</span></span> <span data-ttu-id="012b8-102">O AzureRM continuará a ser suportado e a receber correções de erros.</span><span class="sxs-lookup"><span data-stu-id="012b8-102">AzureRM will continue to be supported and receive bugfixes.</span></span> <span data-ttu-id="012b8-103">As novas funcionalidades serão fornecidas no módulo do Az do Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="012b8-103">New features are in the Azure PowerShell Az module.</span></span> <span data-ttu-id="012b8-104">Para saber mais sobre o módulo do Az, incluindo como atualizar a partir do AzureRM, veja [a documentação principal do Azure PowerShell](/powershell/azure).</span><span class="sxs-lookup"><span data-stu-id="012b8-104">To learn more about the Az module, including how to upgrade from AzureRM, see [the main Azure PowerShell documentation](/powershell/azure).</span></span>
 >
-> * [<span data-ttu-id="1d9b1-106">Apresentação do módulo do Azure PowerShell Az</span><span class="sxs-lookup"><span data-stu-id="1d9b1-106">Introducing the Azure PowerShell Az module</span></span>](/powershell/azure/new-azureps-module-az)
-> * [<span data-ttu-id="1d9b1-107">Instalar o módulo do Azure PowerShell Az</span><span class="sxs-lookup"><span data-stu-id="1d9b1-107">Install Azure PowerShell Az module</span></span>](/powershell/azure/install-az-ps)
-> * [<span data-ttu-id="1d9b1-108">Migrar para o novo módulo do Azure PowerShell Az</span><span class="sxs-lookup"><span data-stu-id="1d9b1-108">Migrate to the new Azure PowerShell Az module</span></span>](/powershell/azure/migrate-from-azurerm-to-az)
+> <span data-ttu-id="012b8-105">Os utilizadores do Azure Stack devem continuar a utilizar o AzureRM por agora.</span><span class="sxs-lookup"><span data-stu-id="012b8-105">Azure Stack users should continue to use AzureRM for now.</span></span> <span data-ttu-id="012b8-106">A versão mais recente do AzureRM que suporta o Azure Stack é: [AzureRM 2.3.0](/powershell/azure/azurerm?view=azurermps-2.3.0).</span><span class="sxs-lookup"><span data-stu-id="012b8-106">The latest version of AzureRM which supports Azure Stack is [AzureRM 2.3.0](/powershell/azure/azurerm?view=azurermps-2.3.0).</span></span>
 >
-> <span data-ttu-id="1d9b1-109">Se tiver implementações que utilizam o modelo de implementação clássico que não é possível converter, pode instalar a versão de Gestão de Serviço do Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="1d9b1-109">If you have deployments that use the classic deployment model that cannot be converted, you can install the Service Management version of Azure PowerShell.</span></span> <span data-ttu-id="1d9b1-110">Para obter mais informações, veja [Instalar o módulo Service Management do Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).</span><span class="sxs-lookup"><span data-stu-id="1d9b1-110">For more information, see [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps).</span></span>
+> <span data-ttu-id="012b8-107">Se utiliza o modelo de implementação clássico, instale a versão de Gestão de Serviço do Azure PowerShell.</span><span class="sxs-lookup"><span data-stu-id="012b8-107">If you use the classic deployment model, install the Service Management version of Azure PowerShell.</span></span>
+> <span data-ttu-id="012b8-108">Para obter mais informações, veja [Instalar o módulo Service Management do Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).</span><span class="sxs-lookup"><span data-stu-id="012b8-108">For more information, see [Install the Azure PowerShell Service Management module](/powershell/azure/servicemanagement/install-azure-ps).</span></span>
