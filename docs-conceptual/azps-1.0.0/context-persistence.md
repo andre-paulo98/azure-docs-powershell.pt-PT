@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: 8777662b7cfd3948f0e4bd91b0a85cc25bc97285
-ms.sourcegitcommit: 797c18f93aaa495ef005993b2e202d7378588dfa
+ms.openlocfilehash: 8702de48429482748939fb1a43ff911bed15f6c0
+ms.sourcegitcommit: c0f1ef7fd165e5f57dd2b753265510f111356c5f
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/19/2018
-ms.locfileid: "53595024"
+ms.lasthandoff: 01/08/2019
+ms.locfileid: "54071918"
 ---
 # <a name="persist-user-credentials-across-powershell-sessions"></a>Manter credenciais do utilizador nas sessões do PowerShell
 
@@ -42,7 +42,7 @@ O Azure PowerShell mantém as informações de contexto automaticamente entre se
 
 Para permitir que o Azure PowerShell se lembre do contexto depois de fechar a sessão do PowerShell, utilize `Enable-AzContextAutosave`. As informações de contexto e de credenciais são guardadas automaticamente numa pasta oculta especial no seu diretório de utilizador (`$env:USERPROFILE\.Azure` no Windows e `$HOME/.Azure` noutras plataformas). Cada nova sessão do PowerShell visa o contexto utilizado na sua última sessão.
 
-Os cmdlets que lhe permitem gerir contextos do Azure também permitem o controlo detalhado. Se pretender que as alterações sejam aplicadas apenas à sessão atual do PowerShell (âmbito `Process`) ou a cada sessão do PowerShell (âmbito `CurrentUser`). Estas opções são abordadas detalhadamente em [Utilizar Âmbitos de Contexto](#Using-Context-Scopes).
+Os cmdlets que lhe permitem gerir contextos do Azure também permitem o controlo detalhado. Se pretender que as alterações sejam aplicadas apenas à sessão atual do PowerShell (âmbito `Process`) ou a cada sessão do PowerShell (âmbito `CurrentUser`). Estas opções são abordadas mais detalhadamente em [Utilizar Âmbitos de Contexto](#Using-Context-Scopes).
 
 ## <a name="running-azure-powershell-cmdlets-as-background-jobs"></a>Executar os cmdlets do Azure PowerShell como tarefas em segundo plano
 

@@ -7,16 +7,23 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/29/2018
-ms.openlocfilehash: 8b085720aeabe26c1293ece193e050b31f99a693
-ms.sourcegitcommit: ae81b08a45d8729fc8d40156422e3eb2e94de8c7
+ms.openlocfilehash: 80c59a10666c6e3a01e6c33716fce40094fb14be
+ms.sourcegitcommit: b5635e291cdc324e66c936aa16c5772507fc78e8
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 12/27/2018
-ms.locfileid: "53786684"
+ms.lasthandoff: 01/04/2019
+ms.locfileid: "54055681"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Iniciar sessão com o Azure PowerShell
 
-O Azure PowerShell suporta vários métodos de autenticação. A forma mais simples de começar é iniciar sessão interativamente na linha de comandos.
+O Azure PowerShell suporta vários métodos de autenticação. O [Azure Cloud Shell](/azure/cloud-shell/overview) é a forma mais fácil de começar, uma vez que regista automaticamente o utilizador. Com uma instalação local, pode iniciar sessão interativamente através do browser. Ao escrever scripts para automatização, a abordagem recomendada é utilizar um [principal de serviço](create-azure-service-principal-azureps.md) com as permissões necessárias. Ao restringir as permissões de início de sessão tanto quanto possível para o seu caso de utilização, ajuda a manter os recursos do Azure seguros.
+
+Depois de iniciar sessão, os comandos são executados na sua subscrição predefinida. Para alterar a subscrição ativa para uma sessão, utilize o cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Para alterar a subscrição predefinida utilizada ao iniciar sessão com o Azure PowerShell, utilize [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).
+
+> [!IMPORTANT]
+>
+> As suas credenciais são partilhadas entre várias sessões do PowerShell, desde que mantenha a sessão iniciada.
+> Para obter mais informações, veja o artigo sobre [Credenciais Persistentes](context-persistence.md).
 
 ## <a name="sign-in-interactively"></a>Iniciar sessão interativamente
 
@@ -26,12 +33,20 @@ Para iniciar sessão interativamente, utilize o cmdlet [Connect-AzAccount](/powe
 Connect-AzAccount
 ```
 
-Quando é executado, este cmdlet apresenta uma cadeia de token. Para iniciar sessão, copie essa cadeia e cole-a em https://microsoft.com/devicelogin num browser. A sua sessão do PowerShell é autenticada para se ligar ao Azure. Esta autenticação tem a duração da sessão atual do PowerShell.
+Quando é executado, este cmdlet apresenta uma cadeia de token. Para iniciar sessão, copie esta cadeia e cole-a em https://microsoft.com/devicelogin num browser. A sua sessão do PowerShell será autenticada para se ligar ao Azure.
 
-> [!IMPORTANT]
->
-> As suas credenciais são partilhadas entre várias sessões do PowerShell, desde que mantenha a sessão iniciada.
-> Para obter mais informações, veja o artigo sobre [Credenciais Persistentes](context-persistence.md).
+## <a name="sign-in-with-credentials"></a>Iniciar sessão com credenciais
+
+Também pode iniciar sessão com um objeto `PSCredential` autorizado para ligar ao Azure.
+A maneira mais fácil de obter um objeto de credencial é com o cmdlet [Get-Credential](/powershell/module/Microsoft.PowerShell.Security/Get-Credential). Quando é executado, este cmdlet vai solicitar-lhe um par de credenciais nome de utilizador/palavra-passe.
+
+> [!Note]
+> Esta abordagem não funciona em contas Microsoft nem em contas que tenham a autenticação multifator ativada.
+
+```azurepowershell-interactive
+$creds = Get-Credential
+Connect-AzAccount -Credential $creds
+```
 
 ## <a name="sign-in-with-a-service-principal"></a>Iniciar sessão com um principal de serviço
 
@@ -46,15 +61,17 @@ $pscredential = Get-Credential
 Connect-AzAccount -ServicePrincipal -ApplicationId  "http://my-app" -Credential $pscredential -TenantId $tenantid
 ```
 
-## <a name="sign-in-using-an-azure-managed-service-identity"></a>Iniciar sessão com uma Identidade de Serviço Gerida do Azure
+## <a name="sign-in-using-a-managed-identity"></a>Iniciar sessão com uma identidade gerida 
 
-As identidades geridas para os recursos do Azure são uma funcionalidade do Azure Active Directory. Pode utilizar um principal de serviço da identidade gerida para início de sessão e adquirir um token de acesso só de aplicação para aceder a outros recursos. As identidades geridas só estão disponíveis em máquinas virtuais em execução numa cloud do Azure.
+As identidades geridas são uma funcionalidade do Azure Active Directory. As identidades geridas são principais de serviço atribuídos aos recursos que são executados no Azure. Pode utilizar um principal de serviço da identidade gerida para início de sessão e adquirir um token de acesso só de aplicação para aceder a outros recursos. As identidades geridas só estão disponíveis em recursos em execução numa cloud do Azure.
 
-Para obter mais informações sobre identidades geridas para recursos do Azure, veja [Como utilizar identidades geridas para recursos do Azure numa VM do Azure para adquirir um token de acesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
+Para saber mais sobre identidades geridas para recursos do Azure, veja [Como utilizar identidades geridas para recursos do Azure numa VM do Azure para adquirir um token de acesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
 
-## <a name="sign-in-as-a-cloud-solution-provider-csp"></a>Iniciar a sessão como um Fornecedor de Soluções Cloud (CSP)
+## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Iniciar sessão com um inquilino não predefinido ou como um Fornecedor de Soluções Cloud (CSP)
 
-Um início de sessão do [Fornecedor de Soluções Cloud (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/) requer a utilização de `-TenantId`. Normalmente, este parâmetro pode ser fornecido como um ID de inquilino ou um nome de domínio. No entanto, para o início de sessão de CSP, é preciso fornecer um **ID de inquilino**.
+Se a sua conta estiver associada a mais do que um inquilino, o início de sessão requer a utilização do parâmetro `-TenantId` durante a ligação. Este parâmetro irá funcionar com qualquer outro método de início de sessão. Quando iniciar sessão, o valor deste parâmetro pode ser o ID de objeto do Azure do inquilino (ID de Inquilino) ou o nome de domínio completamente qualificado do inquilino.
+
+Se for um [Fornecedor de Soluções Cloud (CSP)](https://azure.microsoft.com/en-us/offers/ms-azr-0145p/), o valor `-TenantId` **tem** de ser um ID de inquilino.
 
 ```azurepowershell-interactive
 Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
@@ -62,7 +79,7 @@ Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
 
 ## <a name="sign-in-to-another-cloud"></a>Iniciar sessão noutra Cloud
 
-Os serviços cloud do Azure oferecem ambientes em conformidade com regulamentos de processamento de dados regionais.
+Os serviços cloud do Azure oferecem ambientes em conformidade com as leis de processamento de dados regionais.
 Para as contas numa cloud regional, defina o ambiente quando iniciar sessão com o argumento `-Environment`.
 Por exemplo, se a sua conta está na cloud da China:
 
@@ -75,17 +92,3 @@ O comando seguinte obtém uma lista dos ambientes disponíveis:
 ```azurepowershell-interactive
 Get-AzEnvironment | Select-Object Name
 ```
-
-## <a name="learn-more-about-managing-azure-role-based-access"></a>Saiba mais sobre como gerir o acesso baseado em funções do Azure
-
-Para obter mais informações sobre a gestão de autenticação e de subscrições do Azure, veja [Gerir Contas, Subscrições e Funções Administrativas](/azure/active-directory/role-based-access-control-configure).
-
-Cmdlets do Azure PowerShell para a gestão de funções:
-
-* [Get-AzRoleAssignment](/powershell/module/az.Resources/Get-azRoleAssignment)
-* [Get-AzRoleDefinition](/powershell/module/az.Resources/Get-azRoleDefinition)
-* [New-AzRoleAssignment](/powershell/module/az.Resources/New-azRoleAssignment)
-* [New-AzRoleDefinition](/powershell/module/az.Resources/New-azRoleDefinition)
-* [Remove-AzRoleAssignment](/powershell/module/az.Resources/Remove-azRoleAssignment)
-* [Remove-AzRoleDefinition](/powershell/module/az.Resources/Remove-azRoleDefinition)
-* [Set-AzRoleDefinition](/powershell/module/az.Resources/Set-azRoleDefinition)
