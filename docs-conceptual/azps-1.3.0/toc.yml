@@ -2,13 +2,12 @@ items:
 - name: Azure PowerShell
   href: overview.md
   items:
+  - name: Apresentação do novo módulo do Az
+    href: new-azureps-module-az.md
   - name: Instalar
-    href: install-azurerm-ps.md
-    items:
-    - name: Instalar no macOS e Linux
-      href: install-azurermps-maclinux.md
-    - name: Outros métodos de instalação
-      href: other-install.md
+    href: install-az-ps.md
+  - name: Desinstalar
+    href: uninstall-az-ps.md
   - name: Introdução
     href: get-started-azureps.md
   - name: Cloud Shell,
@@ -20,6 +19,8 @@ items:
       href: create-azure-service-principal-azureps.md
     - name: Credenciais persistentes
       href: context-persistence.md
+  - name: Migrar do AzureRM
+    href: migrate-from-azurerm-to-az.md
   - name: Consultas
     href: queries-azureps.md
   - name: Formatar saída
@@ -38,11 +39,17 @@ items:
     items:
     - name: Módulos experimentais
       href: using-experimental-modules.md
+    - name: Tarefas do PowerShell
+      href: using-psjobs.md
   - name: Notas de versão
     href: release-notes-azureps.md
     items:
-    - name: Alterações recentes ao Azure PowerShell 4.x
-      href: migration-guide.4.0.0.md
+    - name: Alterações interruptivas do Az 1.0.0
+      href: migrate-az-1.0.0.md
+- name: Tutoriais
+  items:
+  - name: Criar Máquinas Virtuais
+    href: azureps-vm-tutorial.yml
 - name: Scripts de Exemplo
   items:
   - name: Máquinas Virtuais do Linux
@@ -55,9 +62,9 @@ items:
     href: /azure/sql-database/sql-database-powershell-samples?toc=%2fpowershell%2fmodule%2ftoc.json
   - name: BD do Cosmos
     href: /azure/cosmos-db/powershell-samples?toc=%2fpowershell%2fmodules%2ftoc.json
-ms.openlocfilehash: a4e5e00066372f461b831e17c60aab32ce7f2b61
+ms.openlocfilehash: 5954dc3821f68af8bba916fc4832038ca24b5ca5
 ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153515"
+ms.locfileid: "56144519"
