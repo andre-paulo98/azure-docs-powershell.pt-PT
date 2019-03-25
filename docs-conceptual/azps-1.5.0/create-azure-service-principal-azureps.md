@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
-ms.openlocfilehash: ae8bb8341209fedc3fadf8137f4faaf1ad3fe686
-ms.sourcegitcommit: 447276d46ffeeb37f0c07a570536665e36c5ddb8
+ms.openlocfilehash: 3ce1135cc81d11ce6faa62c790cb4358b5fceda4
+ms.sourcegitcommit: 32dad89878c7e728f740936f5f338b8ae878a6a1
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 03/14/2019
-ms.locfileid: "57882407"
+ms.lasthandoff: 03/19/2019
+ms.locfileid: "58192927"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar um principal de serviço do Azure com o Azure PowerShell
 
@@ -88,7 +88,7 @@ O objeto devolvido a partir de `New-AzADServicePrincipal` contém os membros `Id
 
 ## <a name="get-an-existing-service-principal"></a>Obter um principal de serviço existente
 
-É possível obter uma lista de principais de serviço do inquilino atualmente ativo com [Get-AzADServicePrincipal](/module/az.resources/get-azadserviceprincipal). Por predefinição, este comando devolve __todos__ os principais de serviço de um inquilino, pelo que a devolução dos resultados pode ser muito demorada para as organizações de grande dimensão. Em alternativa, recomenda-se a utilização de um dos argumentos de filtragem opcionais do lado do servidor:
+É possível obter uma lista de principais de serviço do inquilino atualmente ativo com [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal). Por predefinição, este comando devolve __todos__ os principais de serviço de um inquilino, pelo que a devolução dos resultados pode ser muito demorada para as organizações de grande dimensão. Em alternativa, recomenda-se a utilização de um dos argumentos de filtragem opcionais do lado do servidor:
 
 * `-DisplayNameBeginsWith` pede principais de serviço que tenham um _prefixo_ correspondente ao valor fornecido. O nome a apresentar de um principal de serviço é o valor definido com `-DisplayName` durante a criação.
 * `-DisplayName` pede uma _correspondência exata_ de um nome do principal do serviço.
@@ -121,7 +121,7 @@ Adicionar uma função _não_ restringe as permissões atribuídas anteriormente
 As alterações podem ser verificadas ao listar as funções atribuídas:
 
 ```azurepowershell-interactive
-Get-AzRoleAssignment -ServicePrinicpalName ServicePrincipalName
+Get-AzRoleAssignment -ServicePrincipalName ServicePrincipalName
 ```
 
 ## <a name="sign-in-using-a-service-principal"></a>Iniciar sessão com um principal de serviço
