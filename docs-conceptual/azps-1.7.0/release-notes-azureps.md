@@ -218,7 +218,7 @@ ms.locfileid: "59364139"
 * Correção de erro que impedia a criação repetida de KeyCredentials
 
 #### <a name="azsql"></a>Az.Sql
-* Suporte adicionado para a camada Hiperescala da BD SQL
+* Suporte adicionado para a camada Hyperscale da BD SQL
 * Foi corrigido o erro no qual o restauro podia falhar devido à definição de propriedades desnecessárias no pedido de restauro
 
 #### <a name="azwebsites"></a>Az.Websites
