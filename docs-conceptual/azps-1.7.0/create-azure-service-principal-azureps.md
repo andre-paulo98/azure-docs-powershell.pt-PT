@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/20/2019
 ms.openlocfilehash: 06116c7eb6ed848c9f369a3dd16f5e901e02afbe
-ms.sourcegitcommit: 1f13aaa89d23130f84b98047e261d26cd4e9cf0c
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 04/10/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59430623"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar um principal de serviço do Azure com o Azure PowerShell
@@ -91,7 +91,7 @@ O objeto devolvido a partir de `New-AzADServicePrincipal` contém os membros `Id
 
 É possível obter uma lista de principais de serviço do inquilino atualmente ativo com [Get-AzADServicePrincipal](/powershell/module/az.resources/get-azadserviceprincipal). Por predefinição, este comando devolve __todos__ os principais de serviço de um inquilino, pelo que a devolução dos resultados pode ser muito demorada para as organizações de grande dimensão. Em alternativa, recomenda-se a utilização de um dos argumentos de filtragem opcionais do lado do servidor:
 
-* `-DisplayNameBeginsWith` pede principais de serviço que tenham um _prefixo_ que corresponda ao valor fornecido. O nome a apresentar de um principal de serviço é o valor definido com `-DisplayName` durante a criação.
+* `-DisplayNameBeginsWith` pede principais de serviço que tenham um _prefixo_ correspondente ao valor fornecido. O nome a apresentar de um principal de serviço é o valor definido com `-DisplayName` durante a criação.
 * `-DisplayName` pede uma _correspondência exata_ de um nome do principal do serviço.
 
 ## <a name="manage-service-principal-roles"></a>Gerir funções de principais de serviço

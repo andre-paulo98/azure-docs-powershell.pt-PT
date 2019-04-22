@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/14/2018
 ms.openlocfilehash: be3e19dc4b689adbc63b933dd9f3454122d5344a
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/18/2019
 ms.locfileid: "59364153"
 ---
 # <a name="migration-guide-for-az-100"></a>Guia de migração para o Az 1.0.0
@@ -21,7 +21,7 @@ Este documento descreve as alterações realizadas entre as versões de 6.x do A
 ## <a name="table-of-contents"></a>Índice
 - [Alterações interruptivas gerais](#general-breaking-changes)
   - [Alterações do Prefixo de Nomes de Cmdlet](#cmdlet-noun-prefix-changes)
-  - [Alterações de nomes de módulos](#module-name-changes)
+  - [Alterações de Nomes de Módulos](#module-name-changes)
   - [Módulos removidos](#removed-modules)
   - [Windows PowerShell 5.1 e .NET 4.7.2](#windows-powershell-51-and-net-472)
   - [Remoção temporária do Início de sessão do utilizador através de PSCredential](#temporary-removal-of-user-login-using-pscredential)
@@ -60,7 +60,7 @@ Get-AzVM
 Get-AzKeyVaultSecret
 ```
 
-Para simplificar a transição para estes novos nomes de cmdlet, o Az apresenta dois novos cmdlets: ```Enable-AzureRmAlias``` e ```Disable-AzureRmAlias```.  ```Enable-AzureRmAlias``` cria aliases a partir dos nomes de cmdlet mais antigos no AzureRM e transforma-os em nomes de cmdlet do Az mais recente.  O cmdlet permite criar aliases na sessão atual, ou em todas as sessões, ao alterar o seu perfil de utilizador ou de computador. 
+Para simplificar a transição para estes novos nomes de cmdlet, o Az apresenta dois novos cmdlets: ```Enable-AzureRmAlias``` e ```Disable-AzureRmAlias```.  ```Enable-AzureRmAlias``` cria aliases a partir dos nomes de cmdlet mais antigos no AzureRM e transforma-os em nomes de cmdlet do Az mais recentes.  O cmdlet permite criar aliases na sessão atual, ou em todas as sessões, ao alterar o seu perfil de utilizador ou de computador. 
 
 Por exemplo, o seguinte script no AzureRM:
 ```powershell
@@ -188,7 +188,7 @@ As ferramentas para estes serviços já não são suportadas ativamente.  Os cli
 ### <a name="azcompute-previously-azurermcompute"></a>Az.Compute (anteriormente AzureRM.Compute)
 - Os `IdentityIds` foram removidos da propriedade `Identity` nos objetos `PSVirtualMachine` e `PSVirtualMachineScaleSet`. Os scripts devem deixar de utilizar o valor deste campo para tomar decisões de processamento.
 - O tipo de propriedade `InstanceView` do objeto `PSVirtualMachineScaleSetVM` foi alterado de `VirtualMachineInstanceView` para `VirtualMachineScaleSetVMInstanceView`
-- `AutoOSUpgradePolicy` e as propriedades `AutomaticOSUpgrade` foram removidas da propriedade `UpgradePolicy`
+- As propriedades `AutoOSUpgradePolicy` e `AutomaticOSUpgrade` foram removidas da propriedade `UpgradePolicy`
 - O tipo de propriedade `Sku` no objeto `PSSnapshotUpdate` foi alterado de `DiskSku` para `SnapshotSku`
 - `VmScaleSetVMParameterSet` foi removido do cmdlet `Add-AzVMDataDisk`. Já não pode adicionar um disco de dados individualmente a uma VM de conjunto de dimensionamento (ScaleSet).
 
@@ -264,7 +264,7 @@ Os scripts devem deixar de tomar decisões de processamento com base nos valores
 
 ### <a name="azrecoveryservices-previously-azurermrecoveryservices-azurermrecoveryservicesbackup-and-azurermrecoveryservicessiterecovery"></a>Az.RecoveryServices (anteriormente AzureRM.RecoveryServices, AzureRM.RecoveryServices.Backup e AzureRM.RecoveryServices.SiteRecovery)
 - O parâmetro `Encryption` foi removido do cmdlet `New/Set-AzRecoveryServicesAsrPolicy`
-- `TargetStorageAccountName` o parâmetro passa a ser obrigatório para os restauros de discos geridos no cmdlet `Restore-AzRecoveryServicesBackupItem`
+- Agora, o parâmetro `TargetStorageAccountName` é obrigatório para os restauros de discos geridos no cmdlet `Restore-AzRecoveryServicesBackupItem`
 - Os parâmetros `StorageAccountName` e `StorageAccountResourceGroupName` foram removidos no cmdlet `Restore-AzRecoveryServicesBackupItem`
 - O parâmetro `Name` foi removido no cmdlet `Get-AzRecoveryServicesBackupContainer`
 
@@ -304,7 +304,7 @@ Os scripts devem deixar de tomar decisões de processamento com base nos valores
 
 ### <a name="azsql-previously-azurermsql"></a>Az.Sql (anteriormente AzureRM.Sql)
 - Os parâmetros `State` e `ResourceId` foram removidos do cmdlet `Set-AzSqlDatabaseBackupLongTermRetentionPolicy`
-- Os cmdlets preteridos que se seguem foram removidos: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing`, `Remove-AzSqlServerAuditing`
+- Foram removidos os seguintes cmdlets preteridos: `Get/Set-AzSqlServerBackupLongTermRetentionVault`, `Get/Start/Stop-AzSqlServerUpgrade`, `Get/Set-AzSqlDatabaseAuditingPolicy`, `Get/Set-AzSqlServerAuditingPolicy`, `Remove-AzSqlDatabaseAuditing` e `Remove-AzSqlServerAuditing`
 - O parâmetro preterido `Current` foi removido do cmdlet `Get-AzSqlDatabaseBackupLongTermRetentionPolicy`
 - O parâmetro preterido `DatabaseName` foi removido do cmdlet `Get-AzSqlServerServiceObjective`
 - O parâmetro preterido `PrivilegedLogin` foi removido do cmdlet `Set-AzSqlDatabaseDataMaskingPolicy`

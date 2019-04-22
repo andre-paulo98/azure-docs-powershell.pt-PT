@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/11/2018
 ms.openlocfilehash: 825a07e01194a07b747712a62384c7f162e63d7d
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364099"
 ---
 # <a name="running-cmdlets-in-parallel-using-powershell-jobs"></a>Executar cmdlets em paralelo com as tarefas do PowerShell
@@ -66,7 +66,7 @@ MyVm                 MyVm   eastus Standard_DS1_v2 Windows    MyVm          Crea
 Quando a tarefa estiver concluída, obtenha o resultado da tarefa com `Receive-Job`.
 
 > [!NOTE]
-> `Receive-Job` devolve o resultado do cmdlet como se o sinalizador `-AsJob` não estivesse presente.
+> `Receive-Job` devolve o resultado a partir do cmdlet como se o sinalizador `-AsJob` não estivesse presente.
 > Por exemplo, o resultado `Receive-Job` de `Do-Action -AsJob` é do mesmo tipo que o resultado de `Do-Action`.
 
 ```azurepowershell-interactive

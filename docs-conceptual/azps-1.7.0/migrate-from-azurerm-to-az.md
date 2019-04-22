@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
 ms.openlocfilehash: 28122ca953d62b405f19effbbc680f2dc6202cca
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364278"
 ---
 # <a name="migrate-from-azurerm-to-azure-powershell-az"></a>Migrar do AzureRM para o Azure PowerShell Az
@@ -43,7 +43,7 @@ Para instalar o módulo do Azure PowerShell Az, siga estes passos:
 
 * __RECOMENDADO__: [Desinstalar o módulo do AzureRM](/powershell/azure/uninstall-az-ps#uninstall-the-azurerm-module).
   Certifique-se de que remove _todas_ as versões instaladas do AzureRM, e não apenas a versão mais recente.
-* [Instalar o módulo Az](install-az-ps.md)
+* [Instalar o módulo do Az](install-az-ps.md)
 
 ## <a name="a-namealiasesenable-azurerm-compatibility-aliases"></a><a name="aliases"/>Ativar os aliases de compatibilidade do AzureRM 
 
@@ -68,7 +68,7 @@ Assim que o modo de alias estiver ativado, execute os seus scripts novamente par
 ## <a name="change-module-imports-and-cmdlet-names"></a>Alterar importações de módulo e nomes de cmdlet
 
 Em geral, os nomes dos módulos foram alterados para que `AzureRM` e `Azure` se tornassem `Az`, e o mesmo para os cmdlets.
-Por exemplo, o módulo `AzureRM.Compute` foi renomeado para `Az.Compute`. `New-AzureRMVM` tornou-se `New-AzVM` e `Get-AzureStorageBlob` é agora `Get-AzStorageBlob`.
+Por exemplo, o módulo `AzureRM.Compute` foi renomeado para `Az.Compute`. `New-AzureRMVM` tornou-se `New-AzVM`, e `Get-AzureStorageBlob` é agora `Get-AzStorageBlob`.
 
 Existem exceções a esta alteração de nomenclatura de que deve estar ciente. Os nomes de alguns módulos foram mudados ou intercalados com os de módulos existentes sem afetar o sufixo dos respetivos cmdlets, exceto o facto de alterar `AzureRM` ou `Azure` para `Az`. Fora isso, o sufixo do cmdlet completo foi alterado de modo a refletir o novo nome do módulo.
 

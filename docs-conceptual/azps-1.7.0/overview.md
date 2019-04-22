@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 01/10/2019
 ms.openlocfilehash: 45ab083dd133c8c7b8dbe902484c92564bc216b9
-ms.sourcegitcommit: 89066b7c4b527357bb2024e1ad708df84c131804
+ms.sourcegitcommit: ae4540a90508db73335a54408dfd6cdf3712a1e9
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 04/09/2019
+ms.lasthandoff: 04/17/2019
 ms.locfileid: "59364258"
 ---
 # <a name="overview-of-azure-powershell"></a>Descrição Geral do Azure PowerShell
@@ -48,7 +48,7 @@ Leia o artigo [Introdução ao Azure PowerShell](get-started-azureps.md) para ap
 
 * [Instalar o PowerShell](/powershell/scripting/install/installing-powershell)
 * [Scripting com o PowerShell](/powershell/scripting/powershell-scripting)
-* [Noções Básicas do PowerShell: (Parte 1) Introdução ao PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)
+* [Noções básicas do PowerShell: (Parte 1) Introdução ao PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1)
 * [Introdução ao Arranque do PowerShell](https://mva.microsoft.com/liveevents/powershell-jumpstart) da Microsoft Virtual Academy
 
 Os exemplos seguintes podem ajudá-lo com algumas utilizações comuns do Azure:
@@ -60,7 +60,7 @@ Os exemplos seguintes podem ajudá-lo com algumas utilizações comuns do Azure:
 
 ## <a name="build-your-skills-with-microsoft-learn"></a>Desenvolva as suas competências com o Microsoft Learn
 
-- [Automatizar as tarefas do Azure com scripts com o PowerShell](/learn/modules/automate-azure-tasks-with-powershell/)
+- [Utilizar scripts para automatizar as tarefas do Azure com o PowerShell](/learn/modules/automate-azure-tasks-with-powershell/)
 - [Mais aprendizagem interativa...](/learn/browse/?term=powershell)
 
 ## <a name="other-azure-powershell-modules"></a>Outros módulos do Azure PowerShell
