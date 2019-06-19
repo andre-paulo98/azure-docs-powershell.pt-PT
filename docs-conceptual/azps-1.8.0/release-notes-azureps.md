@@ -292,7 +292,7 @@ ms.locfileid: "65971908"
 #### <a name="azlogicapp"></a>Az.LogicApp
 * Adição de sku básico para Contas de Integração
 * Adição de XSLT 2.0, XSLT 3.0 e Tipos de Mapa de Líquidos
-* Novos cmdlets para Assemblies de Contas de Integração
+* Novos cmdlets para Assemblagens de Contas de Integração
     - Get-AzIntegrationAccountAssembly
     - New-AzIntegrationAccountAssembly
     - Remove-AzIntegrationAccountAssembly

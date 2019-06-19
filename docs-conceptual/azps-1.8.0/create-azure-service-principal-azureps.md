@@ -54,7 +54,7 @@ O objeto devolvido a partir de `New-AzADServicePrincipal` contém os membros `Id
 
 > [!IMPORTANT]
 >
-> Iniciar sessão com um principal de serviço necessita do ID de inquilino no qual o principal de serviço foi criado. Para obter o inquilino que estava ativo quando o principal de serviço foi criado, execute o seguinte comando __imediatamente após__ a criação do principal de serviço:
+> O início de sessão com um principal de serviço requer o ID de inquilino no qual o principal de serviço foi criado. Para obter o inquilino que estava ativo quando o principal de serviço foi criado, execute o seguinte comando __imediatamente após__ a criação do principal de serviço:
 >
 > ```azurepowershell-interactive
 > (Get-AzContext).Tenant.Id
@@ -62,14 +62,14 @@ O objeto devolvido a partir de `New-AzADServicePrincipal` contém os membros `Id
 
 ### <a name="certificate-based-authentication"></a>Autenticação baseada em certificado
 
-Os principais de serviço que utilizam a autenticação baseada em certificado são criados com o parâmetro `-CertValue`. Este parâmetro aceita uma cadeia ASCII codificada em base64 do certificado público. Isto é representado por um ficheiro PEM, ou por um CRT ou CER codificado em texto. Não são suportadas codificações binárias do certificado público. Estas instruções partem do princípio de que já tem um certificado disponível.
+Os principais de serviço que utilizam a autenticação baseada em certificado são criados com o parâmetro `-CertValue`. Este parâmetro aceita uma cadeia ASCII codificada em base64 do certificado público. Isto é representado por um ficheiro PEM ou por um CRT ou CER codificado em texto. Não são suportadas codificações binárias do certificado público. Estas instruções partem do princípio de que já tem um certificado disponível.
 
 ```azurepowershell-interactive
 $cert = <public certificate as base64-encoded string>
 $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName -CertValue $cert
 ```
 
-Também pode utilizar o parâmetro `-KeyCredential`, que aceita objetos `PSADKeyCredential`. Estes objetos têm de ter uma `StartDate` e uma `EndDate` válidas, e têm de ter o membro `CertValue` definido como uma cadeia ASCII codificada em base64 do certificado público.
+Também pode utilizar o parâmetro `-KeyCredential`, que aceita objetos `PSADKeyCredential`. Estes objetos têm de ter uma `StartDate` e uma `EndDate` válidas e têm de ter o membro `CertValue` definido como uma cadeia ASCII codificada em base64 do certificado público.
 
 ```azurepowershell-interactive
 $cert = <public certificate as base64-encoded string>
@@ -81,7 +81,7 @@ O objeto devolvido a partir de `New-AzADServicePrincipal` contém os membros `Id
 
 > [!IMPORTANT]
 >
-> Iniciar sessão com um principal de serviço necessita do ID de inquilino no qual o principal de serviço foi criado. Para obter o inquilino que estava ativo quando o principal de serviço foi criado, execute o seguinte comando __imediatamente após__ a criação do principal de serviço:
+> O início de sessão com um principal de serviço requer o ID de inquilino no qual o principal de serviço foi criado. Para obter o inquilino que estava ativo quando o principal de serviço foi criado, execute o seguinte comando __imediatamente após__ a criação do principal de serviço:
 >
 > ```azurepowershell-interactive
 > (Get-AzContext).Tenant.Id
@@ -143,7 +143,7 @@ A autenticação baseada em certificado precisa que o Azure PowerShell tenha a c
 Connect-AzAccount -ServicePrincipal -TenantId $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-Para obter instruções sobre como importar um certificado para um arquivo de credenciais acessível ao PowerShell, veja [Sign in with Azure PowerShell](authenticate-azureps.md#sp-signin) (Iniciar sessão com o Azure PowerShell)
+Para obter instruções sobre como importar um certificado para um arquivo de credenciais acessível ao PowerShell, veja [Iniciar sessão com o Azure PowerShell](authenticate-azureps.md#sp-signin)
 
 ## <a name="reset-credentials"></a>Repor credenciais
 
