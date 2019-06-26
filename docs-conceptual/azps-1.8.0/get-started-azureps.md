@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: get-started-article
 ms.date: 01/14/2019
-ms.openlocfilehash: 0c3b749cb2ac7f11dacafca76b65944f523f727d
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: c60036ba8be6282007aa34a0bb9c0d9e33197072
+ms.sourcegitcommit: fd62a6376eef9b6ca76df766de1edcd7938c7a30
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346616"
+ms.lasthandoff: 06/25/2019
+ms.locfileid: "67388917"
 ---
 # <a name="get-started-with-azure-powershell"></a>Introdução ao Azure PowerShell
 
@@ -52,7 +52,7 @@ Assim que tiver iniciado sessão, utilize os cmdlets do Azure PowerShell para ac
 
 ## <a name="find-commands"></a>Encontrar comandos
 
-Os cmdlets do Azure PowerShell seguem uma convenção de nomenclatura padrão para o PowerShell: `VERB-NOUN`. O verbo descreve a ação (os exemplos incluem `Create`, `Get`, `Set`, `Delete`) e o substantivo descreve o tipo de recurso (os exemplos incluem `AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`). Os substantivos no Azure PowerShell começam sempre com o prefixo `Az`. Para obter a lista completa dos verbos padrão, veja [Verbos aprovados para os Comandos do PowerShell](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
+Os cmdlets do Azure PowerShell seguem uma convenção de nomenclatura padrão para o PowerShell: `VERB-NOUN`. O verbo descreve a ação (os exemplos incluem `New`, `Get`, `Set`, `Remove`) e o substantivo descreve o tipo de recurso (os exemplos incluem `AzVM`, `AzKeyVaultCertificate`, `AzFirewall`, `AzVirtualNetworkGateway`). Os substantivos no Azure PowerShell começam sempre com o prefixo `Az`. Para obter a lista completa dos verbos padrão, veja [Verbos aprovados para os Comandos do PowerShell](/powershell/developer/cmdlet/approved-verbs-for-windows-powershell-commands).
 
 Saber os substantivos, verbos e módulos do Azure PowerShell disponíveis ajuda-o a encontrar os comandos com o cmdlet [Get-Command](/powershell/module/microsoft.powershell.core/get-command). Por exemplo, para encontrar todos os comandos relacionados com VMs que utilizem o verbo `Get`:
 
