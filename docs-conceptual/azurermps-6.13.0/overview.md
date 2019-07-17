@@ -8,12 +8,12 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.manager: carmonm
 ms.date: 12/20/2018
-ms.openlocfilehash: eaa4e3ccd2b53304aeaf9cb184814b83f4f88608
-ms.sourcegitcommit: 2054a8f74cd9bf5a50ea7fdfddccaa632c842934
+ms.openlocfilehash: bdb63ce4bb614920582460ae707d8594977e8f71
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 02/12/2019
-ms.locfileid: "56153492"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863590"
 ---
 # <a name="overview-of-azure-powershell"></a>Descrição Geral do Azure PowerShell
 
@@ -38,8 +38,6 @@ Se não está familiarizado com o PowerShell, uma introdução ao PowerShell pod
 * [Scripting com o PowerShell](/powershell/scripting/powershell-scripting)
 
 Também pode ver este vídeo: [Noções básicas do PowerShell: (Parte 1) Introdução ao PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
-
-Ou assista à [Introdução ao Arranque do PowerShell](https://mva.microsoft.com/liveevents/powershell-jumpstart) da Microsoft Virtual Academy.
 
 ## <a name="build-your-skills-with-microsoft-learn"></a>Desenvolva as suas competências com o Microsoft Learn
 
