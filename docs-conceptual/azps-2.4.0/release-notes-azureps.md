@@ -1,10 +1,10 @@
 ---
-ms.openlocfilehash: ac8513b3eee4adfcaf0be8bf7b4e8d09190811df
-ms.sourcegitcommit: a4e527d3deba004007cfa22fa536e8255dd23b37
+ms.openlocfilehash: f357a17f698d68c1a29dcb78f83671973fd6ecad
+ms.sourcegitcommit: 0b644bfecf4224b2ea83520d1a6a956734d9fba4
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 07/02/2019
-ms.locfileid: "67516645"
+ms.lasthandoff: 07/12/2019
+ms.locfileid: "67863728"
 ---
 ## <a name="240---july-2019"></a>2.4.0 - Julho de 2019
 #### <a name="azaccounts"></a>Az.Accounts
@@ -614,7 +614,7 @@ ms.locfileid: "67516645"
 
 #### <a name="azresources"></a>Az.Resources
 * Melhor processamento dos fornecedores de "Get-AzResource" no fornecimento dos parâmetros "-ResourceId" ou "-ResourceGroupName", "-Name" e "-ResourceType"
-* Melhor processamento de erros de "Test-AzDeployment" e "Test-AzResourceGroupDeployment"
+* Melhor processamento de erros para "Test-AzDeployment" e "Test-AzResourceGroupDeployment"
     - Processamento de erros que ocorrem fora da validação da implementação e inclusão dos mesmos na saída do comando
     - Obtenha mais informações aqui: https://github.com/Azure/azure-powershell/issues/6856
 * Adição do parâmetro opcional "-IgnoreDynamicParameters" ao conjunto de cmdlets de implementação para ignorar os pedidos nos cenários de script e de tarefas
