@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
-ms.openlocfilehash: abb85d3d3f6a20697510447cda2c02b2703ef921
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 6d9df4a62238f1e3b9cc9a62864f5d4d9337d6a7
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67345368"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807394"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar um principal de serviço do Azure com o Azure PowerShell
 
@@ -40,7 +40,14 @@ Na ausência de outros parâmetros de autenticação, a autenticação baseada e
 $sp = New-AzADServicePrincipal -DisplayName ServicePrincipalName
 ```
 
-O objeto devolvido contém o membro `Secret`, ou seja, uma `SecureString` que contém a palavra-passe gerada. Certifique-se de que armazena este valor num local seguro para efetuar a autenticação com o principal de serviço. O respetivo valor __não será__ apresentado na saída da consola. Se perder a palavra-passe, [reponha as credenciais do principal de serviço](#reset-credentials). 
+O objeto devolvido contém o membro `Secret`, ou seja, uma `SecureString` que contém a palavra-passe gerada. Certifique-se de que armazena este valor num local seguro para efetuar a autenticação com o principal de serviço. O respetivo valor __não será__ apresentado na saída da consola. Se perder a palavra-passe, [reponha as credenciais do principal de serviço](#reset-credentials).
+
+O código seguinte permitirá exportar o segredo:
+
+```azurepowershell-interactive
+$BSTR = [System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($sp.Secret)
+$UnsecureSecret = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto($BSTR)
+```
 
 Para as palavras-passe fornecidas pelo utilizador, o argumento `-PasswordCredential` aceita objetos `Microsoft.Azure.Commands.ActiveDirectory.PSADPasswordCredential`. Estes objetos têm de ter uma `StartDate` e uma `EndDate` válidas, bem como aceitar uma `Password` com texto desencriptado. Quando criar uma palavra-passe, certifique-se de que segue as [regras e restrições de palavra-passe do Azure Active Directory](/azure/active-directory/active-directory-passwords-policy). Não utilize uma palavra-passe fraca nem reutilize uma palavra-passe.
 

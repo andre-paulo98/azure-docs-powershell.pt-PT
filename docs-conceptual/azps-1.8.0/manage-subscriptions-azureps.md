@@ -7,16 +7,18 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 02/04/2019
-ms.openlocfilehash: 29d7c84d0ca9ae8d3e4e22f407b007d2d582f8bc
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 778fdb463a42b609d3a94c910a2c0f9553ef4eb9
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346565"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807517"
 ---
 # <a name="use-multiple-azure-subscriptions"></a>Utilizar várias subscrições do Azure
 
 A maioria dos utilizadores do Azure terão apenas uma única subscrição. No entanto, se fizer parte de várias organizações ou se a sua organização tiver dividido o acesso a determinados recursos entre agrupamentos, pode ter várias subscrições no Azure. A CLI suporta a seleção de uma subscrição tanto a nível global como por comando.
+
+Para obter informações detalhadas sobre subscrições, faturação e gestão de custos, veja a [documentação sobre a gestão da faturação e dos custos](/azure/billing/).
 
 ## <a name="tenants-users-and-subscriptions"></a>Inquilinos, utilizadores e subscrições
 
