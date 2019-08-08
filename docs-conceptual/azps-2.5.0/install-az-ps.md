@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 12/13/2018
-ms.openlocfilehash: ead6c48496c646b5184f88aeac64fbe650be17c4
-ms.sourcegitcommit: 6c0d296bfec7c1c35a1d15074ca5eacda6684ea4
+ms.openlocfilehash: 8e63e3efb2671eef435498063010d5704c793060
+ms.sourcegitcommit: a261efc84dedfd829c0613cf62f8fcf3aa62adb8
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 07/30/2019
-ms.locfileid: "68657982"
+ms.lasthandoff: 08/06/2019
+ms.locfileid: "68807472"
 ---
 # <a name="install-the-azure-powershell-module"></a>Instalar o módulo do Azure PowerShell
 
@@ -40,16 +40,16 @@ Não existem requisitos adicionais para o Azure PowerShell quando utilizar o Pow
 > [!WARNING]
 > __Não__ pode ter os módulos AzureRM e Az instalados em simultâneo para o PowerShell 5.1 para Windows. Se precisar de manter o AzureRM disponível no sistema, instale o módulo do Az para o PowerShell Core 6.x ou posterior. Para tal, [instale o PowerShell Core 6.x ou posterior](https://docs.microsoft.com/en-us/powershell/scripting/install/installing-powershell-core-on-windows) e, em seguida, siga estas instruções num terminal do PowerShell Core.
 
-Para instalar módulo num âmbito global, precisa de privilégios elevados para instalar módulos da Galeria do PowerShell. Para instalar o Azure PowerShell, execute o seguinte comando numa sessão elevada ("Executar como Administrador" no Windows, ou com privilégios de superutilizador no macOS ou Linux):
-
-```powershell-interactive
-Install-Module -Name Az -AllowClobber
-```
-
-Se não tiver acesso a privilégios de administrador, pode instalar para o utilizador atual, ao adicionar o argumento `-Scope`.
+O método de instalação recomendado é instalar apenas para o utilizador ativo:
 
 ```powershell-interactive
 Install-Module -Name Az -AllowClobber -Scope CurrentUser
+```
+
+Se quiser instalar para todos os utilizadores num sistema, precisará de privilégios de administrador. Numa sessão do PowerShell elevada, execute como administrador ou com o comando `sudo` no macOS ou Linux:
+
+```powershell-interactive
+Install-Module -Name Az -AllowClobber -Scope AllUsers
 ```
 
 Por predefinição, a galeria do PowerShell não está configurada como um repositório fidedigno para o PowerShellGet. Na primeira vez que utilizar o PSGallery verá a seguinte linha de comandos:
