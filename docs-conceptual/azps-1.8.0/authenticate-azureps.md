@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 02/20/2019
-ms.openlocfilehash: 0b7a6fa4278d95a69b21f570ac6fb22b70f073f6
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.date: 09/04/2019
+ms.openlocfilehash: 21d87bd35da74f09b70976e7b395e7b987fbd3f5
+ms.sourcegitcommit: e5b029312d17e12257b2b5351b808fdab0b4634c
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 08/09/2019
-ms.locfileid: "68861223"
+ms.lasthandoff: 09/05/2019
+ms.locfileid: "70386800"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Iniciar sessão com o Azure PowerShell
 
@@ -54,7 +54,7 @@ Para obter as credenciais do principal de serviço como o objeto adequado, utili
 
 ```azurepowershell-interactive
 $pscredential = Get-Credential
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 Para cenários de automatização, tem de criar as credenciais a partir de um nome de utilizador e de uma cadeia segura:
@@ -62,7 +62,7 @@ Para cenários de automatização, tem de criar as credenciais a partir de um no
 ```azurepowershell-interactive
 $passwd = ConvertTo-SecureString <use a secure password here> -AsPlainText -Force
 $pscredential = New-Object System.Management.Automation.PSCredential('service principal name/id', $passwd)
-Connect-AzAccount -ServicePrincipal -Credential $pscredential -TenantId $tenantId
+Connect-AzAccount -ServicePrincipal -Credential $pscredential -Tenant $tenantId
 ```
 
 Certifique-se de que utiliza boas práticas de armazenamento de palavras-passe quando automatizar as ligações do principal de serviço.
@@ -71,7 +71,13 @@ Certifique-se de que utiliza boas práticas de armazenamento de palavras-passe q
 
 A autenticação baseada em certificado precisa que o Azure PowerShell tenha a capacidade de obter informações de um arquivo de certificados local com base num thumbprint do certificado.
 ```azurepowershell-interactive
-Connect-AzAccount -ServicePrincipal -TenantId $tenantId -CertificateThumbprint <thumbprint>
+Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
+```
+
+Ao utilizar um principal de serviço em vez de uma aplicação registada, adicione o argumento `-ServicePrincipal` e forneça o ID do principal de serviço como o valor do parâmetro `-ApplicationId`.
+
+```azurepowershell-interactive
+Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
 No PowerShell 5.1, o arquivo de certificados pode ser gerido e inspecionado com o módulo de [PKI](/powershell/module/pkiclient). No PowerShell Core 6.x e versões posteriores, o processo é mais complexo. Os scripts que se seguem mostram como importar um certificado existente para o arquivo de certificados acessível ao PowerShell.
@@ -100,7 +106,7 @@ $store.Add($Certificate)
 $store.Close()
 ```
 
-## <a name="sign-in-using-a-managed-identity"></a>Iniciar sessão com uma identidade gerida 
+## <a name="sign-in-using-a-managed-identity"></a>Iniciar sessão com uma identidade gerida
 
 As identidades geridas são uma funcionalidade do Azure Active Directory. As identidades geridas são principais de serviço atribuídos aos recursos que são executados no Azure. Pode utilizar um principal de serviço da identidade gerida para início de sessão e adquirir um token de acesso só de aplicação para aceder a outros recursos. As identidades geridas só estão disponíveis em recursos em execução numa cloud do Azure.
 
@@ -108,19 +114,19 @@ Para saber mais sobre identidades geridas para recursos do Azure, veja [Como uti
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Iniciar sessão com um inquilino não predefinido ou como um Fornecedor de Soluções Cloud (CSP)
 
-Se a sua conta estiver associada a mais do que um inquilino, o início de sessão requer a utilização do parâmetro `-TenantId` durante a ligação. Este parâmetro irá funcionar com qualquer outro método de início de sessão. Quando iniciar sessão, o valor deste parâmetro pode ser o ID de objeto do Azure do inquilino (ID de Inquilino) ou o nome de domínio completamente qualificado do inquilino.
+Se a sua conta estiver associada a mais do que um inquilino, o início de sessão requer a utilização do parâmetro `-Tenant` durante a ligação. Este parâmetro irá funcionar com qualquer método de início de sessão. Quando iniciar sessão, o valor deste parâmetro pode ser o ID de objeto do Azure do inquilino (ID de Inquilino) ou o nome de domínio completamente qualificado do inquilino.
 
-Se for um [Fornecedor de Soluções Cloud (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), o valor `-TenantId` **tem** de ser um ID de inquilino.
+Se for um [Fornecedor de Soluções Cloud (CSP)](https://azure.microsoft.com/offers/ms-azr-0145p/), o valor `-Tenant` **tem** de ser um ID de inquilino.
 
 ```azurepowershell-interactive
-Connect-AzAccount -TenantId 'xxxx-xxxx-xxxx-xxxx'
+Connect-AzAccount -Tenant 'xxxx-xxxx-xxxx-xxxx'
 ```
 
 ## <a name="sign-in-to-another-cloud"></a>Iniciar sessão noutra Cloud
 
 Os serviços cloud do Azure oferecem ambientes em conformidade com as leis de processamento de dados regionais.
 Para as contas numa cloud regional, defina o ambiente quando iniciar sessão com o argumento `-Environment`.
-Por exemplo, se a sua conta está na cloud da China:
+Este parâmetro irá funcionar com qualquer método de início de sessão. Por exemplo, se a sua conta está na cloud da China:
 
 ```azurepowershell-interactive
 Connect-AzAccount -Environment AzureChinaCloud
