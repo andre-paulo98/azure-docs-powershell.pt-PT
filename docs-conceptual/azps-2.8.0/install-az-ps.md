@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 12/13/2018
-ms.openlocfilehash: e302e49d95b6bc15750366c9eb960a6fec80c1a4
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.date: 10/22/2019
+ms.openlocfilehash: 7f22a420068db87fa2c3c007bd36f515384162fb
+ms.sourcegitcommit: ad7677d703a8512d371d3123dc7e541156b95cb8
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/15/2019
-ms.locfileid: "72370347"
+ms.lasthandoff: 10/23/2019
+ms.locfileid: "72814218"
 ---
 # <a name="install-the-azure-powershell-module"></a>Instalar o módulo do Azure PowerShell
 
@@ -67,6 +67,18 @@ Are you sure you want to install the modules from 'PSGallery'?
 Responda `Yes` ou `Yes to All` para continuar com a instalação.
 
 O módulo do Az é um módulo de rollup para os cmdlets do Azure PowerShell. A instalação do mesmo transfere todos os módulos disponíveis do Azure Resource Manager e disponibiliza os respetivos cmdlets para utilização.
+
+## <a name="install-offline"></a>Instalar offline
+
+Em alguns ambientes, não é possível ligar à Galeria do PowerShell. Nessas situações, ainda pode instalar offline através de um destes métodos:
+
+* Transfira os módulos para outra localização e utilize-os como uma origem de instalação na sua rede. Isso pode ser um processo complicado, mas irá permitir que armazene em cache os módulos do PowerShell num único servidor ou que seja implementada a partilha de ficheiros através do PowerShellGet para quaisquer sistemas desligados. Saiba como configurar um repositório local e instalar em sistemas desligados com a opção [Trabalhar com repositórios do PowerShellGet locais](/powershell/scripting/gallery/how-to/working-with-local-psrepositories).
+* [Transferira o MSI do Azure PowerShell](install-az-ps-msi.md) para um computador ligado a uma rede e, em seguida, copie o instalador para os sistemas sem o acesso à Galeria do PowerShell. Tenha em mente que o instalador MSI funciona apenas para o PowerShell 5.1 no Windows.
+* Guarde o módulo com [Guardar-Módulo](/powershell/module/PowershellGet/Save-Module) numa partilha de ficheiros ou guarde noutra fonte e faça a cópia manualmente para outros computadores:
+  
+  ```powershell-interactive
+  Save-Module -Name Az -Path '\\someshare\PowerShell\modules' -Force
+  ```
 
 ## <a name="troubleshooting"></a>Resolução de problemas
 
