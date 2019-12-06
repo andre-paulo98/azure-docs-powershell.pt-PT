@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/15/2019
-ms.openlocfilehash: 83e6039153bcc2b8ccb7ceddfa91609f0d6c7b3f
-ms.sourcegitcommit: b4ee3fbaaa2a329ea28308bd1902ae83a34db698
+ms.openlocfilehash: 8c1369cdedf8848f3c62ca6b6bc4eb3d2d78be95
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/16/2019
-ms.locfileid: "72380189"
+ms.lasthandoff: 11/28/2019
+ms.locfileid: "74656826"
 ---
 ## <a name="280---october-2019"></a>2.8.0 - Outubro de 2019
 ### <a name="general"></a>Geral
@@ -56,16 +56,16 @@ ms.locfileid: "72380189"
 * Correção de pequeno erro: Get-AzIothub não devolvia subscriptionId 
 
 #### <a name="azmonitor"></a>Az.Monitor
-* Novos recetores de grupo de ações adicionados para o grupo de ações   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
+* Foram adicionados novos recetores de grupos de ações para New-AzActionGroupReceiver:   -ItsmReceiver   -VoiceReceiver   -ArmRoleReceiver   -AzureFunctionReceiver   -LogicAppReceiver   -AutomationRunbookReceiver   -AzureAppPushReceiver
 * Utilização do esquema de alerta comum ativada para os recetores. Não é aplicável aos recetores de SMS, emissão de Aplicação do Azure, ITSM e Voz
-* Os Webhooks suportam agora a autenticação do Azure Active Directory.
+* Os webhooks suportam agora a autenticação do Azure Active Directory.
 
 #### <a name="aznetwork"></a>Az.Network
 * Adição do novo cmdlet Get-AzAvailableServiceAlias, que pode ser chamado para obter os aliases que podem ser utilizados para Políticas de Ponto Final de Serviço.
 * Foi adicionado suporte para os seletores de adição de tráfego às Ligações de Gateway de Rede Virtual
     - Foram adicionados novos cmdlets:
-        - New-AzureRmTrafficSelectorPolicy
-    - Cmdlets atualizados com o parâmetro opcional -TrafficSelectorPolicies   -New-AzureRmVirtualNetworkGatewayConnection   -Set-AzureRmVirtualNetworkGatewayConnection
+        - New-AzIpsecTrafficSelectorPolicy
+    - Os cmdlets foram atualizados com o parâmetro opcional -TrafficSelectorPolicies   -New-AzVirtualNetworkGatewayConnection   -Set-AzVirtualNetworkGatewayConnection
 * Adição de suporte para os protocolos ESP e AH nas configurações de regras de segurança de rede
     - cmdlets atualizados:
         - Add-AzNetworkSecurityRuleConfig
