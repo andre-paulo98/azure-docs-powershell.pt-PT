@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: 04c520a3171d0b06ceaaa96f1c77bda6b03952ae
-ms.sourcegitcommit: 020c69430358b13cbd99fedd5d56607c9b10047b
+ms.openlocfilehash: ea7593cf2b753b210ff2955b7bd450030ad83596
+ms.sourcegitcommit: f9445d1525eac8c165637e1a80fbc92b1ab005c2
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/29/2019
-ms.locfileid: "66365720"
+ms.lasthandoff: 12/16/2019
+ms.locfileid: "75035834"
 ---
 # <a name="breaking-changes-for-az-100"></a>Alterações interruptivas do Az 1.0.0
 
@@ -272,7 +272,7 @@ Esta secção fornece detalhes sobre alterações interruptivas específicas par
 
   Devem ser alterados para
   ```azurepowershell-interactive
-  New-AzMMediaService -Tag @{TagName="TagValue"}
+  New-AzMediaService -Tag @{TagName="TagValue"}
   ```
 
 ### <a name="azmonitor-previously-azurerminsights"></a>Az.Monitor (anteriormente AzureRM.Insights)
@@ -292,7 +292,7 @@ Esta secção fornece detalhes sobre alterações interruptivas específicas par
 - O parâmetro preterido `ResourceId` foi removido do cmdlet `Get-AzServiceEndpointPolicyDefinition`
 - A propriedade preterida `EnableVmProtection` foi removida do objeto `PSVirtualNetwork`
 - O cmdlet preterido `Set-AzVirtualNetworkGatewayVpnClientConfig` foi removido
-  
+
 Os scripts devem deixar de tomar decisões de processamento com base nos valores destes campos.
 
 ### <a name="azoperationalinsights-previously-azurermoperationalinsights"></a>Az.OperationalInsights (anteriormente AzureRM.OperationalInsights)
