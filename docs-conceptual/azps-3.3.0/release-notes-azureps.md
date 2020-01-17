@@ -6,13 +6,13 @@ ms.author: sttramer
 manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/15/2019
-ms.openlocfilehash: fb934ed0f8bef5e2aff715debe5d406d54abf24f
-ms.sourcegitcommit: 2d0c3ffaa5246f680784fa7e15b0d2536c27ff80
+ms.date: 01/09/2020
+ms.openlocfilehash: 3806a1c609a71c53c0bddc5bafd51d845c0c296e
+ms.sourcegitcommit: 16904e0a72c55fb81248e0252769defb86c50f36
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 01/07/2020
-ms.locfileid: "75718989"
+ms.lasthandoff: 01/10/2020
+ms.locfileid: "75831649"
 ---
 # <a name="azure-powershell-release-notes"></a>Notas de versão do Azure PowerShell
 
@@ -21,7 +21,7 @@ ms.locfileid: "75718989"
 * Add-AzEnvironment e Set-AzEnvironment foram atualizados para aceitar os parâmetros AzureAttestationServiceEndpointResourceId e AzureAttestationServiceEndpointSuffix
 
 #### <a name="azcdn"></a>Az.Cdn
-* Apresentar detalhes da resposta de erro no cmdlet New-AzCdnEndpoint
+* Apresentação dos detalhes da resposta de erro no cmdlet New-AzCdnEndpoint
 
 #### <a name="azcompute"></a>Az.Compute
 * Correção do cmdlet Set-AzVMCustomScriptExtension para uma VM com disco OD gerido sem perfil de SO.
@@ -31,19 +31,19 @@ ms.locfileid: "75718989"
 
 #### <a name="azdataboxedge"></a>Az.DataBoxEdge
 * Foi adicionado o cmdlet "Get-AzDataBoxEdgeStorageContainer"
-  - Obter o contentor de armazenamento Edge
+  - Obter o Contentor de Armazenamento Edge
 * Foi adicionado o cmdlet "New-AzDataBoxEdgeStorageContainer"
-  - Criar um novo contentor de armazenamento Edge
+  - Criar novo Contentor de Armazenamento Edge
 * Foi adicionado o cmdlet "Remove-AzDataBoxEdgeStorageContainer"
-  - Remover o contentor de armazenamento Edge
+  - Remover o Contentor de Armazenamento Edge
 * Foi adicionado o cmdlet "Invoke-AzDataBoxEdgeStorageContainer"
-  - Invocar ação para atualizar os dados no contentor de armazenamento Edge
+  - Invocar ação para atualizar os dados no Contentor de Armazenamento Edge
 * Foi adicionado o cmdlet "Get-AzDataBoxEdgeStorageAccount"
-  - Obter a conta de armazenamento Edge
+  - Obter a Conta de Armazenamento Edge
 * Foi adicionado o cmdlet "New-AzDataBoxEdgeStorageAccount"
-  - Criar uma nova conta de armazenamento Edge
+  - Criar nova Conta de Armazenamento Edge
 * Foi adicionado o cmdlet "Remove-AzDataBoxEdgeStorageAccount"
-  - Remover a conta de armazenamento Edge
+  - Remover a Conta de Armazenamento Edge
 * Invocar o cmdlet "Invoke-AzDataBoxEdgeShare"
   - Invocar ação para atualizar os dados na partilha
 * Foi adicionado o cmdlet "Set-AzDataBoxEdgeStorageAccountCredential"
