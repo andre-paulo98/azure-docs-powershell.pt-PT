@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/04/2019
-ms.openlocfilehash: 44f5d5b44788a52db297a0d73697161eec2eedc2
+ms.openlocfilehash: 0de487cc34593ceac05aa2077358d692470dc23e
 ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402821"
+ms.locfileid: "79402753"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Iniciar sessão com o Azure PowerShell
 
@@ -75,7 +75,7 @@ A autenticação baseada em certificado precisa que o Azure PowerShell tenha a c
 Connect-AzAccount -ApplicationId $appId -Tenant $tenantId -CertificateThumbprint <thumbprint>
 ```
 
-Ao utilizar um principal de serviço em vez de uma aplicação registada, adicione o argumento `-ServicePrincipal` e forneça o ID do principal de serviço como o valor do parâmetro `-ApplicationId`.
+Ao utilizar um principal de serviço em vez de uma aplicação registada, adicione o argumento `-ServicePrincipal` e forneça o ID da Aplicação do principal de serviço como o valor do parâmetro `-ApplicationId`.
 
 ```azurepowershell-interactive
 Connect-AzAccount -ServicePrincipal -ApplicationId $servicePrincipalId -Tenant $tenantId -CertificateThumbprint <thumbprint>
@@ -111,7 +111,11 @@ $store.Close()
 
 As identidades geridas são uma funcionalidade do Azure Active Directory. As identidades geridas são principais de serviço atribuídos aos recursos que são executados no Azure. Pode utilizar um principal de serviço da identidade gerida para início de sessão e adquirir um token de acesso só de aplicação para aceder a outros recursos. As identidades geridas só estão disponíveis em recursos em execução numa cloud do Azure.
 
-Para saber mais sobre identidades geridas para recursos do Azure, veja [Como utilizar identidades geridas para recursos do Azure numa VM do Azure para adquirir um token de acesso](/azure/active-directory/managed-identities-azure-resources/how-to-use-vm-token).
+Este comando liga-se através da identidade gerida do ambiente anfitrião. Por exemplo, se for executado numa VirtualMachine com uma Identidade de Serviço Gerida atribuída, permite ao código iniciar sessão com essa identidade atribuída.
+
+```azurepowershell-interactive
+ Connect-AzAccount -Identity 
+```
 
 ## <a name="sign-in-with-a-non-default-tenant-or-as-a-cloud-solution-provider-csp"></a>Iniciar sessão com um inquilino não predefinido ou como um Fornecedor de Soluções Cloud (CSP)
 
