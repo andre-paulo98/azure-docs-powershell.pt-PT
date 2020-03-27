@@ -3,13 +3,13 @@ title: Utilizar o Azure PowerShell no Docker
 description: Como utilizar o Azure PowerShell pré-instalado numa imagem do Docker.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 03/10/2020
-ms.openlocfilehash: a5746b71cfc41f7c6283b0e95b0940ca4b594ec7
-ms.sourcegitcommit: fb95591c45bb5f12b98e0690938d18f2ec611897
+ms.date: 03/20/2020
+ms.openlocfilehash: b5ad201abcabbdc1a88db241b028d88f05054a14
+ms.sourcegitcommit: 104c90600e0c5eeb841b5a596ba7ebe60cc7f4fa
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 03/15/2020
-ms.locfileid: "79402685"
+ms.lasthandoff: 03/21/2020
+ms.locfileid: "79990541"
 ---
 # <a name="using-azure-powershell-in-docker"></a>Utilizar o Azure PowerShell no Docker
 
@@ -19,13 +19,13 @@ Estamos a publicar imagens do Docker com o Azure PowerShell pré-instalado. Este
 
 As imagens publicadas requerem o Docker 17.05 ou mais recente. Espera-se também que possa executar o Docker sem `sudo` ou direitos administrativos locais. Siga as [instruções][install] oficiais do Docker para instalar `docker` corretamente.
 
-Os contentores publicados são criados a partir dos contentores oficiais do PowerShell e o módulo do Az é adicionado como uma camada.
+A mais recente imagem de contentor inclui a última versão do PowerShell e os mais recentes módulos do Azure PowerShell suportados com o módulo Az.
 
-A imagem estável mais recente inclui:
+Por cada nova versão do módulo Az, vamos disponibilizar uma imagem para os seguintes sistemas operativos:
 
-- Ubuntu 18.04
-- Versão do PowerShell 6.2.4
-- Módulo do Az mais atual do Azure PowerShell
+- Ubuntu 18.04 (predefinição)
+- Debian 9
+- CentOs 7
 
 Pode encontrar uma lista completa das imagens disponíveis na página [Imagem do Docker][az image].
 
@@ -44,6 +44,8 @@ Os passos seguintes mostram os comandos do Docker necessários para transferir a
    ```console
    docker run -it mcr.microsoft.com/azure-powershell pwsh
    ```
+
+Para os anfitriões do Docker para Windows, tem de ativar a Partilha de Ficheiros do Docker para permitir que as unidades locais no Windows sejam partilhadas com os contentores do Linux. Para obter mais informações, veja [Introdução ao Docker for Windows][file-sharing].
 
 ### <a name="run-the-azure-powershell-container-interactively-using-host-authentication"></a>Execute o contentor azure-powershell interativamente com autenticação do anfitrião
 
@@ -71,3 +73,4 @@ Para saber mais sobre os módulos do Azure PowerShell e as respetivas funcionali
 [install]: https://docs.docker.com/engine/installation/
 [powershell image]: https://hub.docker.com/_/microsoft-powershell
 [az image]: https://hub.docker.com/_/microsoft-azure-powershell
+[file-sharing]: https://docs.docker.com/docker-for-windows/#file-sharing
