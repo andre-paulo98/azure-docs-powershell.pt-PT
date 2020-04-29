@@ -4,14 +4,19 @@ description: Saiba mais sobre todas as atualizações mais recentes para os mód
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: bee24af99da4b36e89cff9852c77214e2e09a542
-ms.sourcegitcommit: 6a91b4c545350d316d3cf8c62f384478e3f3ba24
+ms.openlocfilehash: a9c5394a5fac8a8a3de96925b3563776783ea9fe
+ms.sourcegitcommit: de813e8a4e3629a6fee6e87a0208c1f0362a16ca
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 04/21/2020
-ms.locfileid: "81740546"
+ms.lasthandoff: 04/23/2020
+ms.locfileid: "82080203"
 ---
+# <a name="azure-powershell-release-notes"></a>Notas de versão do Azure PowerShell
+
 ## <a name="380---april-2020"></a>3.8.0 - Abril de 2020
+### <a name="highlights-since-the-last-release"></a>Destaques desde a última versão
+* Versões do Powershell suportadas pelo Az.Storage: Windows PowerShell 5.1, PowerShell Core 6.2.4+, PowerShell 7
+
 #### <a name="azaccounts"></a>Az.Accounts
 * Atualização do URL de inquérito do Azure PowerShell em "Resolve-AzError" [#11507]
 
@@ -23,7 +28,7 @@ ms.locfileid: "81740546"
 * Correção da apresentação do SKU de preços relacionados com ChinaCDN
 
 #### <a name="azcognitiveservices"></a>Az.CognitiveServices
-* Suporte para Identidade, Encriptação, UserOwnedStorage 
+* Suporte para Identidade, Encriptação, UserOwnedStorage
 
 #### <a name="azcompute"></a>Az.Compute
 * Adicionado o cmdlet "Set-AzVmssOrchestrationServiceState".
@@ -97,7 +102,7 @@ ms.locfileid: "81740546"
 * Suportado novo SkuName StandardGZRS, StandardRAGZRS ao criar/atualizar a Conta de armazenamento
     - "New-AzStorageAccount"
     - "Set-AzStorageAccount"
-* Suportado o DataLake Gen2 
+* Suportado o DataLake Gen2
     - "New-AzDataLakeGen2Item"
     - "Get-AzDataLakeGen2Item"
     - "Get-AzDataLakeGen2ChildItem"
@@ -107,13 +112,31 @@ ms.locfileid: "81740546"
     - "Get-AzDataLakeGen2ItemContent"
     - "Remove-AzDataLakeGen2Item"
 
-# <a name="azure-powershell-release-notes"></a>Notas de versão do Azure PowerShell
+## <a name="0100-preview---april-2020"></a>0.10.0-preview - Abril de 2020
+### <a name="general"></a>Geral
+* Os módulos Az já estão disponíveis em pré-visualização no Azure Stack Hub. Isto permite a compatibilidade entre plataformas diferentes com o Linux e macOS. Agora, o Azure Stack Hub suporta o PowerShell Core com os módulos Az. Obtenha mais informações [aqui](https://aka.ms/az4AzureStack)
+* Os módulos Az suportam o perfil 2019-03-01-hybrid:
+  - Az.Billing
+  - Az.Compute
+  - Az.DataBoxEdge
+  - Az.EventHub
+  - Az.IotHub
+  - Az.KeyVault
+  - Az.Monitor
+  - Az.Network
+  - Az.Resources
+  - Az.Storage
+  - Az.Websites
+* Foram introduzidos três novos módulos do PowerShell para Az que funcionam com o Azure Stack Hub. São eles o Az.Databox, Az.IotHub e Az.EventHub
+* Os comandos permanecem sensivelmente iguais, com pequenas alterações como, por exemplo, a alteração do AzureRM para Az
+* Veja uma ligação atualizada à documentação do PowerShell para o Azure Stack Hub [aqui](https://aka.ms/InstallASHPowerShell)
+
 ## <a name="370---march-2020"></a>3.7.0 - Março de 2020
 #### <a name="azaccounts"></a>Az.Accounts
 * Foram corrigidos os parâmetros "Get-AzTenant"/"Get-AzDefault"/"Set-AzDefault" que emitiam uma NullReferenceException quando a sessão não estava iniciada [#10292]
 
 #### <a name="azcompute"></a>Az.Compute
-* Foram adicionados os seguintes parâmetros ao cmdlet "New-AzDiskConfig": 
+* Foram adicionados os seguintes parâmetros ao cmdlet "New-AzDiskConfig":
     - DiskIOPSReadOnly, DiskMBpsReadOnly, MaxSharesCount, GalleryImageReference
 * A propriedade Encryption foi permitida para o parâmetro Target do cmdlet "New-AzGalleryImageVersion".
 * Foi corrigido o problema de tempDisk para os cmdlets "Set-AzVmss" -Reimage e "Invoke-AzVMReimage". [#11354]
