@@ -9,10 +9,10 @@ ms.topic: conceptual
 ms.workload: ''
 ms.date: 2/20/2018
 ms.openlocfilehash: 61ab0f91c3d6fffdbffd336fa0d6ed9b0ab8f6ec
-ms.sourcegitcommit: b02cbcd00748a4a9a4790a5fba229ce53c3bf973
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 08/09/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "68863283"
 ---
 # <a name="release-notes"></a>Notas de versão
@@ -149,7 +149,7 @@ Alterações desde a última versão: https://github.com/Azure/azure-powershell/
     - Update-AzureRmRecoveryServicesAsrProtectionDirection
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Parâmetros obsoletos nos cmdlets novos e definidos da conta de armazenamento seguintes: EnableEncryptionService e DisableEncryptionService, uma vez que a Encriptação Inativa está ativada por predefinição e não pode ser desativada.
+* Parâmetros seguintes obsoletos em cmdlets novos e definidos da Conta de Armazenamento: EnableEncryptionService e DisableEncryptionService, uma vez que a Encriptação Inativa está ativada por predefinição e não pode ser desativada.
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -184,9 +184,9 @@ Alterações desde a última versão: https://github.com/Azure/azure-powershell/
 * "New-AzureRmVMSS" imprime cadeias de ligação no modo verboso.
 * "New-AzureRmVMSS" suporta endereço IP público, regras de balanceamento de carga e regras NAT de entrada.
 * Funcionalidade WriteAccelerator
-    - Parâmetro de mudança de WriteAccelerator adicionado aos seguintes cmdlets: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
-    - Parâmetro de mudança de OsDiskWriteAccelerator adicionado aos seguintes cmdlets:     Set-AzureRmVmssStorageProfile.
-    - Parâmetro booleano de OsDiskWriteAccelerator adicionado aos seguintes cmdlets:     Update-AzureRmVM     Update-AzureRmVmss
+    - Parâmetro do comutador WriteAccelerator adicionado aos seguintes cmdlets: Set-AzureRmVMOSDisk Set-AzureRmVMDataDisk Add-AzureRmVMDataDisk Add-AzureRmVmssDataDisk
+    - Parâmetro OsDiskWriteAccelerator adicionado ao seguinte cmdlet: Set-AzureRmVmssStorageProfile.
+    - Parâmetro Booleano OsDiskWriteAccelerator adicionado aos seguintes cmdlets:     Update-AzureRmVM     Update-AzureRmVmss
 
 #### <a name="azurermdatafactories"></a>AzureRM.DataFactories
 * Corrija o problema de encriptação de credencial que não originou um erro significativo para algumas operações de encriptação
@@ -275,18 +275,18 @@ Alterações desde a última versão: https://github.com/Azure/azure-powershell/
     - Remove-AzureRmNetworkWatcherConnectionMonitor
 * Documentação de Set-AzureRmApplicationGatewayBackendAddressPool atualizada para remover exemplo preterido
 * Sinalizador de EnableHttp2 adicionado ao Gateway de Aplicação
-    - New-AzureRmApplicationGateway atualizado: O parâmetro opcional -EnableHttp2 adicionado
+    - New-AzureRmApplicationGateway atualizado: Parâmetro opcional adicionado -EnableHttp2
 * Adicionar IpTags a PublicIpAddress
-    - New-AzureRmPublicIpAddress atualizado: IpTags adicionadas
+    - New-AzureRmPublicIpAddress atualizado: IpTags adicionado
     - New-AzureRmPublicIpTag para adicionar Iptag
 * Adicione a propriedade DisableBgpRoutePropagation ao RouteTable e effectiveRoute.
 
 #### <a name="azurermresources"></a>AzureRM.Resources
-* Register-AzureRmProviderFeature: Exemplo em documentos em falta adicionado
-* Register-AzureRmResourceProvider: Exemplo em documentos em falta adicionado
+* Register-AzureRmProviderFeature: exemplo em falta adicionado aos documentos
+* Register-AzureRmResourceProvider: exemplo em falta adicionado aos documentos
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Parâmetros obsoletos nos cmdlets novos e definidos da conta de armazenamento seguintes: EnableEncryptionService e DisableEncryptionService, uma vez que a Encriptação Inativa está ativada por predefinição e não pode ser desativada.
+* Parâmetros seguintes obsoletos em cmdlets novos e definidos da Conta de Armazenamento: EnableEncryptionService e DisableEncryptionService, uma vez que a Encriptação Inativa está ativada por predefinição e não pode ser desativada.
     - New-AzureRmStorageAccount
     - Set-AzureRmStorageAccount
 
@@ -639,7 +639,7 @@ Alterações desde a última versão: https://github.com/Azure/azure-powershell/
 * DataFactories
     - A funcionalidade de encriptação de credenciais agora funciona com ambos "Acesso Remoto" ativado (Pela Rede) e "Acesso Remoto" desativado (Máquina Local).
 * DataFactoryV2
-  - Foram adicionados dois novos cmdlets: Update-AzureRmDataFactoryV2 e Stop-AzureRmDataFactoryV2PipelineRun
+  - Adicionados dois novos cmdlets: Update-AzureRmDataFactoryV2 e Stop-AzureRmDataFactoryV2PipelineRun
 * DataLakeAnalytics
   - Adicionado um parâmetro chamado ScriptParameter a Submit-AzureRmDataLakeAnalyticsJob
     - Podem ser encontradas informações detalhadas sobre ScriptParameter ao utilizar Get-Help em Submit-AzureRmDataLakeAnalyticsJob
@@ -723,7 +723,7 @@ Alterações desde a última versão: https://github.com/Azure/azure-powershell/
   - AzureRM.StreamAnalytics
 
 ## <a name="2017118---version-500"></a>2017.11.8 - Versão 5.0.0
-* NOTA: esta é uma versão com uma alteração interruptiva. Veja o guia de migração (https://aka.ms/azps-migration-guide) para obter uma lista completa das alterações interruptivas apresentadas.
+* NOTA: Esta é uma versão de quebra de código. Veja o guia de migração (https://aka.ms/azps-migration-guide) para obter uma lista completa das alterações interruptivas apresentadas.
 * Todos os cmdlets no AzureRM suportam agora ajuda online
   - Execute Get-Help com o parâmetro -Online para abrir a ajuda online no seu browser da Internet predefinido
 * AnalysisServices
