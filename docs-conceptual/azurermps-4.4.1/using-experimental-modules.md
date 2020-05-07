@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/05/2017
 ms.openlocfilehash: 7867adeac41444c81c31b7ee44b910ab40d873f8
-ms.sourcegitcommit: bbd3f061cac3417ce588487c1ae4e0bc52c11d6a
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/11/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "65534767"
 ---
 # <a name="using-experimental-azure-powershell-modules"></a>Utilizar módulos experimentais do Azure PowerShell
@@ -32,11 +32,11 @@ Os módulos experimentais utilizam a seguinte convenção de nomenclatura: `Azur
 
 Os módulos experimentais são publicados na Galeria do PowerShell, tal como os módulos existentes do Azure PowerShell. Para ver uma lista de módulos experimentais, execute o comando seguinte:
 
-```azurepowershell-interactive
+```powershell-interactive
 Find-Module AzureRM.*.Experiments
 ```
 
-```output
+```Output
 Version Name                         Repository Description
 ------- ----                         ---------- -----------
 1.0.25  AzureRM.Compute.Experiments  PSGallery  Azure Compute experiments for VM creation
@@ -45,7 +45,7 @@ Version Name                         Repository Description
 
 Para instalar o módulo experimental, utilize os seguintes comandos a partir de uma sessão elevada do PowerShell:
 
-```azurepowershell-interactive
+```powershell-interactive
 Install-Module AzureRM.Compute.Experiments
 Install-Module AzureRM.Websites.Experiments
 ```

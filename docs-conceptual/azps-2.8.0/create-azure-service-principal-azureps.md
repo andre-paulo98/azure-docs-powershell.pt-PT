@@ -8,10 +8,10 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 04/23/2019
 ms.openlocfilehash: 4c47d2bac2c63f13ac0ebbccda3e2eed12cd658f
-ms.sourcegitcommit: 0b94b9566124331d0b15eb7f5a811305c254172e
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 10/15/2019
+ms.lasthandoff: 05/05/2020
 ms.locfileid: "72370420"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar um principal de serviço do Azure com o Azure PowerShell
@@ -88,7 +88,7 @@ O objeto devolvido a partir de `New-AzADServicePrincipal` contém os membros `Id
 
 > [!IMPORTANT]
 >
-> Iniciar sessão com um principal de serviço necessita do ID de inquilino no qual o principal de serviço foi criado. Para obter o inquilino que estava ativo quando o principal de serviço foi criado, execute o seguinte comando __imediatamente após__ a criação do principal de serviço:
+> O início de sessão com um principal de serviço requer o ID de inquilino no qual o principal de serviço foi criado. Para obter o inquilino que estava ativo quando o principal de serviço foi criado, execute o seguinte comando __imediatamente após__ a criação do principal de serviço:
 >
 > ```azurepowershell-interactive
 > (Get-AzContext).Tenant.Id

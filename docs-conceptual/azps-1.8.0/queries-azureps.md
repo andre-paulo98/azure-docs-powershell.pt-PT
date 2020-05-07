@@ -7,12 +7,12 @@ manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 01/10/2019
-ms.openlocfilehash: 9141f5640467722608cb7748f425ce3942668fb8
-ms.sourcegitcommit: 5bdedc77b27b66998387486761ec67ed9326f169
+ms.openlocfilehash: 4f74df6acaa05babc712b7b35737ce3001170b87
+ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/24/2019
-ms.locfileid: "67346582"
+ms.lasthandoff: 05/05/2020
+ms.locfileid: "82587997"
 ---
 # <a name="query-output-of-azure-powershell"></a>Consultar a saída do Azure PowerShell 
 
@@ -76,7 +76,7 @@ A saída resultante da utilização de `Select-Object` é sempre formatada para 
 Algumas propriedades na saída de cmdlet do Azure PowerShell utilizam objetos aninhados, como a propriedade `StorageProfile` da saída `Get-AzVM`. Para obter um valor de uma propriedade aninhada, forneça um nome a apresentar e o caminho completo para o valor que quer inspecionar como parte de um argumento de dicionário para `Select-Object`:
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
+Get-AzVM -ResourceGroupName TestGroup |
     Select-Object Name,@{Name="OSType"; Expression={$_.StorageProfile.OSDisk.OSType}}
 ```
 
@@ -95,7 +95,7 @@ Cada argumento de dicionário seleciona uma propriedade do objeto. A propriedade
 O cmdlet `Where-Object` permite-lhe filtrar o resultado com base em qualquer valor de propriedade, incluindo propriedades aninhadas. O exemplo seguinte mostra como utilizar `Where-Object` para encontrar as VMs do Linux num grupo de recursos.
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
+Get-AzVM -ResourceGroupName TestGroup |
     Where-Object {$_.StorageProfile.OSDisk.OSType -eq "Linux"}
 ```
 
@@ -109,8 +109,8 @@ TestGroup         TestVM2  westus2 Standard_D2s_v3  Linux testvm2669         Suc
 Pode encaminhar os resultados de `Select-Object` e `Where-Object` entre um e outro. Por motivos de desempenho, recomendamos sempre que coloque a operação `Where-Object` antes de `Select-Object`:
 
 ```azurepowershell-interactive
-Get-AzVM -ResourceGroupName TestGroup | `
-    Where-Object {$_.StorageProfile.OsDisk.OsType -eq "Linux"} | `
+Get-AzVM -ResourceGroupName TestGroup |
+    Where-Object {$_.StorageProfile.OsDisk.OsType -eq "Linux"} |
     Select-Object Name,VmID,ProvisioningState
 ```
 
