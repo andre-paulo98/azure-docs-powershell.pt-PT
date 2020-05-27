@@ -1,18 +1,15 @@
 ---
 title: Instalar o Azure PowerShell no Windows com o PowerShellGet
 description: Como instalar o Azure PowerShell com o PowerShellGet
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/15/2018
-ms.openlocfilehash: 5a4ccd67433fe3716df42075a4e2fd035a12af2b
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 17e625dacfadff07b0498ac173b7b2c312172f87
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75722446"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387773"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalar o Azure PowerShell no Windows com o PowerShellGet
 
@@ -20,7 +17,7 @@ ms.locfileid: "75722446"
 
 Este artigo explica os passos para instalar os módulos do Azure PowerShell para o PowerShell 5.x para Windows com o PowerShellGet. O PowerShellGet e a gestão do módulo constituem a forma preferencial de instalar o Azure PowerShell, mas se preferir instalar com o Instalador de Plataforma Web ou o pacote MSI, veja [Outros métodos de instalação](other-install.md).
 
-O modelo de implementação clássica do Azure não é suportado por esta versão do Azure PowerShell. Para suportar implementações clássicas, siga as instruções em [Instalar o módulo de Gestão de Serviço do Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
+O modelo de implementação clássica do Azure não é suportado por esta versão do Azure PowerShell. Para obter suporte para implementações clássicas, siga as instruções indicadas em [Instalar o módulo de Gestão de Serviço do Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
 
 > [!IMPORTANT]
 > O módulo AzureRM não é suportado para macOS ou Linux. Para utilizar cmdlets do Azure PowerShell nestas plataformas, [Instale o módulo Az](/powershell/azure/install-az-ps).
@@ -33,7 +30,7 @@ Para instalar o Azure PowerShell, precisa do PowerShellGet versão 1.1.2.0 ou su
 Get-InstalledModule -Name PowerShellGet -AllVersions | Select-Object -Property Name,Version,Path
 ```
 
-Deverá ver algo semelhante ao resultado seguinte:
+Deverá ver algo semelhante à saída seguinte:
 
 ```output
 Name          Version Path
@@ -54,7 +51,7 @@ Se não tem o PowerShellGet instalado, siga as instruções na tabela abaixo do 
 
 |Cenário|Instruções de instalação|
 |---|---|
-|Windows 10<br/>Windows Server 2016|Incorporado no Windows Management Framework (WMF) 5.0 incluído no SO|
+|Windows 10<br/>Windows Server 2016|Incorporado no Windows Management Framework (WMF) 5.0 incluído no SO|
 |Atualizar para o PowerShell 5| <ol><li>[Instalar a versão mais recente do WMF](https://www.microsoft.com/download/details.aspx?id=54616)</li><li>Execute o seguinte comando:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 |Windows com PowerShell 3 ou PowerShell 4|<ol><il>[Obter os módulos PackageManagement](https://go.microsoft.com/fwlink/?LinkID=746217)</il><li>Execute o seguinte comando:<br/>```Install-Module PowerShellGet -Force```</li></ol>|
 

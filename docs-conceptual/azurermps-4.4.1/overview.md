@@ -1,19 +1,15 @@
 ---
 title: Descrição geral do Azure PowerShell | Microsoft Docs
 description: Descrição geral da instalação e da configuração do Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.manager: carmonm
 ms.date: 08/31/2017
-ms.openlocfilehash: 0541975e55620a8792c0d51213c4ed02ea29988f
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: fbf4676189c6acd9982a10a8aa4acbab67b72730
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "67863415"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386685"
 ---
 # <a name="overview-of-azure-powershell"></a>Descrição Geral do Azure PowerShell
 
@@ -37,7 +33,7 @@ Se não está familiarizado com o PowerShell, uma introdução ao PowerShell pod
 * [Instalar o PowerShell](/powershell/scripting/installing-windows-powershell)
 * [Scripting com o PowerShell](/powershell/scripting/scripting-with-windows-powershell)
 
-Também pode ver este vídeo: [Noções básicas do PowerShell: (parte 1) Começar a Trabalhar com o PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
+Também pode ver este vídeo: [Noções básicas do PowerShell: (Parte 1) Introdução ao PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
 ## <a name="other-azure-powershell-modules"></a>Outros módulos do Azure PowerShell
 

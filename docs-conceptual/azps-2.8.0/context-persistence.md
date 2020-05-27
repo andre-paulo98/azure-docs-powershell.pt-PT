@@ -1,18 +1,15 @@
 ---
 title: Contextos e credenciais de início de sessão do Azure
 description: Saiba como reutilizar as credenciais do Azure e outras informações entre várias sessões do PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: 72d1b07bb2c66f80ea6f5d37ef7012d0d0a5bbbc
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: f2f6de80168ab295f65fcce97da77e1c958ae7ae
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "72791463"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387552"
 ---
 # <a name="azure-powershell-context-objects"></a>Objetos de contexto do Azure PowerShell
 

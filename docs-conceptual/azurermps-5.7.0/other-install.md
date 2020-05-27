@@ -1,18 +1,15 @@
 ---
 title: Outras formas de instalar o Azure PowerShell
 description: Como instalar o Azure PowerShell sem o PowerShellGet
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/20/2018
-ms.openlocfilehash: aaba0ce38129b96e3d691f1a9d9cfdc929188ffd
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 55a89861c3bcca41b940d34d945cd43690331f3e
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75722412"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83385767"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi-or-web-platform-installer"></a>Instalar o Azure PowerShell no Windows com o MSI ou o Instalador de Plataforma Web
 
@@ -23,7 +20,7 @@ Utilize estes métodos de instalação apenas se forem necessários para o seu s
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Instalar ou atualizar no Windows com o Pacote MSI
 
-O Azure PowerShell pode ser instalado através do ficheiro MSI disponível a partir do [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v5.7.0-April2018). Se tiver instalado as versões anteriores dos módulos do Azure como um MSI, o instalador remove-as automaticamente. O pacote do MSI instala os módulos em `${env:ProgramFiles}\WindowsPowerShell\Modules`. Os módulos `AzureRM` e `Azure` estão instalados.
+O Azure PowerShell pode ser instalado através do ficheiro MSI disponível a partir do [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v5.7.0-April2018). Se tiver instalado as versões anteriores dos módulos do Azure como um MSI, o instalador remove-as automaticamente. O pacote do MSI instala os módulos em `${env:ProgramFiles}\WindowsPowerShell\Modules`. Ambos os módulos `AzureRM` e `Azure` são instalados.
 
 > [!NOTE]
 > Utilize o módulo `Azure` apenas se estiver a trabalhar com o modelo de implementação clássica do Azure.

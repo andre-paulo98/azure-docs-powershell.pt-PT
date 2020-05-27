@@ -2,17 +2,14 @@
 title: Desinstalar o Azure PowerShell
 description: Como realizar uma desinstalação completa do Azure PowerShell
 ms.date: 06/10/2019
-author: sptramer
-ms.author: sttramer
-ms.manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: cc0b6a4369116e92b8200ffbc0838d6ee2991263
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 6fc8ff8af0355ab705007f5df81d2aba8444c266
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "67037688"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83388011"
 ---
 # <a name="uninstall-the-azure-powershell-module"></a>Desinstalar o módulo do Azure PowerShell
 
@@ -27,7 +24,7 @@ Se instalou o Azure PowerShell com o pacote MSI ou o Instalador da Plataforma We
 
 | Plataforma | Instruções |
 |----------|--------------|
-| Windows 10 | Iniciar > Definições > Aplicações |
+| Windows 10 | Iniciar > Definições > Aplicações |
 | Windows 7 </br>Windows 8 | Iniciar > Painel de Controlo > Programas > Desinstalar um programa |
 
 Quando estiver neste ecrã, verá "Azure PowerShell" na lista de programas e poderá desinstalar a partir daí.
@@ -36,7 +33,7 @@ Quando estiver neste ecrã, verá "Azure PowerShell" na lista de programas e pod
 
 Se instalou o Azure PowerShell através do PowerShellGet, pode utilizar o cmdlet [Uninstall-Module](/powershell/module/powershellget/uninstall-module). No entanto, `Uninstall-Module` desinstala apenas um módulo. Para remover completamente o Azure PowerShell, tem de desinstalar cada módulo individualmente. A desinstalação pode ser complicada se tiver várias versões do Azure PowerShell instaladas.
 
-O script a seguir pode servir para remover completamente uma versão única do Azure PowerShell. O script consulta a Galeria do PowerShell para obter uma lista dos submódulos dependentes. Em seguida, o script desinstala a versão correta de cada submódulo.
+O script a seguir pode servir para remover completamente uma versão única do Azure PowerShell. O script consulta a Galeria do PowerShell para obter uma lista dos submódulos pendentes. Em seguida, o script desinstala a versão correta de cada submódulo.
 
 ```powershell-interactive
 function Uninstall-AllModules {

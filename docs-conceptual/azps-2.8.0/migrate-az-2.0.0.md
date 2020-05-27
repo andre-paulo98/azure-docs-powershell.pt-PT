@@ -1,18 +1,15 @@
 ---
 title: Guia de migração para o Az 2.0.0
 description: Este guia de migração contém uma lista das alterações interruptivas realizadas no Azure PowerShell no lançamento da versão do Az 2.0.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/24/2019
-ms.openlocfilehash: 133769c09f74e1d0d90eff0c6c4bdbb90d1ebe24
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 91362f3cc6b35e96a543c1304fb55acbf373d291
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75720562"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387569"
 ---
 # <a name="migration-guide-for-az-200"></a>Guia de migração para o Az 2.0.0
 
