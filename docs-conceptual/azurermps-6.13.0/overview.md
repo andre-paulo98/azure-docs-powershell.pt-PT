@@ -1,19 +1,15 @@
 ---
 title: Descrição geral do Azure PowerShell | Microsoft Docs
 description: Descrição geral da instalação e da configuração do Azure PowerShell.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
-ms.manager: carmonm
 ms.date: 12/20/2018
-ms.openlocfilehash: a5c5504aa4c2932582df9e4a40b4950d5f999cbd
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 91607252c33deb05efebb2d02608084a4b9c7b35
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75035851"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83385563"
 ---
 # <a name="overview-of-azure-powershell"></a>Descrição Geral do Azure PowerShell
 
@@ -37,9 +33,9 @@ Se não está familiarizado com o PowerShell, uma introdução ao PowerShell pod
 * [Instalar o PowerShell](/powershell/scripting/install/installing-windows-powershell)
 * [Scripting com o PowerShell](/powershell/scripting/powershell-scripting)
 
-Também pode ver este vídeo: [Noções básicas do PowerShell: (parte 1) Começar a Trabalhar com o PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
+Também pode ver este vídeo: [Noções básicas do PowerShell: (Parte 1) Introdução ao PowerShell](https://channel9.msdn.com/Blogs/Taste-of-Premier/PowerShellBasicsPart1).
 
-## <a name="build-your-skills-with-microsoft-learn"></a>Desenvolva as suas capacidades com o Microsoft Learn
+## <a name="build-your-skills-with-microsoft-learn"></a>Desenvolva as suas competências com o Microsoft Learn
 
 - [Utilizar scripts para automatizar as tarefas do Azure com o PowerShell](/learn/modules/automate-azure-tasks-with-powershell/)
 - [Mais aprendizagem interativa...](/learn/browse/?term=powershell)

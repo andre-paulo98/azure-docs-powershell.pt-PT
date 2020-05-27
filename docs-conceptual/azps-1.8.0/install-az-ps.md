@@ -1,18 +1,15 @@
 ---
 title: Instalar o Azure PowerShell com o PowerShellGet
 description: Como instalar o Azure PowerShell com o PowerShellGet
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/22/2019
-ms.openlocfilehash: 7f22a420068db87fa2c3c007bd36f515384162fb
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 1ed7c9055b471ddc266ede7a8e2ca6359c01f8c3
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "72814379"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83387059"
 ---
 # <a name="install-the-azure-powershell-module"></a>Instalar o módulo do Azure PowerShell
 

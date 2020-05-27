@@ -3,13 +3,13 @@ title: Instalar o Azure PowerShell com um MSI
 description: Como instalar o Azure PowerShell sem o PowerShellGet utilizar um MSI
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 10/22/2019
-ms.openlocfilehash: d51a65d3e8600e8b381da0f485725c0345e37215
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.date: 03/10/2020
+ms.openlocfilehash: 1bd5bd1ae529a63c848b7aa835272d79b4011d32
+ms.sourcegitcommit: 10ec909100a70acec94d42f6084e7bf0342c6854
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387076"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83630746"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Instalar o Azure PowerShell no Windows com o MSI
 
@@ -17,8 +17,7 @@ Este artigo explica como instalar o Azure PowerShell no Windows com um Instalado
 
 ## <a name="requirements"></a>Requisitos
 
-O instalador MSI para o Azure PowerShell funciona __apenas__ para o PowerShell 5.1 no Windows. Para a instalação em plataformas que não sejam do Windows ou versões posteriores do PowerShell, utilize a opção [Instalar com o PowerShellGet](install-az-ps.md).
-Para consultar a sua versão do PowerShell, execute o comando:
+O instalador MSI no Windows foi criado para instalar o Azure PowerShell apenas para o PowerShell 5.1. Para a instalação em plataformas que não sejam do Windows ou versões posteriores do PowerShell, utilize a opção [Instalar com o PowerShellGet](install-az-ps.md). Para consultar a sua versão do PowerShell, execute o comando:
 
 ```powershell-interactive
 $PSVersionTable.PSVersion
@@ -31,7 +30,7 @@ Para utilizar o Azure PowerShell no PowerShell 5.1:
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Instalar ou atualizar no Windows com o Pacote MSI
 
-O Azure PowerShell para Windows pode ser instalado através do ficheiro MSI disponível a partir do [GitHub](https://github.com/Azure/azure-powershell/releases/tag/v1.8.0-April2019). Se tiver instalado as versões anteriores dos módulos do Azure como um MSI, o instalador remove-as automaticamente. O pacote do MSI instala os módulos em `${env:ProgramFiles}\WindowsPowerShell\Modules`.
+O pacote MSI para o Azure PowerShell está disponível a partir do [GitHub](https://github.com/Azure/azure-powershell/releases/latest). Se tiver instalado versões anteriores do Azure PowerShell com o MSI, o instalador remove-as automaticamente. O pacote do MSI instala os módulos em `${env:ProgramFiles}\WindowsPowerShell\Modules`.
 
 Para começar a trabalhar com o Azure PowerShell, inicie sessão com as suas credenciais do Azure.
 
@@ -41,17 +40,14 @@ Connect-AzAccount
 ```
 
 > [!NOTE]
->
 > Se tiver desativado o carregamento automático do módulo, tem de importar o módulo manualmente com `Import-Module Az`. Devido à forma como o módulo está estruturado, esta operação pode demorar um minuto.
 
 Terá de repetir este passo para cada nova sessão do PowerShell que iniciar. Para saber como manter o início de sessão do Azure nas sessões do PowerShell, veja [Manter as credenciais do utilizador nas sessões do PowerShell](context-persistence.md).
 
 ## <a name="provide-feedback"></a>Enviar comentários
 
-Se encontrar um erro no Azure Powershell, [registe um problema no GitHub](https://github.com/Azure/azure-powershell/issues).
-Para enviar comentários a partir da linha de comandos, experimente o cmdlet [Send-Feedback](/powershell/module/az.accounts/send-feedback).
+Se encontrar um erro no Azure PowerShell, [registe um problema no GitHub](https://github.com/Azure/azure-powershell/issues). Para enviar comentários a partir da linha de comandos, experimente o cmdlet [Send-Feedback](/powershell/module/az.accounts/send-feedback).
 
 ## <a name="next-steps"></a>Passos Seguintes
 
-Para saber mais sobre os módulos do Azure PowerShell e as respetivas funcionalidades, veja [Introdução ao Azure PowerShell](get-started-azureps.md).
-Se estiver familiarizado com o Azure PowerShell e precisar de migrar do AzureRM, veja [Migrar do AzureRM para o Az](migrate-from-azurerm-to-az.md).
+Para saber mais sobre os módulos do Azure PowerShell e as respetivas funcionalidades, veja [Introdução ao Azure PowerShell](get-started-azureps.md). Se estiver familiarizado com o Azure PowerShell e precisar de migrar do AzureRM, veja [Migrar do AzureRM para o Az](migrate-from-azurerm-to-az.md).

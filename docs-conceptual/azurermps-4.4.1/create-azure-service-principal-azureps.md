@@ -2,18 +2,15 @@
 title: Criar um principal de serviço do Azure com o Azure PowerShell
 description: Saiba como criar um principal de serviço para o seu serviço ou aplicação com o Azure PowerShell.
 keywords: Azure PowerShell, Azure Active Directory, Azure Active directory, AD, RBAC
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2017
-ms.openlocfilehash: a596e321d19cf157510418c150f51eb2532adb3c
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 8fc73b6268c01f9dbf76888e291843e035fae587
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "65535100"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386787"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar um principal de serviço do Azure com o Azure PowerShell
 
@@ -32,7 +29,7 @@ Um principal de serviço do Azure é uma identidade de segurança utilizada por 
 
 Em primeiro lugar, tem de ter permissões suficientes na sua subscrição do Azure e no Azure Active Directory. Mais concretamente, tem de poder criar uma aplicação no Active Directory e atribuir uma função ao principal de serviço.
 
-A forma mais fácil de verificar se a sua conta tem permissões adequadas é utilizar o portal. Veja [Check required permission in portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions) (Verificar as permissões necessárias no portal).
+A forma mais fácil de verificar se a sua conta tem permissões adequadas é utilizar o portal. Veja [Verificar as permissões necessárias no portal](/azure/azure-resource-manager/resource-group-create-service-principal-portal#required-permissions).
 
 ## <a name="create-a-service-principal-for-your-app"></a>Criar um principal de serviço para a sua aplicação
 
@@ -117,7 +114,7 @@ Parabéns! Pode utilizar estas credenciais para executar a aplicação. Em segui
 ## <a name="managing-roles"></a>Gerir funções
 
 > [!NOTE]
-> O Controlo de Acesso Baseado em Funções (RBAC) do Azure é um modelo para definir e gerir funções para principais de utilizador e serviço. As funções têm conjuntos de permissões associadas às mesmas, que determinam os recursos que o principal pode ler, aceder, escrever ou gerir. Para obter mais informações sobre RBAC e funções, veja [RBAC: Built-in roles](/azure/active-directory/role-based-access-built-in-roles) (RBAC: Funções incorporadas).
+> O Controlo de Acesso Baseado em Funções (RBAC) do Azure é um modelo para definir e gerir funções para principais de utilizador e serviço. As funções têm conjuntos de permissões associadas às mesmas, que determinam os recursos que o principal pode ler, aceder, escrever ou gerir. Para obter mais informações sobre RBAC e funções, veja [RBAC: Funções incorporadas](/azure/active-directory/role-based-access-built-in-roles).
 
 O Azure PowerShell disponibiliza os cmdlets seguintes para gerir atribuições de funções:
 
@@ -125,7 +122,7 @@ O Azure PowerShell disponibiliza os cmdlets seguintes para gerir atribuições d
 * [New-AzureRmRoleAssignment](/powershell/module/azurerm.resources/new-azurermroleassignment)
 * [Remove-AzureRmRoleAssignment](/powershell/module/azurerm.resources/remove-azurermroleassignment)
 
-A função predefinida dos principais de serviço é **Contribuidor**. Pode não ser a melhor opção consoante o âmbito das interações da sua aplicação com os serviços do Azure, dadas as suas amplas permissões.
+A função predefinida dos principais de serviço é **Contribuinte**. Pode não ser a melhor opção consoante o âmbito das interações da sua aplicação com os serviços do Azure, dadas as suas amplas permissões.
 A função **Leitor** é mais restritiva e é uma boa escolha para aplicações só de leitura. Pode ver detalhes de permissões específicas de funções ou criar permissões personalizadas através do portal do Azure.
 
 Neste exemplo, adicionámos a função **Leitor** ao exemplo anterior e eliminámos a função **Contribuinte**:

@@ -1,18 +1,15 @@
 ---
 title: Instalar e configurar o Azure PowerShell | Microsoft Docs
 description: Como instalar e configurar o Azure PowerShell para uma primeira utilização.
-author: sptramer
-ms.author: sttramer
-manager: carmonm
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 7b099fead7cb985fc8f7e6fed55b8c1107caa0d9
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 6f894546364e6a5ae06e1915a166edb258ccc698
+ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "75720383"
+ms.lasthandoff: 05/14/2020
+ms.locfileid: "83386753"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalar o Azure PowerShell no Windows com o PowerShellGet
 

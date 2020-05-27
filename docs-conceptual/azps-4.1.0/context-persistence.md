@@ -4,12 +4,12 @@ description: Saiba como reutilizar as credenciais do Azure e outras informaçõe
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: d93d7ee0ac88d797b04080e8b96160b4241eaf92
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: c79d1d634d5b76b2c6ab6b6ab309c2d49f9f7678
+ms.sourcegitcommit: 10ec909100a70acec94d42f6084e7bf0342c6854
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387127"
+ms.lasthandoff: 05/19/2020
+ms.locfileid: "83630933"
 ---
 # <a name="azure-powershell-context-objects"></a>Objetos de contexto do Azure PowerShell
 
@@ -40,7 +40,7 @@ Get-AzContext -ListAvailable
 Ou obtenha um contexto por nome:
 
 ```azurepowershell-interactive
-$context = Get-Context -Name "mycontext"
+$context = Get-AzContext -Name "mycontext"
 ```
 
 Os nomes dos contextos podem ser diferentes do nome da subscrição associada.
@@ -50,7 +50,7 @@ Os nomes dos contextos podem ser diferentes do nome da subscrição associada.
 
 ## <a name="create-a-new-azure-context-from-subscription-information"></a>Criar um novo contexto do Azure a partir de informações de subscrição
 
-O cmdlet [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext?view=azps-1.8.0) serve para criar novos contextos do Azure e para defini-los como o contexto ativo.
+O cmdlet [Set-AzContext](/powershell/module/Az.Accounts/Set-AzContext) serve para criar novos contextos do Azure e para defini-los como o contexto ativo.
 A forma mais fácil de criar um novo contexto do Azure é utilizar as informações de subscrição existentes. O cmdlet destina-se a retirar o objeto de saída de `Get-AzSubscription` como um valor encaminhado e configurar um novo contexto do Azure:
 
 ```azurepowershell-interactive
@@ -67,7 +67,7 @@ Se o argumento `-Name` for omitido, o nome e o ID da subscrição são utilizado
 
 ## <a name="change-the-active-azure-context"></a>Alterar o contexto ativo do Azure
 
-Tanto `Set-AzContext` como [Select-AzContext](/powershell/module/az.accounts/set-azcontext?view=azps-1.8.0) podem ser utilizados para alterar o contexto ativo do Azure. Conforme descrito em [Criar um novo contexto do Azure ](#create-a-new-azure-context-from-subscription-information), `Set-AzContext` cria um novo contexto do Azure para uma subscrição, caso não exista um, e, em seguida, passa a utilizar esse contexto como o contexto ativo.
+Tanto `Set-AzContext` como [Select-AzContext](/powershell/module/az.accounts/set-azcontext) podem ser utilizados para alterar o contexto ativo do Azure. Conforme descrito em [Criar um novo contexto do Azure ](#create-a-new-azure-context-from-subscription-information), `Set-AzContext` cria um novo contexto do Azure para uma subscrição, caso não exista um, e, em seguida, passa a utilizar esse contexto como o contexto ativo.
 
 `Select-AzContext` destina-se a ser utilizado apenas com contextos existentes do Azure e funciona de forma semelhante a `Set-AzContext -Context`, mas foi projetado para ser utilizado com encaminhamento:
 
