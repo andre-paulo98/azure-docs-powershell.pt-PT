@@ -4,12 +4,12 @@ description: Apresentação do novo módulo do Azure PowerShell Az, a substitui�
 ms.date: 05/20/2020
 ms.devlang: powershell
 ms.topic: conceptual
-ms.openlocfilehash: a50592c65c52eab005a6531572dbbfc144a0e43a
+ms.openlocfilehash: 5bc5e1230427289ec1d61971d6cab52ce2e099ac
 ms.sourcegitcommit: 308ebca475d1c37624d7a10a2c02047594f44cdf
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 05/22/2020
-ms.locfileid: "83778138"
+ms.locfileid: "83778109"
 ---
 # <a name="introducing-the-new-azure-powershell-az-module"></a>Apresentação do novo módulo do Azure PowerShell Az
 
@@ -18,7 +18,7 @@ Desde dezembro de 2018, o módulo do Az do Azure PowerShell é uma versão de di
 > [!NOTE]
 > A versão recomendada do PowerShell para utilização com o Azure PowerShell em todas as plataformas é o PowerShell 7.x e posteriores.
 
-Com o módulo do Az mais recente, o Azure PowerShell funciona bem com o PowerShell 6.x e posterior em todas as plataformas, incluindo Windows, macOS e Linux. Também é compatível com o PowerShell 5.1 no Windows.
+Com o módulo do Az mais recente, o Azure PowerShell funciona bem com o PowerShell 6.2.4 e posteriores em todas as plataformas, incluindo Windows, macOS e Linux. Também é compatível com o PowerShell 5.1 no Windows.
 
 O Az é um módulo novo, pelo que a versão foi reposta para 1.0.0.
 
@@ -26,7 +26,7 @@ O Az é um módulo novo, pelo que a versão foi reposta para 1.0.0.
 
 As principais atualizações podem ser inconvenientes, pelo que é importante informá-lo das razões que nos levaram a optar por introduzir um novo conjunto de módulos, com novos cmdlets, para interagir com o Azure a partir do PowerShell.
 
-A alteração mais importante e mais significativa é que o PowerShell tem sido um produto compatível com várias plataformas desde o lançamento do [PowerShell 6.x](/powershell/scripting/overview), com base na biblioteca do .NET Standard. Estamos empenhados em disponibilizar o suporte do Azure em todas as plataformas. Isto significa que os módulos do Azure PowerShell têm de ser atualizados para utilizar o .NET Standard e ser compatíveis com o PowerShell 6.x e posterior.
+A alteração mais importante e mais significativa é que o PowerShell tem sido um produto compatível com várias plataformas desde o lançamento do [PowerShell 6.x](/powershell/scripting/overview), com base na biblioteca do .NET Standard. Estamos empenhados em disponibilizar o suporte do Azure em todas as plataformas. Isto significa que os módulos do Azure PowerShell têm de ser atualizados para utilizar o .NET Standard e ser compatíveis com o PowerShell 6.2.4 e posteriores.
 Em vez de introduzirmos alterações complexas ao módulo AzureRM para adicionar este suporte, criámos o módulo Az.
 
 A criação de um novo módulo também permitiu que os nossos engenheiros garantam a consistência da estruturação e da nomenclatura dos cmdlets e dos módulos. Agora, todos os módulos começam com o prefixo `Az.` e todos os cmdlets utilizam a forma _Verbo_-`Az`_Substantivo_. Anteriormente, os nomes dos cmdlets não só eram mais longos, como os nomes tinham mais inconsistências.
@@ -40,7 +40,7 @@ Ao levar a cabo estas alterações importantes que exigiram a criação de um no
 Para se manter a par das mais recentes funcionalidades do Azure no PowerShell, deve migrar para o módulo Az assim que for possível. Se não estiver pronto para instalar o módulo Az como substituto do AzureRM, tem algumas opções disponíveis para experimentar o Az:
 
 - Utilize um ambiente `PowerShell` com o [Azure Cloud Shell](https://docs.microsoft.com/azure/cloud-shell/overview). O Azure Cloud Shell é um ambiente de shell baseado no browser que é fornecido com o módulo do Az instalado e com os aliases de compatibilidade `Enable-AzureRM` ativados.
-- Mantenha o módulo do AzureRM instalado com o PowerShell 5.1 para Windows, mas instale o módulo do Az para o PowerShell 6.x ou posterior. O PowerShell 5.1 para Windows e o PowerShell 6.x utilizam coleções separadas de módulos. Siga as instruções para instalar a [versão mais recente do PowerShell](/powershell/scripting/install/installing-powershell) e, em seguida, [instale o módulo do Az](install-az-ps.md) a partir do PowerShell 6.x ou posterior.
+- Mantenha o módulo do AzureRM instalado com o PowerShell 5.1 para Windows, mas instale o módulo do Az para o PowerShell 6.2.4 ou versões posteriores. O PowerShell 5.1 para Windows e o PowerShell 6.2.4 utilizam coleções separadas de módulos. Siga as instruções para instalar a [versão mais recente do PowerShell](/powershell/scripting/install/installing-powershell) e, em seguida, [instale o módulo do Az](install-az-ps.md) a partir do PowerShell 6.2.4 ou posterior.
 
 Para atualizar a partir de uma instalação existente do AzureRM:
 
