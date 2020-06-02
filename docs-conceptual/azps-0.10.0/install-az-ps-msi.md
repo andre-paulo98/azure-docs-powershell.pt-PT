@@ -4,12 +4,12 @@ description: Como instalar o Azure PowerShell sem o PowerShellGet utilizar um MS
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/10/2020
-ms.openlocfilehash: 1bd5bd1ae529a63c848b7aa835272d79b4011d32
-ms.sourcegitcommit: d661f38bec34e65bf73913db59028e11fd78b131
+ms.openlocfilehash: 07abfc9a4277c0d658830c397ad5c1abfbe95abe
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/05/2020
-ms.locfileid: "81445633"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84121999"
 ---
 # <a name="install-azure-powershell-on-windows-with-msi"></a>Instalar o Azure PowerShell no Windows com o MSI
 
@@ -25,7 +25,7 @@ $PSVersionTable.PSVersion
 
 Para utilizar o Azure PowerShell no PowerShell 5.1:
 
-1. Atualize para o [Windows PowerShell 5.1](/powershell/scripting/install/installing-windows-powershell#upgrading-existing-windows-powershell) se for necessário. Se estiver no Windows 10, já tem o PowerShell 5.1 instalado.
+1. Atualize para o [Windows PowerShell 5.1](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell) se for necessário. Se estiver no Windows 10, já tem o PowerShell 5.1 instalado.
 2. Instale o [.NET Framework 4.7.2 ou posterior](/dotnet/framework/install).
 
 ## <a name="install-or-update-on-windows-using-the-msi-package"></a>Instalar ou atualizar no Windows com o Pacote MSI
