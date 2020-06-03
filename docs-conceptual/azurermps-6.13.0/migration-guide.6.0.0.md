@@ -4,12 +4,12 @@ description: Este guia de migração contém uma lista de alterações recentes 
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 629cbb31f086c569d2b8961497d0255663602f54
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: ab20dd07fb0c14d8066ad12185f8245be291e7ec
+ms.sourcegitcommit: 9f5c7d231b069ad501729bf015a829f3fe89bc6a
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387212"
+ms.lasthandoff: 05/28/2020
+ms.locfileid: "84122243"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-600"></a>Alterações recentes ao Microsoft Azure PowerShell 6.0.0
 
@@ -20,9 +20,9 @@ Este documento é simultaneamente uma notificação das alterações recentes e 
 ## <a name="table-of-contents"></a>Índice
 
 - [Alterações interruptivas gerais](#general-breaking-changes)
-    - [Versão mínima do PowerShell necessária bumped para 5.0](#minimum-powershell-version-required-bumped-to-50)
-    - [Gravação automática do contexto ativada por predefinição](#context-autosave-enabled-by-default)
-    - [Remoção de alias de Etiquetas](#removal-of-tags-alias)
+  - [Versão mínima do PowerShell necessária bumped para 5.0](#minimum-powershell-version-required-bumped-to-50)
+  - [Gravação automática do contexto ativada por predefinição](#context-autosave-enabled-by-default)
+  - [Remoção de alias de Etiquetas](#removal-of-tags-alias)
 - [Alterações interruptivas aos cmdlets AzureRM.Compute](#breaking-changes-to-azurermcompute-cmdlets)
 - [Alterações interruptivas aos cmdlets AzureRM.DataLakeStore](#breaking-changes-to-azurermdatalakestore-cmdlets)
 - [Alterações interruptivas aos cmdlets AzureRM.Dns](#breaking-changes-to-azurermdns-cmdlets)
@@ -33,22 +33,23 @@ Este documento é simultaneamente uma notificação das alterações recentes e 
 - [Alterações interruptivas aos cmdlets AzureRM.Resources](#breaking-changes-to-azurermresources-cmdlets)
 - [Alterações interruptivas aos cmdlets AzureRM.Storage](#breaking-changes-to-azurermstorage-cmdlets)
 - [Módulos removidos](#removed-modules)
-    - [`AzureRM.ServerManagement`](#azurermservermanagement)
-    - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
+  - [`AzureRM.ServerManagement`](#azurermservermanagement)
+  - [`AzureRM.SiteRecovery`](#azurermsiterecovery)
 
 ## <a name="general-breaking-changes"></a>Alterações interruptivas gerais
 
 ### <a name="minimum-powershell-version-required-bumped-to-50"></a>Versão mínima do PowerShell necessária bumped para 5.0
 
-Anteriormente, o Azure PowerShell precisava de, _pelo menos_, a versão 3.0 do PowerShell para executar qualquer cmdlet. Daqui para a frente, este requisito será acionado para a versão 5.0 do PowerShell. Para obter informações sobre a atualização para o PowerShell 5.0, veja [esta tabela](https://docs.microsoft.com/powershell/scripting/setup/installing-windows-powershell?view=powershell-6#upgrading-existing-windows-powershell).
+Anteriormente, o Azure PowerShell precisava de, _pelo menos_, a versão 3.0 do PowerShell para executar qualquer cmdlet. Daqui para a frente, este requisito será acionado para a versão 5.0 do PowerShell. Para obter informações sobre a atualização para o PowerShell 5.0, veja [esta tabela](/powershell/scripting/windows-powershell/install/installing-windows-powershell#upgrading-existing-windows-powershell).
 
 ### <a name="context-autosave-enabled-by-default"></a>Gravação automática do contexto ativada por predefinição
 
-A gravação automática do contexto é o armazenamento de informações de início de sessão do Azure, que podem ser utilizadas entre sessões do PowerShell novas e diferentes. Para obter mais informações sobre a gravação automática do contexto, veja [este documento](https://docs.microsoft.com/powershell/azure/context-persistence).
+A gravação automática do contexto é o armazenamento de informações de início de sessão do Azure, que podem ser utilizadas entre sessões do PowerShell novas e diferentes. Para obter mais informações sobre a gravação automática do contexto, veja [este documento](/powershell/azure/context-persistence).
 
 Anteriormente, a gravação automática do contexto estava desativada por predefinição, o que significa que as informações de autenticação do Azure do utilizador não eram armazenadas entre sessões até executarem o cmdlet `Enable-AzureRmContextAutosave` para ativar a persistência de contexto. Daqui para a frente, a gravação automática do contexto estará ativada por predefinição, o que significa que os utilizadores _sem definições guardadas da gravação automática do contexto_ terão os respetivos contextos armazenados quando iniciarem sessão pela próxima vez. Os utilizadores podem optar ativamente por não participar desta funcionalidade através do cmdlet `Disable-AzureRmContextAutosave`.
 
-_Nota_: os utilizadores que anteriormente desativaram a gravação automática do contexto ou os utilizadores com gravação automática do contexto ativado e contextos existentes não serão afetados por esta alteração
+> [!NOTE]
+> Os utilizadores que anteriormente desativaram a gravação automática do contexto ou os utilizadores com gravação automática do contexto ativada e contextos existentes não serão afetados por esta alteração.
 
 ### <a name="removal-of-tags-alias"></a>Remoção de alias de Etiquetas
 
@@ -96,6 +97,7 @@ O alias `Tags` para o parâmetro `Tag` foi removido entre vários cmdlets. Segue
 ## <a name="breaking-changes-to-azurermcompute-cmdlets"></a>Alterações interruptivas aos cmdlets AzureRM.Compute
 
 **Diversos**
+
 - A propriedade de nome de sku aninhada nos tipos `PSDisk` e `PSSnapshot` mudaram de `StandardLRS` e `PremiumLRS` para `Standard_LRS` e `Premium_LRS`, respetivamente
 
 ```powershell-interactive
@@ -114,12 +116,15 @@ $vm.StorageProfile.DataDisks[0].ManagedDisk.StorageAccountType   # This will now
 ```
 
 **Add-AzureRmImageDataDisk**
+
 - Os valores aceites para o parâmetro `StorageAccountType` mudaram de `StandardLRS` e `PremiumLRS` para `Standard_LRS` e `Premium_LRS`, respetivamente
 
 **Add-AzureRmVMDataDisk**
+
 - Os valores aceites para o parâmetro `StorageAccountType` mudaram de `StandardLRS` e `PremiumLRS` para `Standard_LRS` e `Premium_LRS`, respetivamente
 
 **Add-AzureRmVmssDataDisk**
+
 - Os valores aceites para o parâmetro `StorageAccountType` mudaram de `StandardLRS` e `PremiumLRS` para `Standard_LRS` e `Premium_LRS`, respetivamente
 
 **New-AzureRmAvailabilitySet**
@@ -254,8 +259,9 @@ Remove-AzureRmDataLakeStoreItem -Account "ContosoADL" -path /myFolder -Recurse
 - O cmdlet já não aceita parâmetros individuais que compõem o token de acesso; em vez disso, o cmdlet substitui parâmetros de token explícitos, como `Service` ou `Permissions`, com um parâmetro `TemplateUri` genérico correspondente a um token de acesso de exemplo definido noutro local (possivelmente através de cmdlets do PowerShell de Armazenamento ou composto manualmente de acordo com a documentação de Armazenamento.) O cmdlet mantém o parâmetro `ValidityPeriod`.
 
 Para obter mais informações sobre a composição de tokens de acesso partilhado para o Armazenamento do Azure, veja as páginas de documentação, respetivamente:
-- [Construir um Serviço SAS](https://docs.microsoft.com/rest/api/storageservices/Constructing-a-Service-SAS)
-- [Construir uma Conta SAS](https://docs.microsoft.com/rest/api/storageservices/constructing-an-account-sas)
+
+- [Construir um Serviço SAS](/rest/api/storageservices/Constructing-a-Service-SAS)
+- [Construir uma Conta SAS](/rest/api/storageservices/constructing-an-account-sas)
 
 ```powershell-interactive
 # Old
@@ -282,7 +288,7 @@ $sas=Set-AzureKeyVaultManagedStorageSasDefinition -AccountName $sa.StorageAccoun
 - A permissão `all` foi removida de `PermissionsToKeys`, `PermissionsToSecrets` e `PermissionsToCertificates`.
 
 **Geral**
-- A propriedade `ValueFromPipelineByPropertyName` foi removida de todos os cmdlets onde a tubagem por `InputObject` foi ativada.  Os cmdlets afetados são:
+- A propriedade `ValueFromPipelineByPropertyName` foi removida de todos os cmdlets onde a tubagem por `InputObject` foi ativada. Os cmdlets afetados são:
     - `Add-AzureKeyVaultCertificate`
     - `Add-AzureKeyVaultCertificateContact`
     - `Add-AzureKeyVaultKey`
