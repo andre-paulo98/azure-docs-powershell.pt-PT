@@ -4,12 +4,12 @@ description: Saiba como criar e utilizar principais de serviço com o Azure Powe
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 06/17/2020
-ms.openlocfilehash: ebdc0783c43ccecbbeb315de5b5baebc9539b40e
-ms.sourcegitcommit: 747769a143ddebff39e78c2cc62a182401adddb9
+ms.openlocfilehash: 9d1f0e3be894a592bdf105c2070e9db0cf882921
+ms.sourcegitcommit: e324ad44921c9d8228ec7b91f3f8b333d2c520d4
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85268124"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86127759"
 ---
 # <a name="create-an-azure-service-principal-with-azure-powershell"></a>Criar um principal de serviço do Azure com o Azure PowerShell
 
@@ -149,7 +149,7 @@ Connect-AzAccount -ServicePrincipal -Credential $credentials -Tenant <tenant ID>
 A autenticação baseada em certificado precisa que o Azure PowerShell tenha a capacidade de obter informações de um arquivo de certificados local com base num thumbprint do certificado.
 
 ```azurepowershell-interactive
-Connect-AzAccount -ServicePrincipal -Tenant <tenant ID> -CertificateThumbprint <thumbprint>
+Connect-AzAccount -ServicePrincipal -Tenant <TenantId> -CertificateThumbprint <Thumbprint> -ApplicationId <ApplicationId>
 ```
 
 Para obter instruções sobre como importar um certificado para um arquivo de credenciais acessível ao PowerShell, veja [Sign in with Azure PowerShell](authenticate-azureps.md#sp-signin) (Iniciar sessão com o Azure PowerShell)
