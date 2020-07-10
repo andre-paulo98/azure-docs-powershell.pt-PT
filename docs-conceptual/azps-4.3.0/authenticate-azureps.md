@@ -3,19 +3,19 @@ title: Iniciar sessão com o Azure PowerShell
 description: Como iniciar sessão com o Azure PowerShell como um utilizador, principal de serviço ou com identidades geridas para recursos do Azure.
 ms.devlang: powershell
 ms.topic: conceptual
-ms.date: 06/18/2020
-ms.openlocfilehash: f82a9e373806f2f071ae59f6aee7e0a0bd4ea13d
-ms.sourcegitcommit: 747769a143ddebff39e78c2cc62a182401adddb9
+ms.date: 7/7/2020
+ms.openlocfilehash: 7ac723202ca9e81c8ef4cba5e844d46b98ba4b67
+ms.sourcegitcommit: 7b368a9be1cea2ac4e7d269e1a51529271269a42
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 06/23/2020
-ms.locfileid: "85268192"
+ms.lasthandoff: 07/08/2020
+ms.locfileid: "86098785"
 ---
 # <a name="sign-in-with-azure-powershell"></a>Iniciar sessão com o Azure PowerShell
 
 O Azure PowerShell suporta vários métodos de autenticação. O [Azure Cloud Shell](/azure/cloud-shell/overview) é a forma mais fácil de começar, uma vez que regista automaticamente o utilizador. Com uma instalação local, pode iniciar sessão interativamente através do browser. Ao escrever scripts para automatização, a abordagem recomendada é utilizar um [principal de serviço](create-azure-service-principal-azureps.md) com as permissões necessárias. Ao restringir as permissões de início de sessão tanto quanto possível para o seu caso de utilização, ajuda a manter os recursos do Azure seguros.
 
-Depois de iniciar sessão, os comandos são executados na sua subscrição predefinida. Para alterar a subscrição ativa para uma sessão, utilize o cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Para alterar a subscrição predefinida utilizada ao iniciar sessão com o Azure PowerShell, utilize [Set-AzDefault](/powershell/module/az.accounts/set-azdefault).
+Inicialmente, a sua sessão é iniciada na primeira subscrição que o Azure devolve se tiver acesso a mais do que uma subscrição. Os comandos são executados em relação a esta subscrição por predefinição. Para alterar a subscrição ativa para uma sessão, utilize o cmdlet [Set-AzContext](/powershell/module/az.accounts/set-azcontext). Para alterar a sua subscrição ativa e fazer com que esta persista entre sessões no mesmo sistema, utilize o cmdlet [Select-AzContext](/powershell/module/az.accounts/select-azcontext).
 
 > [!IMPORTANT]
 > As suas credenciais são partilhadas entre várias sessões do PowerShell, desde que mantenha a sessão iniciada.
