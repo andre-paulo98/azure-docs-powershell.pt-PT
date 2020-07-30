@@ -4,12 +4,12 @@ description: Como instalar e configurar o Azure PowerShell para uma primeira uti
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 6f894546364e6a5ae06e1915a166edb258ccc698
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.openlocfilehash: 653284edc093943972516dfd4253af6297754a6a
+ms.sourcegitcommit: c19bf5a96a82a56e2b1fa9ab5e106690f850cedf
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386753"
+ms.lasthandoff: 07/27/2020
+ms.locfileid: "87177514"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalar o Azure PowerShell no Windows com o PowerShellGet
 
@@ -17,7 +17,7 @@ ms.locfileid: "83386753"
 
 Este artigo explica os passos para instalar os módulos do Azure PowerShell para o PowerShell 5.x para Windows com o PowerShellGet. O PowerShellGet e a gestão do módulo constituem a forma preferencial de instalar o Azure PowerShell, mas se preferir instalar com o Instalador de Plataforma Web ou o pacote MSI, veja [Outros métodos de instalação](other-install.md).
 
-O modelo de implementação clássica do Azure não é suportado por esta versão do Azure PowerShell. Para suportar implementações clássicas, siga as instruções em [Instalar o módulo de Gestão de Serviço do Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
+O modelo de implementação clássica do Azure não é suportado por esta versão do Azure PowerShell. Para obter suporte para implementações clássicas, siga as instruções indicadas em [Instalar o módulo de Gestão de Serviço do Azure PowerShell](/powershell/azure/servicemanagement/install-azure-ps).
 
 > [!IMPORTANT]
 > O módulo AzureRM não é suportado para macOS ou Linux. Para utilizar cmdlets do Azure PowerShell nestas plataformas, [Instale o módulo Az](/powershell/azure/install-az-ps).
@@ -31,7 +31,7 @@ A instalação de itens a partir da Galeria do PowerShell requer o módulo Power
 Get-InstalledModule -Name PowerShellGet -ListAvailable | Select-Object -Property Name,Version,Path
 ```
 
-Deverá ver algo semelhante ao resultado seguinte:
+Deverá ver algo semelhante à saída seguinte:
 
 ```Output
 Name          Version Path
@@ -54,7 +54,7 @@ Se não tiver o PowerShellGet instalado, veja a secção [Como obter o PowerShel
 > A utilização do PowerShellGet requer uma Política de Execução que lhe permita executar scripts. Para obter mais informações sobre a Política de Execução do PowerShell, veja [About Execution Policies (Sobre as Políticas de Execução)](/powershell/module/microsoft.powershell.core/about/about_execution_policies).
 >
 > [!IMPORTANT]
-> O módulo descrito neste documento, o AzureRM, utiliza o .NET Framework. Isto torna-o incompatível com o PowerShell 6.0, que utiliza o .NET Core. Se estiver a utilizar o PowerShell 6.0, siga as [instruções de instalação para macOS e Linux](install-azurermps-maclinux.md).
+> O módulo descrito neste documento, o AzureRM, utiliza o .NET Framework. Isto torna-o incompatível com o PowerShell 6.0, que utiliza o .NET Core. Se estiver a utilizar o PowerShell 6.0, siga as [instruções de instalação para macOS e Linux](/powershell/azure/install-az-ps).
 
 ## <a name="step-2-install-azure-powershell"></a>Passo 2: Instalar o Azure PowerShell
 
@@ -86,7 +86,7 @@ O módulo de AzureRM é um módulo de rollup para os cmdlets do Azure Resource M
 
 Se tiver uma versão anterior do Azure PowerShell instalado poderá receber um erro. Para resolver este problema, veja a secção [Updating to a new version of Azure PowerShell](#update-azps)(Atualizar para uma versão nova do Azure PowerShell) deste artigo.
 
-## <a name="step-3-load-the-azurerm-module"></a>Passo 3: carregar o módulo de AzureRM
+## <a name="step-3-load-the-azurerm-module"></a>Passo 3: Carregar o módulo de AzureRM
 
 Uma vez que o módulo seja instalado, terá de carregar o módulo para a sessão do PowerShell. Deve fazê-lo numa sessão normal (não avaliada) do PowerShell. Os módulos são carregados com o cmdlet `Import-Module`, da seguinte forma:
 
