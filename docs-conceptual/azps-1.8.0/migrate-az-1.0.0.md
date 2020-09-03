@@ -4,12 +4,13 @@ description: Este guia de migração contém uma lista das alterações interrup
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/15/2019
-ms.openlocfilehash: d2e67ada70fed91a939dc72935e2fa639c731002
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 5aad9264cf5ea19d17601a7217285ec30b6d93ac
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387025"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241155"
 ---
 # <a name="breaking-changes-for-az-100"></a>Alterações interruptivas do Az 1.0.0
 

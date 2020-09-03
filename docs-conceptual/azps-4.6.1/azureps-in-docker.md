@@ -10,7 +10,7 @@ ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89241462"
+ms.locfileid: "89241768"
 ---
 # <a name="using-azure-powershell-in-docker"></a>Utilizar o Azure PowerShell no Docker
 

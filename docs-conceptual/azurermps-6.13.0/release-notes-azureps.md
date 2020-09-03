@@ -5,16 +5,17 @@ ms.devlang: powershell
 ms.topic: conceptual
 ms.workload: ''
 ms.date: 08/28/2018
-ms.openlocfilehash: 8aa0462af97877e0d20fe898ddd927a6d2850dea
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 189b360f8825b7de93b67b0b2cbe670d00187327
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387331"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89241360"
 ---
 # <a name="release-notes"></a>Notas de versão
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 
@@ -46,7 +47,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Adicionado o cmdlet New-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayCustomError, Get-AzureRmApplicationGatewayCustomError, Set-AzureRmApplicationGatewayCustomError, Remove-AzureRmApplicationGatewayCustomError, Add-AzureRmApplicationGatewayHttpListenerCustomError, Get-AzureRmApplicationGatewayHttpListenerCustomError, Set-AzureRmApplicationGatewayHttpListenerCustomError, Remove-AzureRmApplicationGatewayHttpListenerCustomError
 * Adicionado novamente o ICMP aos Protocolos de Rede do AzureFirewall
-* Atualização do cmdlet Test-AzureRmNetworkWatcherConnectivity, adicionada a validação no ID de destino, no endereço e na porta. 
+* Atualização do cmdlet Test-AzureRmNetworkWatcherConnectivity, adicionada a validação no ID de destino, no endereço e na porta.
 * Corrigidos os problemas relacionados com a utilização da memória no mapa da VirtualNetwork
 
 #### <a name="azurermrecoveryservicesbackup"></a>AzureRM.RecoveryServices.Backup
@@ -231,14 +232,14 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 #### <a name="azurermprofile"></a>AzureRM.Profile
 * Alterações menores ao código comum do armazenamento
 * Ficheiros de ajuda atualizados para incluírem todos os tipos de parâmetros.
-* -ServicePrincipal alterado para non-mandatory no conjunto de parâmetros ServicePrincipalCertificateWithSubscriptionId 
+* -ServicePrincipal alterado para non-mandatory no conjunto de parâmetros ServicePrincipalCertificateWithSubscriptionId
 
 #### <a name="azurestorage"></a>Azure.Storage
-* Suporte para a criação de Contexto de Armazenamento com OAuth. 
+* Suporte para a criação de Contexto de Armazenamento com OAuth.
     - New-AzureStorageContext
 
 #### <a name="azurermcdn"></a>AzureRM.Cdn
-* Standard_Microsoft adicionado ao sku de preços de Cdn. 
+* Standard_Microsoft adicionado ao sku de preços de Cdn.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
 * Dependências no Cofre de Chaves e no Armazenamento movidas para as dependências comuns
@@ -349,7 +350,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 * Adicionado campo de versão ao objeto PSSignalRResource e cadeia de ligação ao objeto PSSignalRKeys.
 
 #### <a name="azurermstorage"></a>AzureRM.Storage
-* Suporte para política Imutabilidade em AzureRm.Storage 
+* Suporte para política Imutabilidade em AzureRm.Storage
     - Remove-AzureRmStorageAccountNetworkRule
     - Get-AzureRmStorageContainer
     - Update-AzureRmStorageContainer
@@ -685,7 +686,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 * Atualização de exemplo para New-AzureRmDisk
 * Adição de exemplo para “New-AzureRmVM”
 * Atualização da descrição para Set-AzureRmVMOSDisk
-* Atualização do Exemplo 1 para Set-AzureRmVMBginfoExtension para corrigir a ortografia e o prefixo. 
+* Atualização do Exemplo 1 para Set-AzureRmVMBginfoExtension para corrigir a ortografia e o prefixo.
 
 #### <a name="azurermdatafactoryv2"></a>AzureRM.DataFactoryV2
 * Atualização da versão do SDK .NET do ADF para a 1.1.0.
@@ -897,7 +898,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 * Adição de outras informações sobre o parâmetro -Permissions nos ficheiros de ajuda.
 
 #### <a name="azurermcompute"></a>AzureRM.Compute
-* "Get-AzureRmVmDiskEncryptionStatus" corrige um problema observado em VMs sem discos de dados 
+* "Get-AzureRmVmDiskEncryptionStatus" corrige um problema observado em VMs sem discos de dados
 * Atualização da versão da biblioteca de cliente de Computação para corrigir os seguintes cmdlets
     - Grant-AzureRmDiskAccess
     - Grant-AzureRmSnapshotAccess
@@ -1020,8 +1021,8 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 
 #### <a name="azurermdatalakestore"></a>AzureRM.DataLakeStore
 * Correção do exemplo de Export-AzureRmDataLakeStoreChildItemProperties
-* Correção da exceção do parâmetro nulo do caso Recursivo em Set-AzureRmDataLakeStoreItemAclEntry 
-* Correção dos ficheiros de ajuda de Set-AzureRmDataLakeStoreItemAclEntry, Set-AzureRmDataLakeStoreItemAcl, Remove-AzureRmDataLakeStoreItemAclEntry 
+* Correção da exceção do parâmetro nulo do caso Recursivo em Set-AzureRmDataLakeStoreItemAclEntry
+* Correção dos ficheiros de ajuda de Set-AzureRmDataLakeStoreItemAclEntry, Set-AzureRmDataLakeStoreItemAcl, Remove-AzureRmDataLakeStoreItemAclEntry
 
 #### <a name="azurermnetwork"></a>AzureRM.Network
 * Aumento da versão do SDK de Rede de 18.0.0-preview para 19.0.0-preview
@@ -1041,7 +1042,7 @@ Esta é a lista de alterações feitas ao Azure PowerShell nesta versão.
 * Atualização dos cmdlets de Auditoria para permitir a remoção de AuditActions ou AuditActionGroups
 * Correção do problema de Set-AzureRmSqlDatabaseBackupLongTermRetentionPolicy ao definir uma nova política de retenção flexível em que o comando falhava com "Configurar a política de retenção de longo-prazo com o cofre e a política do serviço de recuperação do Azure já não é suportado. Submeta um pedido com a nova política de retenção flexível".
 * Atualize todos os cmdlets relacionados com as Bases de Dados SQL do Azure/Criação de Conjuntos Elásticos/Atualização para utilizar a nova API de Base de Dados, que suporta a propriedade SKU para propriedades relacionadas com dimensionamento e escalão.
-* Os cmdlets atualizados, incluindo: 
+* Os cmdlets atualizados, incluindo:
     - New-AzureRmSqlDatabase; Set-AzureRmSqlDatabase
     - New-AzureRmSqlElasticPool; Set-AzureRmSqlElasticPool
     - New-AzureRmSqlDatabaseCopy
