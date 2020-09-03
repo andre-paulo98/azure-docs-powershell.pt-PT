@@ -10,7 +10,7 @@ ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-PT
 ms.lasthandoff: 09/01/2020
-ms.locfileid: "89244454"
+ms.locfileid: "89240136"
 ---
 # <a name="breaking-changes-for-az-100"></a>Alterações interruptivas do Az 1.0.0
 
