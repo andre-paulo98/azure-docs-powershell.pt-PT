@@ -4,16 +4,17 @@ description: Como instalar e configurar o Azure PowerShell para uma primeira uti
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 03/27/2018
-ms.openlocfilehash: 653284edc093943972516dfd4253af6297754a6a
-ms.sourcegitcommit: c19bf5a96a82a56e2b1fa9ab5e106690f850cedf
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 7c0ae849d276df103619bec3422cdc9b694d068f
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 07/27/2020
-ms.locfileid: "87177514"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89238589"
 ---
 # <a name="install-azure-powershell-on-windows-with-powershellget"></a>Instalar o Azure PowerShell no Windows com o PowerShellGet
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Este artigo explica os passos para instalar os módulos do Azure PowerShell para o PowerShell 5.x para Windows com o PowerShellGet. O PowerShellGet e a gestão do módulo constituem a forma preferencial de instalar o Azure PowerShell, mas se preferir instalar com o Instalador de Plataforma Web ou o pacote MSI, veja [Outros métodos de instalação](other-install.md).
 
