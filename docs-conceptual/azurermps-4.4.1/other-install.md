@@ -4,16 +4,17 @@ description: Como instalar o Azure PowerShell através do pacote MSI ou do Insta
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 09/06/2017
-ms.openlocfilehash: 3f8963c98b26f971c1259dc89d5da1f35ce3015a
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 3a52201f6fd45de171d6a6b1088e12eb204192ae
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386702"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243961"
 ---
 # <a name="other-installation-methods"></a>Outros métodos de instalação
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 O Azure PowerShell tem múltiplos métodos de instalação. A utilização do PowerShellGet com a Galeria do PowerShell é o método preferencial. O Azure PowerShell pode ser instalado no Windows através do Instalador de Plataforma Web (WebPI) ou do ficheiro MSI disponível a partir do GitHub.
 

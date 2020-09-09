@@ -4,16 +4,17 @@ description: Este guia de migração contém uma lista de alterações recentes 
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 05/01/2018
-ms.openlocfilehash: 47d7ab67a6b1d092bb07405e7dc925d844cac5ab
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: 3e5be2d8279b28e683fbe8a03b812c658fcecf33
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83386719"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243978"
 ---
 # <a name="breaking-changes-for-microsoft-azure-powershell-400"></a>Alterações recentes ao Microsoft Azure PowerShell 4.0.0
 
-[!INCLUDE [migrate-to-az](../includes/migrate-to-az.md)]
+[!INCLUDE [migrate-to-az-banner](../../includes/migrate-to-az-banner.md)]
 
 Este documento é simultaneamente uma notificação das alterações recentes e um guia de migração para os consumidores de cmdlets do Microsoft Azure PowerShell. Cada secção descreve não só o catalisador da alteração recente como o caminho de migração que envolve o menor esforço. Para obter um contexto mais aprofundado, consulte o pedido detalhado associado a cada alteração.
 
@@ -64,15 +65,15 @@ Os seguintes cmdlets foram afetados nesta versão:
 ## <a name="breaking-changes-to-insights-cmdlets"></a>Alterações recentes aos cmdlets de Insights
 
 Os seguintes cmdlets foram afetados nesta versão:
-    
+
 ### <a name="get-azurermusage"></a>Get-AzureRmUsage
 - Este cmdlet foi preterido.
 
 ### <a name="remove-azurermalertrule"></a>Remove-AzureRmAlertRule
 - A saída deste cmdlet foi alterada de uma lista com um único objeto para um objeto único; este objeto inclui o requestId e o código de estado.
-    
+
 ```powershell-interactive
-# Old  
+# Old
 $s1 = Remove-AzureRmAlertRule -ResourceGroup $resourceGroup -name chiricutin
 if ($s1 -ne $null)
 {
@@ -85,20 +86,20 @@ $s1 = Remove-AzureRmAlertRule -ResourceGroup $resourceGroup -name chiricutin
 $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
-    
+
 ### <a name="add-azurermlogalertrule"></a>Add-AzureRmLogAlertRule
 - Este cmdlet foi preterido.
-    
+
 ### <a name="get-azurermalertrule"></a>Get-AzureRmAlertRule
 - Cada elemento da saída (uma lista de objetos) deste cmdlet foi simplificado, ou seja, em vez de devolver objetos com a estrutura `{ Id, Location, Name, Tags, Properties }`, devolverá objetos com a estrutura `{ Id, Location, Name, Tags, Type, Description, IsEnabled, Condition, Actions, LastUpdatedTime, ...}`, o que corresponde a todos os atributos de um Recurso do Azure juntamente com todos os atributos de um AlertRuleResource no nível superior.
-    
+
 ```powershell-interactive
 # Old
 $rules = Get-AzureRmAlertRule -ResourceGroup $resourceGroup
 if ($rules -and $rules.count -ge 1)
 {
     Write-Host -fore red "Error updating alert rule"
-      
+
     Write-Host $rules(0).Id
     Write-Host $rules(0).Properties.IsEnabled
     Write-Host $rules(0).Properties.Condition
@@ -109,23 +110,23 @@ $rules = Get-AzureRmAlertRule -ResourceGroup $resourceGroup
 if ($rules -and $rules.count -ge 1)
 {
     Write-Host -fore red "Error updating alert rule"
- 
+
     Write-Host $rules(0).Id
-      
+
     # Properties will remain for a while
     Write-Host $rules(0).Properties.IsEnabled
-      
+
     # But the properties will be at the top level too. Later Properties will be removed
     Write-Host $rules(0).IsEnabled
     Write-Host $rules(0).Condition
 }
 ```
-    
+
 ### <a name="get-azurermautoscalesetting"></a>Get-AzureRmAutoscaleSetting
 - O campo `AutoscaleSettingResourceName` foi preterido porque tem sempre o mesmo valor que o campo `Name`.
 
 ```powershell-interactive
-# Old  
+# Old
 $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
 if ($s1.AutoscaleSettingResourceName -ne $s1.Name)
 {
@@ -134,16 +135,16 @@ if ($s1.AutoscaleSettingResourceName -ne $s1.Name)
 
 # New
 $s1 = Get-AzureRmAutoscaleSetting -ResourceGroup $resourceGroup -Name MySetting
-    
+
 # There won't be a AutoscaleSettingResourceName
 Write-Host $s1.Name
 ```
-    
+
 ### <a name="remove-azurermlogprofile"></a>Remove-AzureRmLogProfile
 - A saída deste cmdlet irá ser alterada de `Boolean` para um objeto que contém `RequestId` e `StatusCode`
 
 ```powershell-interactive
-# Old  
+# Old
 $s1 = Remove-AzureRmLogProfile -Name myLogProfile
 if ($s1 -eq $true)
 {
@@ -159,12 +160,12 @@ $s1 = Remove-AzureRmLogProfile -Name myLogProfile
 $r = $s1.RequestId
 $s = $s1.StatusCode
 ```
-    
+
 ### <a name="add-azurermlogprofile"></a>Add-AzureRmLogProfile
 - A saída deste cmdlet irá ser alterada de um objeto que inclui o requestId, o código de estado e o recurso atualizado ou recém-criado
-    
+
 ```powershell-interactive
-# Old  
+# Old
 $s1 = Add-AzureRmLogProfile -Name default -StorageAccountId /subscriptions/df602c9c-7aa0-407d-a6fb-eb20c8bd1192/resourceGroups/JohnKemTest/providers/Microsoft.Storage/storageAccounts/johnkemtest8162 -Locations Global -categ Delete, Write, Action -retention 3
 $r = $s1.ServiceBusRuleId
 
@@ -173,9 +174,9 @@ $s1 = Add-AzureRmLogProfile -Name default -StorageAccountId /subscriptions/df602
 $r = $s1.RequestId
 $s = $s1.StatusCode
 $a = $s1.NewResource.ServiceBusRuleId
-    
+
 ```
-    
+
 ### <a name="set-azurermdiagnosticsettings"></a>Set-AzureRmDiagnosticSettings
 - O nome do comando irá ser mudado para `Update-AzureRmDiagnosticSettings`
 
@@ -299,7 +300,7 @@ As seguintes propriedades de tipo de saída foram afetadas nesta versão:
     - `Set-AzureStorageBlobContent`
     - `Start-AzureStorageBlobCopy`
     - `Stop-AzureStorageBlobCopy`
-    
+
 ### <a name="azurestoragecontainercloudblobcontainerserviceclient"></a>AzureStorageContainer.CloudBlobContainer.ServiceClient
 - As seguintes propriedades foram removidas deste tipo (_nota_: ainda podem ser encontradas na propriedade `DefaultRequestOptions`):
     - `LocationMode`
@@ -311,7 +312,7 @@ As seguintes propriedades de tipo de saída foram afetadas nesta versão:
     - `Get-AzureStorageContainer`
     - `New-AzureStorageContainer`
     - `Set-AzureStorageContainerAcl`
-    
+
 ### <a name="azurestoragequeuecloudqueueserviceclient"></a>AzureStorageQueue.CloudQueue.ServiceClient
 - As seguintes propriedades foram removidas deste tipo (_nota_: ainda podem ser encontradas na propriedade `DefaultRequestOptions`):
     - `LocationMode`
@@ -321,7 +322,7 @@ As seguintes propriedades de tipo de saída foram afetadas nesta versão:
 - Esta alteração afeta os seguintes cmdlets:
     - `Get-AzureStorageQueue`
     - `New-AzureStorageQueue`
-    
+
 ### <a name="azurestoragetablecloudtableserviceclient"></a>AzureStorageTable.CloudTable.ServiceClient
 - As seguintes propriedades foram removidas deste tipo (_nota_: ainda podem ser encontradas na propriedade `DefaultRequestOptions`):
     - `LocationMode`
@@ -332,16 +333,16 @@ As seguintes propriedades de tipo de saída foram afetadas nesta versão:
 - Esta alteração afeta os seguintes cmdlets:
     - `Get-AzureStorageTable`
     - `New-AzureStorageTable`
-    
+
 ```powershell-interactive
 # Old
-$LocationMode = (Get-AzureStorageBlob -Container $containername)[0].ICloudBlob.ServiceClient.LocationMode       
+$LocationMode = (Get-AzureStorageBlob -Container $containername)[0].ICloudBlob.ServiceClient.LocationMode
 $ParallelOperationThreadCount = (Get-AzureStorageContainer -Container $containername).CloudBlobContainer.ServiceClient.ParallelOperationThreadCount
 $PayloadFormat = (Get-AzureStorageTable -Name $tablename).CloudTable.ServiceClient.PayloadFormat
 $RetryPolicy = (Get-AzureStorageQueue -Name $queuename).CloudQueue.ServiceClient.RetryPolicy
 
 # New
-$LocationMode = (Get-AzureStorageBlob -Container $containername)[0].ICloudBlob.ServiceClient.DefaultRequestOptions.LocationMode     
+$LocationMode = (Get-AzureStorageBlob -Container $containername)[0].ICloudBlob.ServiceClient.DefaultRequestOptions.LocationMode
 $ParallelOperationThreadCount = (Get-AzureStorageContainer -Container $containername).CloudBlobContainer.ServiceClient.DefaultRequestOptions.ParallelOperationThreadCount
 $PayloadFormat = (Get-AzureStorageTable -Name $tablename).CloudTable.ServiceClient.DefaultRequestOptions.PayloadFormat
 $RetryPolicy = (Get-AzureStorageQueue -Name $queuename).CloudQueue.ServiceClient.DefaultRequestOptions.RetryPolicy
@@ -412,7 +413,7 @@ $type = (Get-AzureRmContext).Account.AccountType
 $type = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).Account.AccountType
 $type = (Add-AzureRmAccount).Context.Account.AccountType
 
-# New 
+# New
 $type = (Get-AzureRmContext).Account.Type
 $type = (Set-AzureRmContext -SubscriptionId xxx-xxx-xxx-xxx).Account.Type
 $type = (Add-AzureRmAccount).Context.Account.Type

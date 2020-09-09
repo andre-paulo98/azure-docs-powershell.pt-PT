@@ -4,12 +4,13 @@ description: Saiba como reutilizar as credenciais do Azure e outras informaçõe
 ms.devlang: powershell
 ms.topic: conceptual
 ms.date: 10/21/2019
-ms.openlocfilehash: d93d7ee0ac88d797b04080e8b96160b4241eaf92
-ms.sourcegitcommit: 7839b82f47ef8dd522eff900081c22de0d089cfc
+ms.custom: devx-track-azurepowershell
+ms.openlocfilehash: b75382d09e01dc242acf37a1652ec265266eaf7f
+ms.sourcegitcommit: 8b3126b5c79f453464d90669f0046ba86b7a3424
 ms.translationtype: HT
 ms.contentlocale: pt-PT
-ms.lasthandoff: 05/14/2020
-ms.locfileid: "83387127"
+ms.lasthandoff: 09/01/2020
+ms.locfileid: "89243009"
 ---
 # <a name="azure-powershell-context-objects"></a>Objetos de contexto do Azure PowerShell
 
